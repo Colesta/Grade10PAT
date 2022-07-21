@@ -18,7 +18,7 @@ public class GameManager{
     
     
     
-    public static void main(String[] args) {
+    public static void gameManager(String[] args) {
         
         
         BattleScreen bs = new BattleScreen();

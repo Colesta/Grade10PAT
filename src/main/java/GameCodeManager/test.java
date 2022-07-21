@@ -8,10 +8,8 @@ package GameCodeManager;
  *
  * @author Peters
  */
-public class HelloWorld {
-    
-    public static void helloWorld(String[] args) {
-        System.out.println("Hello World");
+public class test {
+    public static void main(String[] args) {
+        System.out.println(GameCodeManager.HealthManager.GetEnemyAttack());
     }
-    
 }

@@ -4,18 +4,18 @@
  */
 package GameCodeManager;
 
+import java.io.File;
+import javax.swing.*;
+import java.util.Scanner;
+
 /**
  *
  * @author Peters
  */
 public class MovelistManager {
     
-    public static int getTurn(){
-        Scanner sc = new Scanner(new File("turn.txt"));
-        
-        int turn = sc.next();
-        return turn;
-    }
+      
+      
  
     public static void Move() {
         //Player1 Moves

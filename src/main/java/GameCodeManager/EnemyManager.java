@@ -9,21 +9,28 @@ package GameCodeManager;
  * @author Peters
  */
 public class EnemyManager {
-    
-    
-    public int AttackHeroChance(int min, int max) {
-        
-        int range = (max-min) + 1;
-        
-        return (int)(Math.random() * range) + min;
-           }
-    
-    
-  
-    public static void EnemyManager() {
-        
-        HealthManager Hm = new HealthManager();
-        
+
+    public int AttackHeroChance() {
+
+        int range = (4 - 1) + 1;
+
+        return (int) (Math.random() * range) + 1;
     }
     
+    public int EnemyAttackDamage(int i, int io) {
+
+        int range = (io - i) + 1;
+
+        return (int) (Math.random() * range) + i;
+    }
+
+    int AttackHeroChance(int i, int i0) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    
+
+    
+    
+     
 }
