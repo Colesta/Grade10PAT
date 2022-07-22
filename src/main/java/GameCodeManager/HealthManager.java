@@ -98,9 +98,7 @@ public class HealthManager {
 
     public static int getEnemyAttack() {
 
-        EnemyManager em = new EnemyManager();
-
-        int atkPotency = em.AttackHeroChance(1, 3);
+        int atkPotency = EnemyManager.AttackPotencyChance();
 
         int enemyDamage;
 
@@ -127,7 +125,7 @@ public class HealthManager {
     
     public static int getHeroAttack(int damage, int enemy) throws FileNotFoundException{
         Scanner sc;
-        sc = new Scanner(new File("data//enemmyHealth.txt"));
+        sc = new Scanner(new File("data//enemyHealth.txt"));
         int enemy1Health = sc.nextInt();
         int enemy2Health = sc.nextInt();
         int enemy3Health = sc.nextInt();
@@ -161,90 +159,11 @@ public class HealthManager {
 
     }
 
-    public static int getHero1DamagedHealth() throws FileNotFoundException {
-
-        Scanner sc;
-        sc = new Scanner(new File("data//playerHealth.txt"));
-        int player1Health = sc.nextInt();
-        int player2Health = sc.nextInt();
-        int player3Health = sc.nextInt();
-        int player4Health = sc.nextInt();
-
-        int damage = getEnemyAttack();
-
-        return player1Health -= damage;
-
-    }
-    
-    public static int getHero2DamagedHealth() throws FileNotFoundException {
-
-        Scanner sc;
-        sc = new Scanner(new File("data//playerHealth.txt"));
-        int player1Health = sc.nextInt();
-        int player2Health = sc.nextInt();
-        int player3Health = sc.nextInt();
-        int player4Health = sc.nextInt();
-
-        int damage = getEnemyAttack();
-
-        return player2Health -= damage;
-
-    }
-        
-    public static int getHero3DamagedHealth() throws FileNotFoundException {
-
-        Scanner sc;
-        sc = new Scanner(new File("data//playerHealth.txt"));
-        int player1Health = sc.nextInt();
-        int player2Health = sc.nextInt();
-        int player3Health = sc.nextInt();
-        int player4Health = sc.nextInt();
-
-        int damage = getEnemyAttack();
-
-        return player3Health -= damage;
-
-    }
-    
-    public static int getHero4DamagedHealth() throws FileNotFoundException {
-
-        Scanner sc;
-        sc = new Scanner(new File("data//playerHealth.txt"));
-        int player1Health = sc.nextInt();
-        int player2Health = sc.nextInt();
-        int player3Health = sc.nextInt();
-        int player4Health = sc.nextInt();
-
-        int damage = getEnemyAttack();
-
-        return player4Health -= damage;
-
-    }
-
-    public static void getNewHealth() throws FileNotFoundException, IOException {
-
-        int player1Health = getHero1DamagedHealth();
-        int player2Health = getHero2DamagedHealth();
-        int player3Health = getHero3DamagedHealth();
-        int player4Health = getHero4DamagedHealth();
-
-        PrintWriter pw = new PrintWriter(new FileWriter("data//playerHealth.txt"));
-        pw.println(player1Health);
-
-        pw.println(player2Health);
-
-        pw.println(player3Health);
-
-        pw.println(player4Health);
-        pw.close();
-
-    }
-
     public static void addHealth() {
         Scanner sc;
         
         try {
-            sc = new Scanner(new File("data//playerMana.txt"));
+            sc = new Scanner(new File("data//playerHealth.txt"));
             int player1Health = sc.nextInt();
             int player2Health = sc.nextInt();
             int player3Health = sc.nextInt();
@@ -287,5 +206,51 @@ public class HealthManager {
 
     }
 
-    
+    public static void getHeroDamage() {
+        Scanner sc;
+        
+        try {
+            sc = new Scanner(new File("data//playerHealth.txt"));
+            int player1Health = sc.nextInt();
+            int player2Health = sc.nextInt();
+            int player3Health = sc.nextInt();
+            int player4Health = sc.nextInt();
+            
+            int damage = getEnemyAttack();
+            int player = EnemyManager.AttackHeroChance();
+            
+            switch (player) {
+                case 1:
+                    player1Health -= damage;
+                    break;
+                case 2:
+                    player2Health -= damage;
+                    break;
+                case 3:
+                    player3Health -= damage;
+                    break;
+                case 4:
+                    player4Health -= damage;
+                    break;
+                default:
+                    System.out.println("INVALID NUMBER");
+                    
+            }
+
+            PrintWriter pw = new PrintWriter(new FileWriter("data//playerMana.txt"));
+            pw.println(player1Health);
+            pw.println(player2Health);
+            pw.println(player3Health);
+            pw.println(player4Health);
+            
+            pw.close();
+
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(ManaManager.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(ManaManager.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+
 }

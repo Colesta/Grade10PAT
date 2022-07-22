@@ -10,12 +10,20 @@ package GameCodeManager;
  */
 public class EnemyManager {
 
-    public int AttackHeroChance() {
+    public static int AttackHeroChance() {
 
         int range = (4 - 1) + 1;
 
         return (int) (Math.random() * range) + 1;
     }
+    
+    public static int AttackPotencyChance() {
+
+        int range = (3 - 1) + 1;
+
+        return (int) (Math.random() * range) + 1;
+    }
+    
     
     public int EnemyAttackDamage(int i, int io) {
 
@@ -24,9 +32,7 @@ public class EnemyManager {
         return (int) (Math.random() * range) + i;
     }
 
-    int AttackHeroChance(int i, int i0) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+    
 
     
 
