@@ -10,6 +10,6 @@ package GameCodeManager;
  */
 public class test {
     public static void main(String[] args) {
-        System.out.println(GameCodeManager.HealthManager.GetEnemyAttack());
+        System.out.println(GameCodeManager.HealthManager.getEnemyAttack());
     }
 }

@@ -9,9 +9,12 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.time.Clock;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.SpringLayout;
 
 /**
  *
@@ -100,14 +103,18 @@ public class ManaManager {
     }
     
     
-    public static void addMana(int player, int manaToAdd) {
+    public static void addMana() {
         Scanner sc;
+        
         try {
             sc = new Scanner(new File("data//playerMana.txt"));
             int player1Mana = sc.nextInt();
             int player2Mana = sc.nextInt();
             int player3Mana = sc.nextInt();
             int player4Mana = sc.nextInt();
+            
+            int manaToAdd = 50;
+            int player = Integer.parseInt(JOptionPane.showInputDialog("Input which Player youd like to give Mana to (Enter 1,2,3 or 4)"));
 
             switch (player) {
                 case 1:
@@ -122,6 +129,9 @@ public class ManaManager {
                 case 4:
                     player4Mana += manaToAdd;
                     break;
+                default:
+                    System.out.println("INVALID NUMBER");
+                    
             }
 
             PrintWriter pw = new PrintWriter(new FileWriter("data//playerMana.txt"));

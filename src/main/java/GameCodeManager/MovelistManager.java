@@ -15,24 +15,37 @@ import java.util.Scanner;
 public class MovelistManager {
     
       
-      
- 
-    public static void Move() {
-        //Player1 Moves
-        int braveBlade = 0;
-        int swordDance= 0;
-        //Player2 Moves
-        int godsHand = 0;
-        int armorOfHades = 0;
-        //Player3 Moves
-        int inferno = 0;
-        int megidolan= 0;
-        //Player4 Moves
-        int salvation =0;
-        int rebirth= 0;
+    public static int braveBlade(){
+        return 35;
     }
-        
     
-   
+    public static int swordDance(){
+        return 150;
+    } 
     
+    public static int godsHand(){
+        return 65;
+    } 
+    
+    public static int t(){
+        return 35;
+    }
+    
+    public static int infero(){
+        return 120;
+    }
+    
+    public static int megidoloan(){
+        return 200;
+    }
+    
+    public static int divineJudgement(){
+        return 85;
+    }    
+    
+    public static void salvation(){
+        ManaManager.addMana();
+        HealthManager.addHealth();
+    }    
+ 
 }

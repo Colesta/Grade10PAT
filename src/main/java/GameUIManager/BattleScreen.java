@@ -4,10 +4,13 @@
  */
 package GameUIManager;
 
+import GameCodeManager.HealthManager;
+import GameCodeManager.ManaManager;
 import GameCodeManager.MovelistManager;
 import java.io.FileNotFoundException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -35,15 +38,23 @@ public class BattleScreen extends javax.swing.JFrame {
 
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        p1Move1 = new javax.swing.JButton();
+        p1Move2 = new javax.swing.JButton();
+        p2Move1 = new javax.swing.JButton();
+        p2Move2 = new javax.swing.JButton();
+        p3Move1 = new javax.swing.JButton();
+        p3Move2 = new javax.swing.JButton();
+        p4Move1 = new javax.swing.JButton();
+        p4Move2 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(800, 650));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setText("jButton1");
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 180, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/battleArena.jpg"))); // NOI18N
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel1MouseClicked(evt);
@@ -51,8 +62,37 @@ public class BattleScreen extends javax.swing.JFrame {
         });
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, -1));
 
-        jLabel2.setText("jLabel2");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, -1, -1));
+        p1Move1.setText("P1 Move 1");
+        p1Move1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                p1Move1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(p1Move1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, -1, -1));
+
+        p1Move2.setText("P1 Move 2");
+        getContentPane().add(p1Move2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 180, -1, -1));
+
+        p2Move1.setText("P2 Move 1");
+        getContentPane().add(p2Move1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, -1, -1));
+
+        p2Move2.setText("P2 Move 2");
+        getContentPane().add(p2Move2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 280, -1, -1));
+
+        p3Move1.setText("P3 Move 1");
+        getContentPane().add(p3Move1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 130, -1, -1));
+
+        p3Move2.setText("P3 Move 2");
+        getContentPane().add(p3Move2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 180, -1, -1));
+
+        p4Move1.setText("P4 Move 1");
+        getContentPane().add(p4Move1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 230, -1, -1));
+
+        p4Move2.setText("P4 Move 2");
+        getContentPane().add(p4Move2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 280, -1, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/battleScreen.jpeg"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 640));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -61,17 +101,44 @@ public class BattleScreen extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel1MouseClicked
 
+    private void p1Move1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p1Move1ActionPerformed
+        // TODO add your handling code here:
+                MovelistManager ml = new MovelistManager();
+                HealthManager hm = new HealthManager();
+                int enemy = Integer.parseInt(JOptionPane.showInputDialog("Enter which enemy you would like to attack (Enter 1,2,3 or 4)"));
+                int damage = ml.braveBlade();
+        try {
+            hm.getHeroAttack(damage, enemy);
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(BattleScreen.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_p1Move1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
     public static void battleScreen(String args[]) {
         
+        HealthManager hm = new HealthManager();
         
+        if (hm.allEnemyDead()){
+            new BattleScreen().setVisible(false);
+            new WinScreen().setVisible(true);
+        }
         
-        java.awt.EventQueue.invokeLater(new Runnable() {
+        if (hm.allHeroDead()){
+            new BattleScreen().setVisible(false);
+            new LoseScreen().setVisible(true);
+        }
+        
+          java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new BattleScreen().setVisible(true);
+                
             }
+        });
+        
+        java.awt.EventQueue.invokeLater(() -> {
+            new BattleScreen().setVisible(true);
         });
     }
 
@@ -79,5 +146,15 @@ public class BattleScreen extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton p1Move1;
+    private javax.swing.JButton p1Move2;
+    private javax.swing.JButton p2Move1;
+    private javax.swing.JButton p2Move2;
+    private javax.swing.JButton p3Move1;
+    private javax.swing.JButton p3Move2;
+    private javax.swing.JButton p4Move1;
+    private javax.swing.JButton p4Move2;
     // End of variables declaration//GEN-END:variables
+
+    
 }

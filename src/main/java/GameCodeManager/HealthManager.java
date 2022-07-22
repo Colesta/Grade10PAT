@@ -12,6 +12,7 @@ import java.io.PrintWriter;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -95,7 +96,7 @@ public class HealthManager {
         }
     }
 
-    public static int GetEnemyAttack() {
+    public static int getEnemyAttack() {
 
         EnemyManager em = new EnemyManager();
 
@@ -123,6 +124,42 @@ public class HealthManager {
             }
         }
     }
+    
+    public static int getHeroAttack(int damage, int enemy) throws FileNotFoundException{
+        Scanner sc;
+        sc = new Scanner(new File("data//enemmyHealth.txt"));
+        int enemy1Health = sc.nextInt();
+        int enemy2Health = sc.nextInt();
+        int enemy3Health = sc.nextInt();
+        int enemy4Health = sc.nextInt();
+        
+               switch (enemy) {
+            case 1 -> {
+                enemy1Health -= damage;
+                return enemy1Health;
+            }
+
+            case 2 -> {
+                enemy2Health -= damage;
+                return enemy2Health;
+            }
+
+            case 3 -> {
+                enemy3Health -= damage;
+                return enemy3Health;
+            }
+            case 4 -> {
+                enemy4Health -= damage;
+                return enemy4Health;
+            }
+            
+            default -> {
+                return 0;
+            }
+        }
+        
+
+    }
 
     public static int getHero1DamagedHealth() throws FileNotFoundException {
 
@@ -133,7 +170,7 @@ public class HealthManager {
         int player3Health = sc.nextInt();
         int player4Health = sc.nextInt();
 
-        int damage = GetEnemyAttack();
+        int damage = getEnemyAttack();
 
         return player1Health -= damage;
 
@@ -148,7 +185,7 @@ public class HealthManager {
         int player3Health = sc.nextInt();
         int player4Health = sc.nextInt();
 
-        int damage = GetEnemyAttack();
+        int damage = getEnemyAttack();
 
         return player2Health -= damage;
 
@@ -163,7 +200,7 @@ public class HealthManager {
         int player3Health = sc.nextInt();
         int player4Health = sc.nextInt();
 
-        int damage = GetEnemyAttack();
+        int damage = getEnemyAttack();
 
         return player3Health -= damage;
 
@@ -178,7 +215,7 @@ public class HealthManager {
         int player3Health = sc.nextInt();
         int player4Health = sc.nextInt();
 
-        int damage = GetEnemyAttack();
+        int damage = getEnemyAttack();
 
         return player4Health -= damage;
 
@@ -203,4 +240,52 @@ public class HealthManager {
 
     }
 
+    public static void addHealth() {
+        Scanner sc;
+        
+        try {
+            sc = new Scanner(new File("data//playerMana.txt"));
+            int player1Health = sc.nextInt();
+            int player2Health = sc.nextInt();
+            int player3Health = sc.nextInt();
+            int player4Health = sc.nextInt();
+            
+            int manaToAdd = 50;
+            int player = Integer.parseInt(JOptionPane.showInputDialog("Input which Player you'd like to give Health to (Enter 1,2,3 or 4)"));
+
+            switch (player) {
+                case 1:
+                    player1Health += manaToAdd;
+                    break;
+                case 2:
+                    player2Health += manaToAdd;
+                    break;
+                case 3:
+                    player3Health += manaToAdd;
+                    break;
+                case 4:
+                    player4Health += manaToAdd;
+                    break;
+                default:
+                    System.out.println("INVALID NUMBER");
+                    
+            }
+
+            PrintWriter pw = new PrintWriter(new FileWriter("data//playerMana.txt"));
+            pw.println(player1Health);
+            pw.println(player2Health);
+            pw.println(player3Health);
+            pw.println(player4Health);
+            
+            pw.close();
+
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(ManaManager.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(ManaManager.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+
+    
 }
