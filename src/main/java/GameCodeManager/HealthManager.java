@@ -95,7 +95,43 @@ public class HealthManager {
             return false;
         }
     }
-
+    
+    public boolean hero1Dead(){
+        if (getPlayerHealth(1) == 0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    
+    public boolean hero2Dead(){
+        if (getPlayerHealth(2) == 0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    
+    public boolean hero3Dead(){
+        if (getPlayerHealth(3) == 0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    
+    public boolean hero4Dead(){
+        if (getPlayerHealth(4) == 0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    
     public static int getEnemyAttack() {
 
         int atkPotency = EnemyManager.AttackPotencyChance();
@@ -133,7 +169,7 @@ public class HealthManager {
         
                switch (enemy) {
             case 1 -> {
-                enemy1Health -= damage;
+                enemy1Health = enemy1Health - damage;
                 return enemy1Health;
             }
 
@@ -190,7 +226,7 @@ public class HealthManager {
                     
             }
 
-            PrintWriter pw = new PrintWriter(new FileWriter("data//playerMana.txt"));
+            PrintWriter pw = new PrintWriter(new FileWriter("data//playerHealth.txt"));
             pw.println(player1Health);
             pw.println(player2Health);
             pw.println(player3Health);
@@ -237,7 +273,7 @@ public class HealthManager {
                     
             }
 
-            PrintWriter pw = new PrintWriter(new FileWriter("data//playerMana.txt"));
+            PrintWriter pw = new PrintWriter(new FileWriter("data//playerHealth.txt"));
             pw.println(player1Health);
             pw.println(player2Health);
             pw.println(player3Health);
@@ -252,5 +288,60 @@ public class HealthManager {
         }
 
     }
+    
+    public static void getEnemyDamage(int enemy, int damage) {
+        Scanner sc;
+        try {
+            sc = new Scanner(new File("data//enemyHealth.txt"));
+            int enemy1Health = sc.nextInt();
+            int enemy2Health = sc.nextInt();
+            int enemy3Health = sc.nextInt();
+            int enemy4Health = sc.nextInt();
+
+            switch (enemy) {
+                case 1 -> {
+                    enemy1Health -= damage;
+                    if (enemy1Health < 0) {
+                        enemy1Health = 0;
+                    }
+                }
+                case 2 -> {
+                    enemy2Health -= damage;
+                    if (enemy2Health < 0) {
+                        enemy2Health = 0;
+                    }
+                }
+                case 3 -> {
+                    enemy3Health -= damage;
+                    if (enemy3Health < 0) {
+                        enemy3Health = 0;
+                    }
+                }
+                case 4 -> {
+                    enemy4Health -= damage;
+                    if (enemy4Health < 0) {
+                        enemy4Health = 0;
+                    }
+                }
+            }
+
+            try (PrintWriter pw = new PrintWriter(new FileWriter("data//enemyHealth.txt"))) {
+                pw.println(enemy1Health);
+                pw.println(enemy2Health);
+                pw.println(enemy3Health);
+                pw.println(enemy4Health);
+            }
+
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(ManaManager.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(ManaManager.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+    
+    
+    
+    
 
 }

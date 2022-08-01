@@ -10,6 +10,7 @@ import GameCodeManager.MovelistManager;
 import java.io.FileNotFoundException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -46,13 +47,18 @@ public class BattleScreen extends javax.swing.JFrame {
         p3Move2 = new javax.swing.JButton();
         p4Move1 = new javax.swing.JButton();
         p4Move2 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        battleScreen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(800, 650));
+        setPreferredSize(new java.awt.Dimension(1250, 625));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 180, -1, -1));
 
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -71,6 +77,11 @@ public class BattleScreen extends javax.swing.JFrame {
         getContentPane().add(p1Move1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, -1, -1));
 
         p1Move2.setText("P1 Move 2");
+        p1Move2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                p1Move2ActionPerformed(evt);
+            }
+        });
         getContentPane().add(p1Move2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 180, -1, -1));
 
         p2Move1.setText("P2 Move 1");
@@ -91,8 +102,9 @@ public class BattleScreen extends javax.swing.JFrame {
         p4Move2.setText("P4 Move 2");
         getContentPane().add(p4Move2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 280, -1, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/battleScreen.jpeg"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 640));
+        battleScreen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/battleScreen.jpeg"))); // NOI18N
+        battleScreen.setPreferredSize(new java.awt.Dimension(1250, 625));
+        getContentPane().add(battleScreen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 640));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -103,16 +115,36 @@ public class BattleScreen extends javax.swing.JFrame {
 
     private void p1Move1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p1Move1ActionPerformed
         // TODO add your handling code here:
-                MovelistManager ml = new MovelistManager();
-                HealthManager hm = new HealthManager();
-                int enemy = Integer.parseInt(JOptionPane.showInputDialog("Enter which enemy you would like to attack (Enter 1,2,3 or 4)"));
+             MovelistManager ml = new MovelistManager();
+             HealthManager hm = new HealthManager();
+             ManaManager mm = new ManaManager();
+             int enemy = Integer.parseInt(JOptionPane.showInputDialog("Enter which enemy you would like to attack (Enter 1,2,3 or 4)"));
                 int damage = ml.braveBlade();
+                int manaToSubtract = ml.braveBladeMana();
+                mm.subtractMana(enemy, manaToSubtract);
+                hm.getEnemyDamage(enemy, damage);
+    }//GEN-LAST:event_p1Move1ActionPerformed
+
+    private void p1Move2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p1Move2ActionPerformed
+        // TODO add your handling code here:
+        MovelistManager ml = new MovelistManager();
+                HealthManager hm = new HealthManager();
+                ManaManager mm = new ManaManager();
+                int enemy = Integer.parseInt(JOptionPane.showInputDialog("Enter which enemy you would like to attack (Enter 1,2,3 or 4)"));
+                int damage = ml.swordDance();
+                int manaToSubtract = ml.swordDanceMana();
+                mm.subtractMana(1, 200);
+                
         try {
-            hm.getHeroAttack(damage, enemy);
+            hm.getHeroAttack(enemy, damage);
         } catch (FileNotFoundException ex) {
             Logger.getLogger(BattleScreen.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_p1Move1ActionPerformed
+    }//GEN-LAST:event_p1Move2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -143,9 +175,9 @@ public class BattleScreen extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel battleScreen;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JButton p1Move1;
     private javax.swing.JButton p1Move2;
     private javax.swing.JButton p2Move1;
