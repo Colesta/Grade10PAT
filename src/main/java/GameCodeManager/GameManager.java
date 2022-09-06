@@ -5,7 +5,7 @@
 package GameCodeManager;
 
 import GameUIManager.BattleScreen;
-import GameUIManager.CharaterInfoScreen;
+import GameUIManager.HeroInfoScreen;
 import GameUIManager.TitleScreen;
 import javax.swing.JOptionPane;
 

@@ -103,7 +103,7 @@ public class ManaManager {
     }
     
     
-    public static void addMana() {
+    public static void addMana(int manaToAdd) {
         Scanner sc;
         
         try {
@@ -113,7 +113,6 @@ public class ManaManager {
             int player3Mana = sc.nextInt();
             int player4Mana = sc.nextInt();
             
-            int manaToAdd = 50;
             int player = Integer.parseInt(JOptionPane.showInputDialog("Input which Player youd like to give Mana to (Enter 1,2,3 or 4)"));
 
             switch (player) {

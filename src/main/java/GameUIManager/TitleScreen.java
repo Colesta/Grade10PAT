@@ -29,34 +29,74 @@ public class TitleScreen extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
+        playButton = new javax.swing.JButton();
+        charButton = new javax.swing.JButton();
+        exit = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 102, 51));
         setForeground(new java.awt.Color(255, 102, 0));
         setMinimumSize(new java.awt.Dimension(900, 500));
+        setUndecorated(true);
         setPreferredSize(new java.awt.Dimension(900, 500));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setText("jLabel2");
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel2MouseClicked(evt);
+        playButton.setBackground(new java.awt.Color(255, 153, 51));
+        playButton.setFont(new java.awt.Font("OCR A Extended", 1, 18)); // NOI18N
+        playButton.setForeground(new java.awt.Color(0, 0, 0));
+        playButton.setText("PLAY");
+        playButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                playButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 290, -1, -1));
+        getContentPane().add(playButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 260, -1, -1));
+
+        charButton.setBackground(new java.awt.Color(255, 153, 51));
+        charButton.setFont(new java.awt.Font("OCR A Extended", 1, 18)); // NOI18N
+        charButton.setForeground(new java.awt.Color(0, 0, 0));
+        charButton.setText("CHARACTERS");
+        charButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                charButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(charButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 260, -1, -1));
+
+        exit.setFont(new java.awt.Font("OCR A Extended", 1, 36)); // NOI18N
+        exit.setForeground(new java.awt.Color(255, 153, 51));
+        exit.setText("X");
+        exit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                exitMousePressed(evt);
+            }
+        });
+        getContentPane().add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 20, 30, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/titleScreen.jpeg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1060, 500));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+    private void playButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playButtonActionPerformed
+        // TODO add your handling code here:
         this.setVisible(false);
-        new BattleScreen().setVisible(true);
-    }//GEN-LAST:event_jLabel2MouseClicked
+        new StoryScreen().setVisible(true);
+    }//GEN-LAST:event_playButtonActionPerformed
+
+    private void charButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_charButtonActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        new HeroInfoScreen().setVisible(true);
+    }//GEN-LAST:event_charButtonActionPerformed
+
+    private void exitMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitMousePressed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_exitMousePressed
 
 
     public void jButtonAction (java.awt.event.ActionEvent evt){
@@ -76,7 +116,9 @@ public class TitleScreen extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton charButton;
+    private javax.swing.JLabel exit;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton playButton;
     // End of variables declaration//GEN-END:variables
 }

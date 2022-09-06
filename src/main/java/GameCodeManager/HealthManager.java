@@ -195,7 +195,7 @@ public class HealthManager {
 
     }
 
-    public static void addHealth() {
+    public static void addHealth(int healthToAdd) {
         Scanner sc;
         
         try {
@@ -205,21 +205,20 @@ public class HealthManager {
             int player3Health = sc.nextInt();
             int player4Health = sc.nextInt();
             
-            int manaToAdd = 50;
             int player = Integer.parseInt(JOptionPane.showInputDialog("Input which Player you'd like to give Health to (Enter 1,2,3 or 4)"));
 
             switch (player) {
                 case 1:
-                    player1Health += manaToAdd;
+                    player1Health += healthToAdd;
                     break;
                 case 2:
-                    player2Health += manaToAdd;
+                    player2Health += healthToAdd;
                     break;
                 case 3:
-                    player3Health += manaToAdd;
+                    player3Health += healthToAdd;
                     break;
                 case 4:
-                    player4Health += manaToAdd;
+                    player4Health += healthToAdd;
                     break;
                 default:
                     System.out.println("INVALID NUMBER");
