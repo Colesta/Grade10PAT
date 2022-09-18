@@ -21,6 +21,7 @@ import javax.swing.SpringLayout;
  * @author Peters
  */
 public class ManaManager {
+    
 
     public static int getMana(int player) {
         try {
@@ -106,6 +107,10 @@ public class ManaManager {
     public static void addMana(int manaToAdd) {
         Scanner sc;
         
+        int maxMana1 = 200;
+        int maxMana2 = 200;        
+        int maxMana3 = 200;
+        int maxMana4 = 200;
         try {
             sc = new Scanner(new File("data//playerMana.txt"));
             int player1Mana = sc.nextInt();
@@ -118,15 +123,27 @@ public class ManaManager {
             switch (player) {
                 case 1:
                     player1Mana += manaToAdd;
+                    if(player1Mana > maxMana1){
+                        player1Mana = maxMana1;
+                    }
                     break;
                 case 2:
                     player2Mana += manaToAdd;
+                    if(player2Mana > maxMana2){
+                        player2Mana = maxMana2;
+                    }
                     break;
                 case 3:
                     player3Mana += manaToAdd;
+                    if(player3Mana > maxMana3){
+                        player3Mana = maxMana3;
+                    }
                     break;
                 case 4:
                     player4Mana += manaToAdd;
+                    if(player4Mana > maxMana4){
+                        player4Mana = maxMana4;
+                    }
                     break;
                 default:
                     System.out.println("INVALID NUMBER");
@@ -148,5 +165,28 @@ public class ManaManager {
         }
 
     }
+    
+     public static void resetMana() {
+         
+         int maxMana1 = 200;
+         int maxMana2 = 200;        
+         int maxMana3 = 200;
+         int maxMana4 = 200;
+         
+        try {
+            PrintWriter pw = new PrintWriter(new FileWriter("data//playerMana.txt"));
+            pw.println(maxMana1);
+            pw.println(maxMana2);
+            pw.println(maxMana3);
+            pw.println(maxMana4);
+            
+            pw.close();
 
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(ManaManager.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(ManaManager.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+}
 }

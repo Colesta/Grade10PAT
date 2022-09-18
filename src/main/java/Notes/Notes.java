@@ -11,7 +11,7 @@ package Notes;
 public class Notes {
     
     //To add an icon onto the Jframe,Make a label, and then in the properties change th eicon to the image you want.
-    
+    //p2 move 2 has correct format for how the turn system should work
     
     
     

@@ -23,20 +23,37 @@ public class EnemyManager {
 
         return (int) (Math.random() * range) + 1;
     }
-    
-    
-    public int EnemyAttackDamage(int i, int io) {
-
-        int range = (io - i) + 1;
-
-        return (int) (Math.random() * range) + i;
+  
+    public static void EnemyAttackTurn(int enemy) {
+        
+        for (int i = 0; i < enemy; i++) {
+            int damage = HealthManager.getEnemyAttack();
+            int player = AttackHeroChance();
+            
+            HealthManager.getHeroDamage(damage, player);
+            
+            
+        }
+        
     }
-
     
-
-    
-
-    
-    
-     
+    public static int EnemyAlive(){
+        int enemyAlive = 4;
+        
+        if(HealthManager.getEnemyHealth(1)<=0){
+            enemyAlive = enemyAlive -1;
+        }
+        else if(HealthManager.getEnemyHealth(2)<=0){
+            enemyAlive = enemyAlive -1;
+    }
+        else if(HealthManager.getEnemyHealth(3)<=0){
+            enemyAlive = enemyAlive -1;
+    }
+        else if(HealthManager.getEnemyHealth(4)<=0){
+            enemyAlive = enemyAlive -1;
+    }
+        
+  
+        return enemyAlive;
+    }    
 }

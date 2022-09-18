@@ -5,6 +5,8 @@
 package GameUIManager;
 
 
+import GameCodeManager.HealthManager;
+import GameCodeManager.ManaManager;
 import com.sun.source.tree.ModuleTree;
 
 /**
@@ -32,7 +34,9 @@ public class TitleScreen extends javax.swing.JFrame {
         playButton = new javax.swing.JButton();
         charButton = new javax.swing.JButton();
         exit = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        reset = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        battleScreen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 102, 51));
@@ -51,7 +55,7 @@ public class TitleScreen extends javax.swing.JFrame {
                 playButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(playButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 260, -1, -1));
+        getContentPane().add(playButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 260, -1, -1));
 
         charButton.setBackground(new java.awt.Color(255, 153, 51));
         charButton.setFont(new java.awt.Font("OCR A Extended", 1, 18)); // NOI18N
@@ -62,7 +66,7 @@ public class TitleScreen extends javax.swing.JFrame {
                 charButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(charButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 260, -1, -1));
+        getContentPane().add(charButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 260, -1, -1));
 
         exit.setFont(new java.awt.Font("OCR A Extended", 1, 36)); // NOI18N
         exit.setForeground(new java.awt.Color(255, 153, 51));
@@ -74,8 +78,27 @@ public class TitleScreen extends javax.swing.JFrame {
         });
         getContentPane().add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 20, 30, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/titleScreen.jpeg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1060, 500));
+        reset.setBackground(new java.awt.Color(255, 153, 51));
+        reset.setFont(new java.awt.Font("OCR A Extended", 1, 18)); // NOI18N
+        reset.setForeground(new java.awt.Color(0, 0, 0));
+        reset.setText("RESET");
+        reset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                resetActionPerformed(evt);
+            }
+        });
+        getContentPane().add(reset, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, -1, -1));
+
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 100, -1, -1));
+
+        battleScreen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/titleScreen.jpeg"))); // NOI18N
+        getContentPane().add(battleScreen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1060, 500));
 
         pack();
         setLocationRelativeTo(null);
@@ -98,6 +121,18 @@ public class TitleScreen extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_exitMousePressed
 
+    private void resetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetActionPerformed
+        // TODO add your handling code here:
+        HealthManager.resetEnemyHP();
+        HealthManager.resetHeroHP();
+        ManaManager.resetMana();
+    }//GEN-LAST:event_resetActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     public void jButtonAction (java.awt.event.ActionEvent evt){
         
@@ -116,9 +151,11 @@ public class TitleScreen extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel battleScreen;
     private javax.swing.JButton charButton;
     private javax.swing.JLabel exit;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton playButton;
+    private javax.swing.JButton reset;
     // End of variables declaration//GEN-END:variables
 }

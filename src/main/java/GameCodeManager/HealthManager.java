@@ -79,7 +79,7 @@ public class HealthManager {
 
     }
 
-    public boolean allHeroDead() {
+    public static boolean allHeroDead() {
 
         if (getPlayerHealth(1) == 0 && getPlayerHealth(2) == 0 && getPlayerHealth(3) == 0 && getPlayerHealth(4) == 0) {
             return true;
@@ -88,7 +88,7 @@ public class HealthManager {
         }
     }
 
-    public boolean allEnemyDead() {
+    public static boolean allEnemyDead() {
         if (getEnemyHealth(1) == 0 && getEnemyHealth(2) == 0 && getEnemyHealth(3) == 0 && getEnemyHealth(4) == 0) {
             return true;
         } else {
@@ -96,40 +96,43 @@ public class HealthManager {
         }
     }
     
-    public boolean hero1Dead(){
-        if (getPlayerHealth(1) == 0){
-            return true;
+    public static boolean heroDead(int hero){
+        boolean dead = false;
+        switch (hero){
+        case 1:
+            if (getPlayerHealth(1) == 0){
+            dead = true;
         }
         else{
-            return false;
+            dead = false;
         }
+            break;
+        case 2:
+            dead = getPlayerHealth(2) == 0;
+            break;
+
+        case 3:
+            if (getPlayerHealth(3) == 0){
+            dead = true;
+        }
+        else{
+            dead = false;
+        }
+            break;
+        case 4:
+            if (getPlayerHealth(4) == 0){
+            dead = true;
+        }
+        else{
+            dead = false;
+        }
+            break;
+        default: 
+            dead = false;
+            
+        
     }
-    
-    public boolean hero2Dead(){
-        if (getPlayerHealth(2) == 0){
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
-    
-    public boolean hero3Dead(){
-        if (getPlayerHealth(3) == 0){
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
-    
-    public boolean hero4Dead(){
-        if (getPlayerHealth(4) == 0){
-            return true;
-        }
-        else{
-            return false;
-        }
+        return dead;
     }
     
     public static int getEnemyAttack() {
@@ -140,17 +143,17 @@ public class HealthManager {
 
         switch (atkPotency) {
             case 1 -> {
-                enemyDamage = 50;
+                enemyDamage = 34;
                 return enemyDamage;
             }
 
             case 2 -> {
-                enemyDamage = 100;
+                enemyDamage = 32;
                 return enemyDamage;
             }
 
             case 3 -> {
-                enemyDamage = 150;
+                enemyDamage = 50;
                 return enemyDamage;
             }
             default -> {
@@ -170,6 +173,7 @@ public class HealthManager {
                switch (enemy) {
             case 1 -> {
                 enemy1Health = enemy1Health - damage;
+                
                 return enemy1Health;
             }
 
@@ -198,6 +202,11 @@ public class HealthManager {
     public static void addHealth(int healthToAdd) {
         Scanner sc;
         
+        int maxP1Hp = 200;
+        int maxP2Hp = 200;
+        int maxP3Hp = 200;
+        int maxP4Hp = 200;
+        
         try {
             sc = new Scanner(new File("data//playerHealth.txt"));
             int player1Health = sc.nextInt();
@@ -208,20 +217,35 @@ public class HealthManager {
             int player = Integer.parseInt(JOptionPane.showInputDialog("Input which Player you'd like to give Health to (Enter 1,2,3 or 4)"));
 
             switch (player) {
-                case 1:
+                case 1 -> {
                     player1Health += healthToAdd;
-                    break;
-                case 2:
+                    if(player1Health > maxP1Hp){
+                        player1Health = maxP1Hp;
+                    }
+                  break;
+                }
+                case 2 -> {
                     player2Health += healthToAdd;
+                    if(player2Health > maxP2Hp){
+                        player2Health = maxP2Hp;
+                    }
                     break;
-                case 3:
+                }
+                case 3 -> {
                     player3Health += healthToAdd;
+                    if(player3Health > maxP3Hp){
+                        player3Health = maxP3Hp;
+                    }
                     break;
-                case 4:
+                }
+                case 4 -> {
                     player4Health += healthToAdd;
+                    if(player4Health > maxP4Hp){
+                        player4Health = maxP4Hp;
+                    }
                     break;
-                default:
-                    System.out.println("INVALID NUMBER");
+                }
+                default -> System.out.println("INVALID NUMBER");
                     
             }
 
@@ -241,7 +265,7 @@ public class HealthManager {
 
     }
 
-    public static void getHeroDamage() {
+    public static void getHeroDamage(int damage, int player) {
         Scanner sc;
         
         try {
@@ -251,21 +275,31 @@ public class HealthManager {
             int player3Health = sc.nextInt();
             int player4Health = sc.nextInt();
             
-            int damage = getEnemyAttack();
-            int player = EnemyManager.AttackHeroChance();
             
             switch (player) {
                 case 1:
                     player1Health -= damage;
+                    if(player1Health < 0){
+                        player1Health = 0;
+                    }
                     break;
                 case 2:
                     player2Health -= damage;
+                    if(player2Health < 0){
+                        player2Health = 0;
+                    }                    
                     break;
                 case 3:
                     player3Health -= damage;
+                    if(player3Health < 0){
+                        player3Health = 0;
+                    }
                     break;
                 case 4:
                     player4Health -= damage;
+                    if(player4Health < 0){
+                        player4Health = 0;
+                    }
                     break;
                 default:
                     System.out.println("INVALID NUMBER");
@@ -330,6 +364,42 @@ public class HealthManager {
                 pw.println(enemy3Health);
                 pw.println(enemy4Health);
             }
+
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(ManaManager.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(ManaManager.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+    
+    public static void resetHeroHP() {
+        try {
+            PrintWriter pw = new PrintWriter(new FileWriter("data//playerHealth.txt"));
+            pw.println(200);
+            pw.println(200);
+            pw.println(200);
+            pw.println(200);
+            
+            pw.close();
+
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(ManaManager.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(ManaManager.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+    
+     public static void resetEnemyHP() {
+        try {
+            PrintWriter pw = new PrintWriter(new FileWriter("data//enemyHealth.txt"));
+            pw.println(200);
+            pw.println(200);
+            pw.println(200);
+            pw.println(200);
+            
+            pw.close();
 
         } catch (FileNotFoundException ex) {
             Logger.getLogger(ManaManager.class.getName()).log(Level.SEVERE, null, ex);

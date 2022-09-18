@@ -4,10 +4,13 @@
  */
 package GameUIManager;
 
+import GameCodeManager.EnemyManager;
 import GameCodeManager.HealthManager;
+import GameCodeManager.HeroManager;
 import GameCodeManager.ManaManager;
 import GameCodeManager.MovelistManager;
 import java.io.FileNotFoundException;
+import java.nio.charset.CodingErrorAction;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
@@ -18,15 +21,16 @@ import javax.swing.JOptionPane;
  * @author Peters
  */
 public class BattleScreen extends javax.swing.JFrame {
-    
-       
 
     /**
      * Creates new form BattleScreen
      */
     public BattleScreen() {
         initComponents();
+
     }
+
+ 
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -49,7 +53,9 @@ public class BattleScreen extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         atkInfoText = new javax.swing.JTextArea();
         test = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        exit = new javax.swing.JLabel();
+        EnemyTurnButton = new javax.swing.JButton();
+        healthBar = new javax.swing.JProgressBar();
         battleScreen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -179,158 +185,190 @@ public class BattleScreen extends javax.swing.JFrame {
                 testMouseEntered(evt);
             }
         });
-        getContentPane().add(test, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 330, -1, -1));
-
-        jLabel2.setFont(new java.awt.Font("OCR A Extended", 1, 36)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 153, 51));
-        jLabel2.setText("X");
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                jLabel2MousePressed(evt);
+        test.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                testActionPerformed(evt);
             }
         });
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 20, 40, -1));
+        getContentPane().add(test, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 330, -1, -1));
+
+        exit.setFont(new java.awt.Font("OCR A Extended", 1, 36)); // NOI18N
+        exit.setForeground(new java.awt.Color(255, 153, 51));
+        exit.setText("X");
+        exit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                exitMousePressed(evt);
+            }
+        });
+        getContentPane().add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 20, 40, -1));
+
+        EnemyTurnButton.setText("Enemies Turn");
+        EnemyTurnButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EnemyTurnButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(EnemyTurnButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 320, -1, -1));
+
+        healthBar.setForeground(new java.awt.Color(51, 255, 0));
+        healthBar.setString("100%");
+        getContentPane().add(healthBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 550, 200, 30));
 
         battleScreen.setForeground(new java.awt.Color(0, 0, 0));
-        battleScreen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/GameBattleBackground.JPG"))); // NOI18N
-        battleScreen.setMaximumSize(new java.awt.Dimension(1250, 640));
-        battleScreen.setMinimumSize(new java.awt.Dimension(1250, 640));
-        getContentPane().add(battleScreen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 1250, 620));
+        battleScreen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/NewBattleScreen.JPG"))); // NOI18N
+        battleScreen.setPreferredSize(new java.awt.Dimension(1250, 635));
+        battleScreen.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                battleScreenMouseEntered(evt);
+            }
+        });
+        getContentPane().add(battleScreen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1250, 640));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void p1Move1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p1Move1ActionPerformed
-        // TODO add your handling code here:
-        MovelistManager ml = new MovelistManager();
-             HealthManager hm = new HealthManager();
-             ManaManager mm = new ManaManager();
-             int enemy = Integer.parseInt(JOptionPane.showInputDialog("Enter which enemy you would like to attack (Enter 1,2,3 or 4)"));
-                int damage = ml.braveBlade();
-                int manaToSubtract = ml.braveBladeMana();
-                mm.subtractMana(enemy, manaToSubtract);
-                hm.getEnemyDamage(enemy, damage);
+        HeroManager.p1Move1();
+        p1Move1.setVisible(false);
+        p1Move2.setVisible(false);
+        p2Move1.setVisible(true);
+        p2Move2.setVisible(true);
+        
+        if (HealthManager.allEnemyDead()) {
+            this.setVisible(false);
+            new WinScreen().setVisible(true);
+        }
     }//GEN-LAST:event_p1Move1ActionPerformed
 
     private void p1Move2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p1Move2ActionPerformed
-        // TODO add your handling code here:
-        MovelistManager ml = new MovelistManager();
-             HealthManager hm = new HealthManager();
-             ManaManager mm = new ManaManager();
-             int enemy = Integer.parseInt(JOptionPane.showInputDialog("Enter which enemy you would like to attack (Enter 1,2,3 or 4)"));
-                int damage = ml.swordDance();
-                int manaToSubtract = ml.swordDanceMana();
-                mm.subtractMana(enemy, manaToSubtract);
-                hm.getEnemyDamage(enemy, damage);
+        HeroManager.p1Move2();
+        p1Move1.setVisible(false);
+        p1Move2.setVisible(false);
+        p2Move1.setVisible(true);
+        p2Move2.setVisible(true);
+        
+        if (HealthManager.allEnemyDead()) {
+            this.setVisible(false);
+            new WinScreen().setVisible(true);
+        }
     }//GEN-LAST:event_p1Move2ActionPerformed
 
     private void p2Move1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p2Move1ActionPerformed
-        // TODO add your handling code here:
-        MovelistManager ml = new MovelistManager();
-             HealthManager hm = new HealthManager();
-             ManaManager mm = new ManaManager();
-             int enemy = Integer.parseInt(JOptionPane.showInputDialog("Enter which enemy you would like to attack (Enter 1,2,3 or 4)"));
-                int damage = ml.skullCracker();
-                int manaToSubtract = ml.skullCrackerMana();
-                mm.subtractMana(enemy, manaToSubtract);
-                hm.getEnemyDamage(enemy, damage);
+        HeroManager.p2Move1();
+        p2Move1.setVisible(false);
+        p2Move2.setVisible(false);
+        p3Move1.setVisible(true);
+        p3Move2.setVisible(true);
+        
+        if (HealthManager.allEnemyDead()) {
+            this.setVisible(false);
+            new WinScreen().setVisible(true);
+        }
+
     }//GEN-LAST:event_p2Move1ActionPerformed
 
     private void p2Move2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p2Move2ActionPerformed
-        // TODO add your handling code here:
-        MovelistManager ml = new MovelistManager();
-             HealthManager hm = new HealthManager();
-             ManaManager mm = new ManaManager();
-             int enemy = Integer.parseInt(JOptionPane.showInputDialog("Enter which enemy you would like to attack (Enter 1,2,3 or 4)"));
-                int damage = ml.godsHand();
-                int manaToSubtract = ml.godHandMana();
-                mm.subtractMana(enemy, manaToSubtract);
-                hm.getEnemyDamage(enemy, damage);
+        HeroManager.p2Move2();
+        p2Move1.setVisible(false);
+        p2Move2.setVisible(false);
+        p3Move1.setVisible(true);
+        p3Move2.setVisible(true);
+        
+        if (HealthManager.allEnemyDead()) {
+            this.setVisible(false);
+            new WinScreen().setVisible(true);
+        }
+
     }//GEN-LAST:event_p2Move2ActionPerformed
 
     private void p3Move1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p3Move1ActionPerformed
-        // TODO add your handling code here:
-        MovelistManager ml = new MovelistManager();
-             HealthManager hm = new HealthManager();
-             ManaManager mm = new ManaManager();
-             int enemy = Integer.parseInt(JOptionPane.showInputDialog("Enter which enemy you would like to attack (Enter 1,2,3 or 4)"));
-                int damage = ml.megidoloan();
-                int manaToSubtract = ml.megidoloanMana();
-                mm.subtractMana(enemy, manaToSubtract);
-                hm.getEnemyDamage(enemy, damage);
+        HeroManager.p3Move1();
+        p3Move1.setVisible(false);
+        p3Move2.setVisible(false);
+        p4Move1.setVisible(true);
+        p4Move2.setVisible(true);
+        
+        if (HealthManager.allEnemyDead()) {
+            this.setVisible(false);
+            new WinScreen().setVisible(true);
+        }
     }//GEN-LAST:event_p3Move1ActionPerformed
 
     private void p3Move2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p3Move2ActionPerformed
-        // TODO add your handling code here:
-        MovelistManager ml = new MovelistManager();
-             HealthManager hm = new HealthManager();
-             ManaManager mm = new ManaManager();
-             int enemy = Integer.parseInt(JOptionPane.showInputDialog("Enter which enemy you would like to attack (Enter 1,2,3 or 4)"));
-                int damage = ml.doorsOfHades();
-                int manaToSubtract = ml.doorsOfHadesMana();
-                mm.subtractMana(enemy, manaToSubtract);
-                hm.getEnemyDamage(enemy, damage);
+        HeroManager.p3Move2();
+        p3Move1.setVisible(false);
+        p3Move2.setVisible(false);
+        p4Move1.setVisible(true);
+        p4Move2.setVisible(true);
+        
+        if (HealthManager.allEnemyDead()) {
+            this.setVisible(false);
+            new WinScreen().setVisible(true);
+        }
     }//GEN-LAST:event_p3Move2ActionPerformed
 
     private void p4Move1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p4Move1ActionPerformed
-        MovelistManager ml = new MovelistManager();
-             HealthManager hm = new HealthManager();
-             ManaManager mm = new ManaManager();
-             int enemy = Integer.parseInt(JOptionPane.showInputDialog("Enter which enemy you would like to attack (Enter 1,2,3 or 4)"));
-                int damage = ml.divineJudgement();
-                int manaToSubtract = ml.divineJudgementMana();
-                mm.subtractMana(enemy, manaToSubtract);
-                hm.getEnemyDamage(enemy, damage);
+        HeroManager.p4Move1();
+        p4Move1.setVisible(false);
+        p4Move2.setVisible(false);
+        EnemyTurnButton.setVisible(true);
+        
+        if (HealthManager.allEnemyDead()) {
+            this.setVisible(false);
+            new WinScreen().setVisible(true);
+        }
     }//GEN-LAST:event_p4Move1ActionPerformed
 
     private void p4Move2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p4Move2ActionPerformed
-        // TODO add your handling code here:
-        MovelistManager.salvation();
+        HeroManager.p4Move2();
+        p4Move1.setVisible(false);
+        p4Move2.setVisible(false);
+        EnemyTurnButton.setVisible(true);
+        
+        if (HealthManager.allEnemyDead()) {
+            this.setVisible(false);
+            new WinScreen().setVisible(true);
+        }
     }//GEN-LAST:event_p4Move2ActionPerformed
 
     private void p1Move1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p1Move1MouseEntered
-        // TODO add your handling code here:
         atkInfoText.setText("BraveBlade info");
     }//GEN-LAST:event_p1Move1MouseEntered
 
     private void p1Move2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p1Move2MouseEntered
-        // TODO add your handling code here:
         atkInfoText.setText("SwordDance info");
     }//GEN-LAST:event_p1Move2MouseEntered
 
     private void p2Move1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p2Move1MouseEntered
-        // TODO add your handling code here:
         atkInfoText.setText("SkullCracker info");
     }//GEN-LAST:event_p2Move1MouseEntered
 
     private void p2Move2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p2Move2MouseEntered
-        // TODO add your handling code here:
         atkInfoText.setText("GodsHand info");
     }//GEN-LAST:event_p2Move2MouseEntered
 
     private void p3Move1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p3Move1MouseEntered
-        // TODO add your handling code here:
         atkInfoText.setText("megidoleon info");
     }//GEN-LAST:event_p3Move1MouseEntered
 
     private void p3Move2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p3Move2MouseEntered
-        // TODO add your handling code here:
         atkInfoText.setText("DoorsOfHades info");
     }//GEN-LAST:event_p3Move2MouseEntered
 
     private void p4Move1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p4Move1MouseEntered
-        // TODO add your handling code here:
         atkInfoText.setText("DivineJudgement info");
     }//GEN-LAST:event_p4Move1MouseEntered
 
     private void p4Move2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p4Move2MouseEntered
-        // TODO add your handling code here:
         atkInfoText.setText("Salvation info");
+
+
     }//GEN-LAST:event_p4Move2MouseEntered
 
     private void testMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_testMouseEntered
@@ -339,55 +377,73 @@ public class BattleScreen extends javax.swing.JFrame {
         atkInfoText.setText(enemyHealth);
     }//GEN-LAST:event_testMouseEntered
 
-    private void jLabel2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MousePressed
+    private void exitMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitMousePressed
         // TODO add your handling code here:
         System.exit(0);
-    }//GEN-LAST:event_jLabel2MousePressed
+    }//GEN-LAST:event_exitMousePressed
+
+    private void EnemyTurnButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnemyTurnButtonActionPerformed
+        // TODO add your handling code here:
+        int enemy = EnemyManager.EnemyAlive();
+        EnemyManager.EnemyAttackTurn(enemy);
+        if (HealthManager.allHeroDead()) {
+            this.setVisible(false);
+            new LoseScreen().setVisible(true);
+        }
+        
+        EnemyTurnButton.setVisible(false);
+        p1Move1.setVisible(true);
+        p1Move2.setVisible(true);
+
+        //just to test the health out
+        String playerHealth = String.valueOf(HealthManager.getPlayerHealth(1));
+        atkInfoText.setText(playerHealth);
+        healthBar.setValue(HealthManager.getPlayerHealth(1));
+
+
+    }//GEN-LAST:event_EnemyTurnButtonActionPerformed
+
+    private void testActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_testActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_testActionPerformed
+
+    private void battleScreenMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_battleScreenMouseEntered
+
+    }//GEN-LAST:event_battleScreenMouseEntered
 
     /**
      * @param args the command line arguments
      */
-    public static void battleScreen(String args[]) {
-        
-        HealthManager hm = new HealthManager();
-        
-        if (hm.allEnemyDead()){
-            new BattleScreen().setVisible(false);
-            new WinScreen().setVisible(true);
-        }
-        
-        if (hm.allHeroDead()){
-            new BattleScreen().setVisible(false);
-            new LoseScreen().setVisible(true);
-        }
-        
-          java.awt.EventQueue.invokeLater(new Runnable() {
+    public static void main(String args[]) {
+
+        java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                
+
             }
         });
-        
+
         java.awt.EventQueue.invokeLater(() -> {
             new BattleScreen().setVisible(true);
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public static javax.swing.JButton EnemyTurnButton;
     private javax.swing.JTextArea atkInfoText;
     private javax.swing.JLabel battleScreen;
+    private javax.swing.JLabel exit;
+    public static javax.swing.JProgressBar healthBar;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JButton p1Move1;
-    private javax.swing.JButton p1Move2;
-    private javax.swing.JButton p2Move1;
-    private javax.swing.JButton p2Move2;
-    private javax.swing.JButton p3Move1;
-    private javax.swing.JButton p3Move2;
-    private javax.swing.JButton p4Move1;
-    private javax.swing.JButton p4Move2;
+    public static javax.swing.JButton p1Move1;
+    public static javax.swing.JButton p1Move2;
+    public static javax.swing.JButton p2Move1;
+    public static javax.swing.JButton p2Move2;
+    public static javax.swing.JButton p3Move1;
+    public static javax.swing.JButton p3Move2;
+    public static javax.swing.JButton p4Move1;
+    public static javax.swing.JButton p4Move2;
     private javax.swing.JButton test;
     // End of variables declaration//GEN-END:variables
 
-    
 }

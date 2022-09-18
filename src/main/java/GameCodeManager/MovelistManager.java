@@ -75,5 +75,9 @@ public class MovelistManager {
         ManaManager.addMana(50);
         HealthManager.addHealth(50);
     }
+    
+    
+    
+    
  
 }

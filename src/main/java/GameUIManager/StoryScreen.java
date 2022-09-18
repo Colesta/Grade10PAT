@@ -4,6 +4,8 @@
  */
 package GameUIManager;
 
+import GameCodeManager.HealthManager;
+
 /**
  *
  * @author Peters
@@ -77,9 +79,24 @@ public class StoryScreen extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void beginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_beginButtonActionPerformed
-        // TODO add your handling code here:
         this.setVisible(false);
         new BattleScreen().setVisible(true);
+        
+        //setup for turn system
+        BattleScreen.p2Move1.setVisible(false);
+        BattleScreen.p2Move2.setVisible(false);
+        BattleScreen.p3Move1.setVisible(false);
+        BattleScreen.p3Move2.setVisible(false);
+        BattleScreen.p4Move1.setVisible(false);
+        BattleScreen.p4Move2.setVisible(false);
+        BattleScreen.EnemyTurnButton.setVisible(false);
+        
+        //setup for health
+        BattleScreen.healthBar.setMaximum(200);
+        BattleScreen.healthBar.setMinimum(0);
+        BattleScreen.healthBar.setValue(HealthManager.getPlayerHealth(1));
+        
+        
     }//GEN-LAST:event_beginButtonActionPerformed
 
     /**
