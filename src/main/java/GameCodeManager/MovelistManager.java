@@ -67,13 +67,15 @@ public class MovelistManager {
         return 85;
     }    
     
-    public static int divineJudgementMana(){
+    public static int divineJudgementHealth(){
         return 35;
     }
     
-    public static void salvation(){
-        ManaManager.addMana(50);
-        HealthManager.addHealth(50);
+    public static int salvation(){
+        return 50;
+    }
+    public static int salvationMana(){
+        return 50;
     }
     
     

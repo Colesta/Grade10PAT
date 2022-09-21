@@ -5,6 +5,7 @@
 package GameUIManager;
 
 import GameCodeManager.HealthManager;
+import GameCodeManager.ManaManager;
 
 /**
  *
@@ -91,12 +92,54 @@ public class StoryScreen extends javax.swing.JFrame {
         BattleScreen.p4Move2.setVisible(false);
         BattleScreen.EnemyTurnButton.setVisible(false);
         
-        //setup for health
-        BattleScreen.healthBar.setMaximum(200);
-        BattleScreen.healthBar.setMinimum(0);
-        BattleScreen.healthBar.setValue(HealthManager.getPlayerHealth(1));
+        //setup for health and mana bars
         
         
+        BattleScreen.p1HP.setMaximum(500);
+        BattleScreen.p1HP.setMinimum(0);
+        BattleScreen.p1HP.setValue(HealthManager.getPlayerHealth(1));
+        BattleScreen.p1M.setMaximum(500);
+        BattleScreen.p1M.setMinimum(0);
+        BattleScreen.p1M.setValue(ManaManager.getMana(1));
+        
+        BattleScreen.p2HP.setMaximum(500);
+        BattleScreen.p2HP.setMinimum(0);
+        BattleScreen.p2HP.setValue(HealthManager.getPlayerHealth(2));
+        BattleScreen.p2M.setMaximum(500);
+        BattleScreen.p2M.setMinimum(0);
+        BattleScreen.p2M.setValue(ManaManager.getMana(2));
+        
+        BattleScreen.p3HP.setMaximum(500);
+        BattleScreen.p3HP.setMinimum(0);
+        BattleScreen.p3HP.setValue(HealthManager.getPlayerHealth(3));
+        BattleScreen.p3M.setMaximum(500);
+        BattleScreen.p3M.setMinimum(0);
+        BattleScreen.p3M.setValue(ManaManager.getMana(3));
+        
+        BattleScreen.p4HP.setMaximum(500);
+        BattleScreen.p4HP.setMinimum(0);
+        BattleScreen.p4HP.setValue(HealthManager.getPlayerHealth(4));
+        BattleScreen.p4M.setMaximum(500);
+        BattleScreen.p4M.setMinimum(0);
+        BattleScreen.p4M.setValue(ManaManager.getMana(4));
+        
+        //setup for enemy health
+        
+        BattleScreen.enemy1HP.setMaximum(500);
+        BattleScreen.enemy1HP.setMinimum(0);
+        BattleScreen.enemy1HP.setValue(HealthManager.getEnemyHealth(1));
+        
+        BattleScreen.enemy2HP.setMaximum(500);
+        BattleScreen.enemy2HP.setMinimum(0);
+        BattleScreen.enemy2HP.setValue(HealthManager.getEnemyHealth(2));
+        
+        BattleScreen.enemy3HP.setMaximum(500);
+        BattleScreen.enemy3HP.setMinimum(0);
+        BattleScreen.enemy3HP.setValue(HealthManager.getEnemyHealth(3));
+        
+        BattleScreen.enemy4HP.setMaximum(500);
+        BattleScreen.enemy4HP.setMinimum(0);
+        BattleScreen.enemy4HP.setValue(HealthManager.getEnemyHealth(4));
     }//GEN-LAST:event_beginButtonActionPerformed
 
     /**

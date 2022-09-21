@@ -16,9 +16,8 @@ public class HeroManager {
         int enemy = Integer.parseInt(JOptionPane.showInputDialog("Enter which enemy you would like to attack (Enter 1,2,3 or 4)"));
         int damage = MovelistManager.braveBlade();
         int manaToSubtract = MovelistManager.braveBladeMana();
-        ManaManager.subtractMana(enemy, manaToSubtract);
+        ManaManager.subtractMana(1, manaToSubtract);
         HealthManager.getEnemyDamage(enemy, damage);
-        EnemyManager.EnemyAttackTurn(enemy);
 
     }
 
@@ -26,7 +25,7 @@ public class HeroManager {
         int enemy = Integer.parseInt(JOptionPane.showInputDialog("Enter which enemy you would like to attack (Enter 1,2,3 or 4)"));
         int damage = MovelistManager.swordDance();
         int manaToSubtract = MovelistManager.swordDanceMana();
-        ManaManager.subtractMana(enemy, manaToSubtract);
+        ManaManager.subtractMana(1, manaToSubtract);
         HealthManager.getEnemyDamage(enemy, damage);
     }
 
@@ -34,7 +33,7 @@ public class HeroManager {
         int enemy = Integer.parseInt(JOptionPane.showInputDialog("Enter which enemy you would like to attack (Enter 1,2,3 or 4)"));
         int damage = MovelistManager.skullCracker();
         int manaToSubtract = MovelistManager.skullCrackerMana();
-        ManaManager.subtractMana(enemy, manaToSubtract);
+        ManaManager.subtractMana(2, manaToSubtract);
         HealthManager.getEnemyDamage(enemy, damage);
     }
 
@@ -42,7 +41,7 @@ public class HeroManager {
         int enemy = Integer.parseInt(JOptionPane.showInputDialog("Enter which enemy you would like to attack (Enter 1,2,3 or 4)"));
         int damage = MovelistManager.godsHand();
         int manaToSubtract = MovelistManager.godHandMana();
-        ManaManager.subtractMana(enemy, manaToSubtract);
+        ManaManager.subtractMana(2, manaToSubtract);
         HealthManager.getEnemyDamage(enemy, damage);
     }
 
@@ -50,7 +49,7 @@ public class HeroManager {
         int enemy = Integer.parseInt(JOptionPane.showInputDialog("Enter which enemy you would like to attack (Enter 1,2,3 or 4)"));
         int damage = MovelistManager.megidoloan();
         int manaToSubtract = MovelistManager.megidoloanMana();
-        ManaManager.subtractMana(enemy, manaToSubtract);
+        ManaManager.subtractMana(3, manaToSubtract);
         HealthManager.getEnemyDamage(enemy, damage);
     }
 
@@ -58,20 +57,32 @@ public class HeroManager {
         int enemy = Integer.parseInt(JOptionPane.showInputDialog("Enter which enemy you would like to attack (Enter 1,2,3 or 4)"));
         int damage = MovelistManager.doorsOfHades();
         int manaToSubtract = MovelistManager.doorsOfHadesMana();
-        ManaManager.subtractMana(enemy, manaToSubtract);
+        ManaManager.subtractMana(3, manaToSubtract);
         HealthManager.getEnemyDamage(enemy, damage);
     }
 
     public static void p4Move1() {
-        int enemy = Integer.parseInt(JOptionPane.showInputDialog("Enter which enemy you would like to attack (Enter 1,2,3 or 4)"));
-        int damage = MovelistManager.divineJudgement();
-        int manaToSubtract = MovelistManager.divineJudgementMana();
-        ManaManager.subtractMana(enemy, manaToSubtract);
-        HealthManager.getEnemyDamage(enemy, damage);
+        int pHealthTotake = Integer.parseInt(JOptionPane.showInputDialog("Enter which player whose Health you wpuld like to sacrifice(Enter 1,2,3 or 4)"));
+        
+        int damage = MovelistManager.divineJudgementHealth();
+        int manaToAdd = MovelistManager.divineJudgement();
+        HealthManager.getHeroDamage(damage, pHealthTotake);
+        ManaManager.addMana(manaToAdd, 1);
+        ManaManager.addMana(manaToAdd, 2);
+        ManaManager.addMana(manaToAdd, 3);
+        ManaManager.addMana(manaToAdd, 4);
+        
     }
 
     public static void p4Move2() {
-        MovelistManager.salvation();
+        int manaToSub = MovelistManager.salvationMana();
+        int healthToAdd = MovelistManager.salvation();
+        ManaManager.subtractMana(4, manaToSub);
+        
+        HealthManager.addHealth(healthToAdd, 1);
+        HealthManager.addHealth(healthToAdd, 1);
+        HealthManager.addHealth(healthToAdd, 1);
+        HealthManager.addHealth(healthToAdd, 1);
     }
 
 }

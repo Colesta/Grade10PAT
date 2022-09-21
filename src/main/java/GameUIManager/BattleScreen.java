@@ -15,6 +15,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import java.awt.Color;
 
 /**
  *
@@ -27,7 +28,9 @@ public class BattleScreen extends javax.swing.JFrame {
      */
     public BattleScreen() {
         initComponents();
-
+        
+        
+        
     }
 
  
@@ -50,12 +53,21 @@ public class BattleScreen extends javax.swing.JFrame {
         p3Move2 = new javax.swing.JButton();
         p4Move1 = new javax.swing.JButton();
         p4Move2 = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        atkInfoText = new javax.swing.JTextArea();
-        test = new javax.swing.JButton();
         exit = new javax.swing.JLabel();
         EnemyTurnButton = new javax.swing.JButton();
-        healthBar = new javax.swing.JProgressBar();
+        p1HP = new javax.swing.JProgressBar();
+        p1M = new javax.swing.JProgressBar();
+        p2HP = new javax.swing.JProgressBar();
+        p3HP = new javax.swing.JProgressBar();
+        p4HP = new javax.swing.JProgressBar();
+        p2M = new javax.swing.JProgressBar();
+        p3M = new javax.swing.JProgressBar();
+        p4M = new javax.swing.JProgressBar();
+        atkInfoText = new javax.swing.JTextField();
+        enemy1HP = new javax.swing.JProgressBar();
+        enemy2HP = new javax.swing.JProgressBar();
+        enemy3HP = new javax.swing.JProgressBar();
+        enemy4HP = new javax.swing.JProgressBar();
         battleScreen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -173,25 +185,6 @@ public class BattleScreen extends javax.swing.JFrame {
         });
         getContentPane().add(p4Move2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 280, -1, -1));
 
-        atkInfoText.setColumns(20);
-        atkInfoText.setRows(5);
-        jScrollPane1.setViewportView(atkInfoText);
-
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 330, -1, -1));
-
-        test.setText("     ");
-        test.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                testMouseEntered(evt);
-            }
-        });
-        test.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                testActionPerformed(evt);
-            }
-        });
-        getContentPane().add(test, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 330, -1, -1));
-
         exit.setFont(new java.awt.Font("OCR A Extended", 1, 36)); // NOI18N
         exit.setForeground(new java.awt.Color(255, 153, 51));
         exit.setText("X");
@@ -208,11 +201,53 @@ public class BattleScreen extends javax.swing.JFrame {
                 EnemyTurnButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(EnemyTurnButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 320, -1, -1));
+        getContentPane().add(EnemyTurnButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 330, -1, -1));
 
-        healthBar.setForeground(new java.awt.Color(51, 255, 0));
-        healthBar.setString("100%");
-        getContentPane().add(healthBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 550, 200, 30));
+        p1HP.setForeground(new java.awt.Color(51, 255, 0));
+        p1HP.setString("100%");
+        getContentPane().add(p1HP, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 510, 120, 20));
+
+        p1M.setForeground(new java.awt.Color(255, 0, 204));
+        getContentPane().add(p1M, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 530, 120, 20));
+
+        p2HP.setForeground(new java.awt.Color(51, 255, 0));
+        getContentPane().add(p2HP, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 570, 120, 20));
+
+        p3HP.setForeground(new java.awt.Color(51, 255, 0));
+        getContentPane().add(p3HP, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 510, 120, 20));
+
+        p4HP.setForeground(new java.awt.Color(51, 255, 0));
+        getContentPane().add(p4HP, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 570, 120, 20));
+
+        p2M.setForeground(new java.awt.Color(255, 0, 204));
+        getContentPane().add(p2M, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 590, 120, 20));
+
+        p3M.setForeground(new java.awt.Color(255, 0, 204));
+        getContentPane().add(p3M, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 530, 120, 20));
+
+        p4M.setForeground(new java.awt.Color(255, 0, 204));
+        getContentPane().add(p4M, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 590, 120, 20));
+
+        atkInfoText.setBackground(new java.awt.Color(37, 43, 67));
+        atkInfoText.setFont(new java.awt.Font("OCR A Extended", 1, 14)); // NOI18N
+        atkInfoText.setForeground(new java.awt.Color(204, 204, 255));
+        atkInfoText.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        atkInfoText.setText(" ");
+        atkInfoText.setToolTipText("");
+        atkInfoText.setBorder(null);
+        getContentPane().add(atkInfoText, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 460, 150, 150));
+
+        enemy1HP.setForeground(new java.awt.Color(204, 0, 0));
+        getContentPane().add(enemy1HP, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 520, -1, 20));
+
+        enemy2HP.setForeground(new java.awt.Color(204, 0, 0));
+        getContentPane().add(enemy2HP, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 580, -1, 20));
+
+        enemy3HP.setForeground(new java.awt.Color(204, 0, 0));
+        getContentPane().add(enemy3HP, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 520, -1, 20));
+
+        enemy4HP.setForeground(new java.awt.Color(204, 0, 0));
+        getContentPane().add(enemy4HP, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 580, -1, 20));
 
         battleScreen.setForeground(new java.awt.Color(0, 0, 0));
         battleScreen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/NewBattleScreen.JPG"))); // NOI18N
@@ -235,106 +270,211 @@ public class BattleScreen extends javax.swing.JFrame {
 
     private void p1Move1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p1Move1ActionPerformed
         HeroManager.p1Move1();
-        p1Move1.setVisible(false);
-        p1Move2.setVisible(false);
-        p2Move1.setVisible(true);
-        p2Move2.setVisible(true);
+        BattleScreen.enemy1HP.setValue(HealthManager.getEnemyHealth(1));
+        BattleScreen.enemy2HP.setValue(HealthManager.getEnemyHealth(2));
+        BattleScreen.enemy3HP.setValue(HealthManager.getEnemyHealth(3));
+        BattleScreen.enemy4HP.setValue(HealthManager.getEnemyHealth(4));
+        BattleScreen.p1M.setValue(ManaManager.getMana(1));
         
-        if (HealthManager.allEnemyDead()) {
+         if (HealthManager.allEnemyDead()) {
             this.setVisible(false);
             new WinScreen().setVisible(true);
         }
+        p1Move1.setVisible(false);
+        p1Move2.setVisible(false);
+        
+        if(HealthManager.getPlayerHealth(2) > 0){
+            updateAfterTurn(2);
+            
+        }
+        else if (HealthManager.getPlayerHealth(3) > 0){
+         updateAfterTurn(3);
+        }
+         else if (HealthManager.getPlayerHealth(4) > 0){
+         updateAfterTurn(4);
+        }
+         else{
+             EnemyTurnButton.setVisible(true);
+         }
+        
+        
+       
     }//GEN-LAST:event_p1Move1ActionPerformed
 
     private void p1Move2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p1Move2ActionPerformed
         HeroManager.p1Move2();
-        p1Move1.setVisible(false);
-        p1Move2.setVisible(false);
-        p2Move1.setVisible(true);
-        p2Move2.setVisible(true);
+        BattleScreen.enemy1HP.setValue(HealthManager.getEnemyHealth(1));
+        BattleScreen.enemy2HP.setValue(HealthManager.getEnemyHealth(2));
+        BattleScreen.enemy3HP.setValue(HealthManager.getEnemyHealth(3));
+        BattleScreen.enemy4HP.setValue(HealthManager.getEnemyHealth(4));
+        BattleScreen.p1M.setValue(ManaManager.getMana(1));
         
-        if (HealthManager.allEnemyDead()) {
+          if (HealthManager.allEnemyDead()) {
             this.setVisible(false);
             new WinScreen().setVisible(true);
         }
+        p1Move1.setVisible(false);
+        p1Move2.setVisible(false);
+        
+        if(HealthManager.getPlayerHealth(2) > 0){
+            updateAfterTurn(2);
+            
+        }
+        else if (HealthManager.getPlayerHealth(3) > 0){
+         updateAfterTurn(3);
+        }
+         else if (HealthManager.getPlayerHealth(4) > 0){
+         updateAfterTurn(4);
+        }
+         else{
+             EnemyTurnButton.setVisible(true);
+         }
+        
+        
+      
     }//GEN-LAST:event_p1Move2ActionPerformed
 
     private void p2Move1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p2Move1ActionPerformed
-        HeroManager.p2Move1();
-        p2Move1.setVisible(false);
-        p2Move2.setVisible(false);
-        p3Move1.setVisible(true);
-        p3Move2.setVisible(true);
-        
+      HeroManager.p2Move1();
+      BattleScreen.enemy1HP.setValue(HealthManager.getEnemyHealth(1));
+        BattleScreen.enemy2HP.setValue(HealthManager.getEnemyHealth(2));
+        BattleScreen.enemy3HP.setValue(HealthManager.getEnemyHealth(3));
+        BattleScreen.enemy4HP.setValue(HealthManager.getEnemyHealth(4));
+       
+      BattleScreen.p2M.setValue(ManaManager.getMana(2));
         if (HealthManager.allEnemyDead()) {
             this.setVisible(false);
             new WinScreen().setVisible(true);
         }
+        p2Move1.setVisible(false);
+        p2Move2.setVisible(false);
+        
+        if(HealthManager.getPlayerHealth(3) > 0){
+            updateAfterTurn(3);
+            
+        }
+        else if (HealthManager.getPlayerHealth(4) > 0){
+         updateAfterTurn(4);
+        }
+         else{
+             EnemyTurnButton.setVisible(true);
+         }
+        
+        
+       
 
     }//GEN-LAST:event_p2Move1ActionPerformed
 
     private void p2Move2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p2Move2ActionPerformed
-        HeroManager.p2Move2();
-        p2Move1.setVisible(false);
-        p2Move2.setVisible(false);
-        p3Move1.setVisible(true);
-        p3Move2.setVisible(true);
-        
-        if (HealthManager.allEnemyDead()) {
+    HeroManager.p2Move2();
+    BattleScreen.enemy1HP.setValue(HealthManager.getEnemyHealth(1));
+        BattleScreen.enemy2HP.setValue(HealthManager.getEnemyHealth(2));
+        BattleScreen.enemy3HP.setValue(HealthManager.getEnemyHealth(3));
+        BattleScreen.enemy4HP.setValue(HealthManager.getEnemyHealth(4));
+    BattleScreen.p2M.setValue(ManaManager.getMana(2));
+     if (HealthManager.allEnemyDead()) {
             this.setVisible(false);
             new WinScreen().setVisible(true);
         }
+        p2Move1.setVisible(false);
+        p2Move2.setVisible(false);
+        
+        if(HealthManager.getPlayerHealth(3) > 0){
+            updateAfterTurn(3);
+            
+        }
+        else if (HealthManager.getPlayerHealth(4) > 0){
+         updateAfterTurn(4);
+        }
+         else{
+             EnemyTurnButton.setVisible(true);
+         }
+        
+        
+       
 
+        
     }//GEN-LAST:event_p2Move2ActionPerformed
 
     private void p3Move1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p3Move1ActionPerformed
-        HeroManager.p3Move1();
-        p3Move1.setVisible(false);
-        p3Move2.setVisible(false);
-        p4Move1.setVisible(true);
-        p4Move2.setVisible(true);
-        
-        if (HealthManager.allEnemyDead()) {
+     HeroManager.p3Move1();
+     BattleScreen.enemy1HP.setValue(HealthManager.getEnemyHealth(1));
+        BattleScreen.enemy2HP.setValue(HealthManager.getEnemyHealth(2));
+        BattleScreen.enemy3HP.setValue(HealthManager.getEnemyHealth(3));
+        BattleScreen.enemy4HP.setValue(HealthManager.getEnemyHealth(4));
+     BattleScreen.p3M.setValue(ManaManager.getMana(3));
+       if (HealthManager.allEnemyDead()) {
             this.setVisible(false);
             new WinScreen().setVisible(true);
         }
+        p3Move1.setVisible(false);
+        p3Move2.setVisible(false);
+        
+        if(HealthManager.getPlayerHealth(4) > 0){
+            updateAfterTurn(4);
+        }
+         else{
+             EnemyTurnButton.setVisible(true);
+         }
+        
+        
+      
     }//GEN-LAST:event_p3Move1ActionPerformed
 
     private void p3Move2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p3Move2ActionPerformed
-        HeroManager.p3Move2();
-        p3Move1.setVisible(false);
-        p3Move2.setVisible(false);
-        p4Move1.setVisible(true);
-        p4Move2.setVisible(true);
-        
-        if (HealthManager.allEnemyDead()) {
+      HeroManager.p3Move2();
+      BattleScreen.enemy1HP.setValue(HealthManager.getEnemyHealth(1));
+        BattleScreen.enemy2HP.setValue(HealthManager.getEnemyHealth(2));
+        BattleScreen.enemy3HP.setValue(HealthManager.getEnemyHealth(3));
+        BattleScreen.enemy4HP.setValue(HealthManager.getEnemyHealth(4));
+      BattleScreen.p3M.setValue(ManaManager.getMana(3));
+      if (HealthManager.allEnemyDead()) {
             this.setVisible(false);
             new WinScreen().setVisible(true);
         }
+        p3Move1.setVisible(false);
+        p3Move2.setVisible(false);
+        
+        if(HealthManager.getPlayerHealth(4) > 0){
+            updateAfterTurn(4);
+        }
+         else{
+             EnemyTurnButton.setVisible(true);
+         }
+        
+        
+        
+                    
     }//GEN-LAST:event_p3Move2ActionPerformed
 
     private void p4Move1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p4Move1ActionPerformed
-        HeroManager.p4Move1();
-        p4Move1.setVisible(false);
-        p4Move2.setVisible(false);
-        EnemyTurnButton.setVisible(true);
-        
+       HeroManager.p4Move1();
+       
+       BattleScreen.p4M.setValue(ManaManager.getMana(4));
         if (HealthManager.allEnemyDead()) {
             this.setVisible(false);
             new WinScreen().setVisible(true);
         }
+        p4Move1.setVisible(false);
+        p4Move2.setVisible(false);
+        
+             EnemyTurnButton.setVisible(true);
+        
+        
+       
     }//GEN-LAST:event_p4Move1ActionPerformed
 
     private void p4Move2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p4Move2ActionPerformed
         HeroManager.p4Move2();
-        p4Move1.setVisible(false);
-        p4Move2.setVisible(false);
-        EnemyTurnButton.setVisible(true);
-        
-        if (HealthManager.allEnemyDead()) {
+        BattleScreen.p4M.setValue(ManaManager.getMana(4));
+         if (HealthManager.allEnemyDead()) {
             this.setVisible(false);
             new WinScreen().setVisible(true);
         }
+        p4Move1.setVisible(false);
+        p4Move2.setVisible(false);
+
+        EnemyTurnButton.setVisible(true);
     }//GEN-LAST:event_p4Move2ActionPerformed
 
     private void p1Move1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p1Move1MouseEntered
@@ -371,46 +511,75 @@ public class BattleScreen extends javax.swing.JFrame {
 
     }//GEN-LAST:event_p4Move2MouseEntered
 
-    private void testMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_testMouseEntered
-        // TODO add your handling code here:
-        String enemyHealth = String.valueOf(HealthManager.getEnemyHealth(1));
-        atkInfoText.setText(enemyHealth);
-    }//GEN-LAST:event_testMouseEntered
-
     private void exitMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitMousePressed
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_exitMousePressed
 
     private void EnemyTurnButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnemyTurnButtonActionPerformed
-        // TODO add your handling code here:
         int enemy = EnemyManager.EnemyAlive();
         EnemyManager.EnemyAttackTurn(enemy);
+        
+        EnemyTurnButton.setVisible(false);
+        
+        BattleScreen.p1HP.setValue(HealthManager.getPlayerHealth(1));
+        
+        BattleScreen.p2HP.setValue(HealthManager.getPlayerHealth(2));
+        
+        BattleScreen.p3HP.setValue(HealthManager.getPlayerHealth(3));
+        
+        BattleScreen.p4HP.setValue(HealthManager.getPlayerHealth(4));
+        
         if (HealthManager.allHeroDead()) {
             this.setVisible(false);
             new LoseScreen().setVisible(true);
         }
         
-        EnemyTurnButton.setVisible(false);
-        p1Move1.setVisible(true);
-        p1Move2.setVisible(true);
+        if(HealthManager.getPlayerHealth(1) > 0){
+            updateAfterTurn(1);
+        }
+        else if (HealthManager.getPlayerHealth(2) > 0){
+         updateAfterTurn(2);
+        }
+         else if (HealthManager.getPlayerHealth(3) > 0){
+         updateAfterTurn(3);
+        }
+         else if (HealthManager.getPlayerHealth(4) > 0){
+         updateAfterTurn(4);
+         }
+        
 
-        //just to test the health out
-        String playerHealth = String.valueOf(HealthManager.getPlayerHealth(1));
-        atkInfoText.setText(playerHealth);
-        healthBar.setValue(HealthManager.getPlayerHealth(1));
+        
 
 
     }//GEN-LAST:event_EnemyTurnButtonActionPerformed
-
-    private void testActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_testActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_testActionPerformed
 
     private void battleScreenMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_battleScreenMouseEntered
 
     }//GEN-LAST:event_battleScreenMouseEntered
 
+    private static void updateAfterTurn(int player){
+        
+        switch(player){
+            case 1 -> {
+                p1Move1.setVisible(true);
+                p1Move2.setVisible(true);
+            }
+            case 2 -> {
+                p2Move1.setVisible(true);
+                p2Move2.setVisible(true);
+            }
+            case 3 -> {
+                p3Move1.setVisible(true);
+                p3Move2.setVisible(true);
+            }
+            case 4 -> {
+                p4Move1.setVisible(true);
+                p4Move2.setVisible(true);
+            }
+        }
+        
+    }
     /**
      * @param args the command line arguments
      */
@@ -429,21 +598,30 @@ public class BattleScreen extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JButton EnemyTurnButton;
-    private javax.swing.JTextArea atkInfoText;
+    public static javax.swing.JTextField atkInfoText;
     private javax.swing.JLabel battleScreen;
+    public static javax.swing.JProgressBar enemy1HP;
+    public static javax.swing.JProgressBar enemy2HP;
+    public static javax.swing.JProgressBar enemy3HP;
+    public static javax.swing.JProgressBar enemy4HP;
     private javax.swing.JLabel exit;
-    public static javax.swing.JProgressBar healthBar;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane jScrollPane1;
+    public static javax.swing.JProgressBar p1HP;
+    public static javax.swing.JProgressBar p1M;
     public static javax.swing.JButton p1Move1;
     public static javax.swing.JButton p1Move2;
+    public static javax.swing.JProgressBar p2HP;
+    public static javax.swing.JProgressBar p2M;
     public static javax.swing.JButton p2Move1;
     public static javax.swing.JButton p2Move2;
+    public static javax.swing.JProgressBar p3HP;
+    public static javax.swing.JProgressBar p3M;
     public static javax.swing.JButton p3Move1;
     public static javax.swing.JButton p3Move2;
+    public static javax.swing.JProgressBar p4HP;
+    public static javax.swing.JProgressBar p4M;
     public static javax.swing.JButton p4Move1;
     public static javax.swing.JButton p4Move2;
-    private javax.swing.JButton test;
     // End of variables declaration//GEN-END:variables
 
 }

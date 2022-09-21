@@ -104,13 +104,13 @@ public class ManaManager {
     }
     
     
-    public static void addMana(int manaToAdd) {
+    public static void addMana(int manaToAdd, int player) {
         Scanner sc;
         
-        int maxMana1 = 200;
-        int maxMana2 = 200;        
-        int maxMana3 = 200;
-        int maxMana4 = 200;
+        int maxMana1 = 500;
+        int maxMana2 = 500;        
+        int maxMana3 = 500;
+        int maxMana4 = 500;
         try {
             sc = new Scanner(new File("data//playerMana.txt"));
             int player1Mana = sc.nextInt();
@@ -118,8 +118,6 @@ public class ManaManager {
             int player3Mana = sc.nextInt();
             int player4Mana = sc.nextInt();
             
-            int player = Integer.parseInt(JOptionPane.showInputDialog("Input which Player youd like to give Mana to (Enter 1,2,3 or 4)"));
-
             switch (player) {
                 case 1:
                     player1Mana += manaToAdd;

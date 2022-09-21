@@ -35,7 +35,6 @@ public class TitleScreen extends javax.swing.JFrame {
         charButton = new javax.swing.JButton();
         exit = new javax.swing.JLabel();
         reset = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
         battleScreen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -89,14 +88,6 @@ public class TitleScreen extends javax.swing.JFrame {
         });
         getContentPane().add(reset, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, -1, -1));
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 100, -1, -1));
-
         battleScreen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/titleScreen.jpeg"))); // NOI18N
         getContentPane().add(battleScreen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1060, 500));
 
@@ -128,11 +119,6 @@ public class TitleScreen extends javax.swing.JFrame {
         ManaManager.resetMana();
     }//GEN-LAST:event_resetActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_jButton1ActionPerformed
-
 
     public void jButtonAction (java.awt.event.ActionEvent evt){
         
@@ -154,7 +140,6 @@ public class TitleScreen extends javax.swing.JFrame {
     private javax.swing.JLabel battleScreen;
     private javax.swing.JButton charButton;
     private javax.swing.JLabel exit;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton playButton;
     private javax.swing.JButton reset;
     // End of variables declaration//GEN-END:variables

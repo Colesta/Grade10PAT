@@ -199,7 +199,7 @@ public class HealthManager {
 
     }
 
-    public static void addHealth(int healthToAdd) {
+    public static void addHealth(int healthToAdd, int player) {
         Scanner sc;
         
         int maxP1Hp = 200;
@@ -214,7 +214,6 @@ public class HealthManager {
             int player3Health = sc.nextInt();
             int player4Health = sc.nextInt();
             
-            int player = Integer.parseInt(JOptionPane.showInputDialog("Input which Player you'd like to give Health to (Enter 1,2,3 or 4)"));
 
             switch (player) {
                 case 1 -> {
@@ -408,6 +407,8 @@ public class HealthManager {
         }
 
     }
+     
+     
     
     
     
