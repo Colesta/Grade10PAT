@@ -103,14 +103,13 @@ public class ManaManager {
 
     }
     
-    
     public static void addMana(int manaToAdd, int player) {
         Scanner sc;
         
-        int maxMana1 = 500;
-        int maxMana2 = 500;        
-        int maxMana3 = 500;
-        int maxMana4 = 500;
+        int maxMana1 = maxMana(1);
+        int maxMana2 = maxMana(2);        
+        int maxMana3 = maxMana(3);
+        int maxMana4 = maxMana(4);
         try {
             sc = new Scanner(new File("data//playerMana.txt"));
             int player1Mana = sc.nextInt();
@@ -166,17 +165,12 @@ public class ManaManager {
     
      public static void resetMana() {
          
-         int maxMana1 = 200;
-         int maxMana2 = 200;        
-         int maxMana3 = 200;
-         int maxMana4 = 200;
-         
         try {
             PrintWriter pw = new PrintWriter(new FileWriter("data//playerMana.txt"));
-            pw.println(maxMana1);
-            pw.println(maxMana2);
-            pw.println(maxMana3);
-            pw.println(maxMana4);
+            pw.println(maxMana(1));
+            pw.println(maxMana(2));
+            pw.println(maxMana(3));
+            pw.println(maxMana(4));
             
             pw.close();
 
@@ -187,4 +181,24 @@ public class ManaManager {
         }
 
 }
+     
+    public static int maxMana(int player){
+        
+        int maxM = 0;
+        
+        switch(player){
+            case 1:
+                maxM = 500;
+                break;
+            case 2:
+                maxM = 500;
+                break;
+            case 3:
+                maxM = 500;
+                break;
+            case 4:
+                maxM = 500;
+        }
+        return maxM;
+    }
 }

@@ -14,7 +14,7 @@ import java.util.Scanner;
  */
 public class MovelistManager {
     
-      
+    
     public static int braveBlade(){
         return 35;
     }

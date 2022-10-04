@@ -83,6 +83,7 @@ public class StoryScreen extends javax.swing.JFrame {
         this.setVisible(false);
         new BattleScreen().setVisible(true);
         
+        
         //setup for turn system
         BattleScreen.p2Move1.setVisible(false);
         BattleScreen.p2Move2.setVisible(false);
@@ -140,6 +141,42 @@ public class StoryScreen extends javax.swing.JFrame {
         BattleScreen.enemy4HP.setMaximum(500);
         BattleScreen.enemy4HP.setMinimum(0);
         BattleScreen.enemy4HP.setValue(HealthManager.getEnemyHealth(4));
+        
+        //setting the text over the healthbars
+        
+        String maxHp1 = HealthManager.maxHeroHp(1)+"";
+        String maxM1 = ManaManager.maxMana(1)+"";
+        BattleScreen.p1HPtxt.setText(maxHp1 + "/" + maxHp1);
+        BattleScreen.p1Mtxt.setText(maxM1 + "/" + maxM1);
+        
+        String maxHp2 = HealthManager.maxHeroHp(2)+"";
+        String maxM2 = ManaManager.maxMana(2)+"";
+        BattleScreen.p2HPtxt.setText(maxHp2 + "/" + maxHp2);
+        BattleScreen.p2Mtxt.setText(maxM2 + "/" + maxM2);
+        
+        String maxHp3 = HealthManager.maxHeroHp(3)+"";
+        String maxM3 = ManaManager.maxMana(3)+"";
+        BattleScreen.p3HPtxt.setText(maxHp3 + "/" + maxHp3);
+        BattleScreen.p3Mtxt.setText(maxM3 + "/" + maxM3);
+        
+        String maxHp4 = HealthManager.maxHeroHp(4)+"";
+        String maxM4 = ManaManager.maxMana(4)+"";
+        BattleScreen.p4HPtxt.setText(maxHp4 + "/" + maxHp4);
+        BattleScreen.p4Mtxt.setText(maxM4 + "/" + maxM4);
+        
+        String maxEHP1 = HealthManager.maxEnemyHP(1)+"";
+        BattleScreen.e1HPtxt.setText(maxEHP1 + "/" + maxEHP1);
+        
+        String maxEHP2 = HealthManager.maxEnemyHP(2)+"";
+        BattleScreen.e2HPtxt.setText(maxEHP2 + "/" + maxEHP2);
+        
+        String maxEHP3 = HealthManager.maxEnemyHP(3)+"";
+        BattleScreen.e3HPtxt.setText(maxEHP3 + "/" + maxEHP3);
+        
+        String maxEHP4 = HealthManager.maxEnemyHP(4)+"";
+        BattleScreen.e4HPtxt.setText(maxEHP4 + "/" + maxEHP4
+        );
+        
     }//GEN-LAST:event_beginButtonActionPerformed
 
     /**

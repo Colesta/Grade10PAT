@@ -375,10 +375,10 @@ public class HealthManager {
     public static void resetHeroHP() {
         try {
             PrintWriter pw = new PrintWriter(new FileWriter("data//playerHealth.txt"));
-            pw.println(200);
-            pw.println(200);
-            pw.println(200);
-            pw.println(200);
+            pw.println(500);
+            pw.println(500);
+            pw.println(500);
+            pw.println(500);
             
             pw.close();
 
@@ -390,13 +390,13 @@ public class HealthManager {
 
     }
     
-     public static void resetEnemyHP() {
+    public static void resetEnemyHP() {
         try {
             PrintWriter pw = new PrintWriter(new FileWriter("data//enemyHealth.txt"));
-            pw.println(200);
-            pw.println(200);
-            pw.println(200);
-            pw.println(200);
+            pw.println(500);
+            pw.println(500);
+            pw.println(500);
+            pw.println(500);
             
             pw.close();
 
@@ -408,10 +408,46 @@ public class HealthManager {
 
     }
      
-     
+    public static int maxHeroHp(int player){
+        
+        int maxHP = 0;
+        
+        switch(player){
+            case 1:
+                maxHP = 500;
+                break;
+            case 2:
+                maxHP = 500;
+                break;
+            case 3:
+                maxHP = 500;
+                break;
+            case 4:
+                maxHP = 500;
+        }
+        return maxHP;
+    }
     
     
-    
+    public static int maxEnemyHP(int enemy){
+        
+        int maxHP = 0;
+        
+        switch(enemy){
+            case 1:
+                maxHP = 500;
+                break;
+            case 2:
+                maxHP = 500;
+                break;
+            case 3:
+                maxHP = 500;
+                break;
+            case 4:
+                maxHP = 500;
+        }
+        return maxHP;
+    }
     
 
 }
