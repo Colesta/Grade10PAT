@@ -28,9 +28,12 @@ public class HeroInfoScreen extends javax.swing.JFrame {
 
         jButton1 = new javax.swing.JButton();
         returnButton = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(1083, 683));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setBackground(new java.awt.Color(255, 153, 51));
         jButton1.setFont(new java.awt.Font("OCR A Extended", 3, 12)); // NOI18N
@@ -41,6 +44,7 @@ public class HeroInfoScreen extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 650, -1, -1));
 
         returnButton.setBackground(new java.awt.Color(255, 153, 51));
         returnButton.setFont(new java.awt.Font("OCR A Extended", 3, 12)); // NOI18N
@@ -51,27 +55,11 @@ public class HeroInfoScreen extends javax.swing.JFrame {
                 returnButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(returnButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 650, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(returnButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 352, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(21, 21, 21))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(360, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(returnButton))
-                .addGap(27, 27, 27))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/HeroScreen.JPG"))); // NOI18N
+        jLabel1.setPreferredSize(new java.awt.Dimension(1083, 683));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1130, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -127,6 +115,7 @@ public class HeroInfoScreen extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JButton returnButton;
     // End of variables declaration//GEN-END:variables
 }

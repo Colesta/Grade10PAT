@@ -31,11 +31,14 @@ public class TitleScreen extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        battleScreen = new javax.swing.JLabel();
         playButton = new javax.swing.JButton();
         charButton = new javax.swing.JButton();
         exit = new javax.swing.JLabel();
         reset = new javax.swing.JButton();
-        battleScreen = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+
+        battleScreen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/titleScreen.jpeg"))); // NOI18N
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 102, 51));
@@ -88,8 +91,8 @@ public class TitleScreen extends javax.swing.JFrame {
         });
         getContentPane().add(reset, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, -1, -1));
 
-        battleScreen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/titleScreen.jpeg"))); // NOI18N
-        getContentPane().add(battleScreen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1060, 500));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/titleScreen.jpeg"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -140,6 +143,7 @@ public class TitleScreen extends javax.swing.JFrame {
     private javax.swing.JLabel battleScreen;
     private javax.swing.JButton charButton;
     private javax.swing.JLabel exit;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JButton playButton;
     private javax.swing.JButton reset;
     // End of variables declaration//GEN-END:variables

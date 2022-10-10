@@ -29,8 +29,6 @@ public class BattleScreen extends javax.swing.JFrame {
     public BattleScreen() {
         initComponents();
 
-        
-        
     }
 
     /**
@@ -84,7 +82,11 @@ public class BattleScreen extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        p1Move1.setBackground(new java.awt.Color(255, 153, 0));
+        p1Move1.setFont(new java.awt.Font("OCR A Extended", 1, 12)); // NOI18N
+        p1Move1.setForeground(new java.awt.Color(0, 0, 0));
         p1Move1.setText("Move 1");
+        p1Move1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         p1Move1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 p1Move1MouseEntered(evt);
@@ -97,7 +99,11 @@ public class BattleScreen extends javax.swing.JFrame {
         });
         getContentPane().add(p1Move1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 210, -1, -1));
 
+        p1Move2.setBackground(new java.awt.Color(255, 153, 0));
+        p1Move2.setFont(new java.awt.Font("OCR A Extended", 1, 12)); // NOI18N
+        p1Move2.setForeground(new java.awt.Color(0, 0, 0));
         p1Move2.setText("Move 2");
+        p1Move2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         p1Move2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 p1Move2MouseEntered(evt);
@@ -110,7 +116,11 @@ public class BattleScreen extends javax.swing.JFrame {
         });
         getContentPane().add(p1Move2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 250, -1, -1));
 
+        p2Move1.setBackground(new java.awt.Color(255, 153, 0));
+        p2Move1.setFont(new java.awt.Font("OCR A Extended", 1, 12)); // NOI18N
+        p2Move1.setForeground(new java.awt.Color(0, 0, 0));
         p2Move1.setText("Move 1");
+        p2Move1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         p2Move1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 p2Move1MouseEntered(evt);
@@ -123,7 +133,11 @@ public class BattleScreen extends javax.swing.JFrame {
         });
         getContentPane().add(p2Move1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 230, -1, -1));
 
+        p2Move2.setBackground(new java.awt.Color(255, 153, 0));
+        p2Move2.setFont(new java.awt.Font("OCR A Extended", 1, 12)); // NOI18N
+        p2Move2.setForeground(new java.awt.Color(0, 0, 0));
         p2Move2.setText("Move 2");
+        p2Move2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         p2Move2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 p2Move2MouseEntered(evt);
@@ -136,7 +150,11 @@ public class BattleScreen extends javax.swing.JFrame {
         });
         getContentPane().add(p2Move2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 260, -1, -1));
 
+        p3Move1.setBackground(new java.awt.Color(255, 153, 0));
+        p3Move1.setFont(new java.awt.Font("OCR A Extended", 1, 12)); // NOI18N
+        p3Move1.setForeground(new java.awt.Color(0, 0, 0));
         p3Move1.setText("Move 1");
+        p3Move1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         p3Move1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 p3Move1MouseEntered(evt);
@@ -149,7 +167,11 @@ public class BattleScreen extends javax.swing.JFrame {
         });
         getContentPane().add(p3Move1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 340, -1, -1));
 
+        p3Move2.setBackground(new java.awt.Color(255, 153, 0));
+        p3Move2.setFont(new java.awt.Font("OCR A Extended", 1, 12)); // NOI18N
+        p3Move2.setForeground(new java.awt.Color(0, 0, 0));
         p3Move2.setText("Move 2");
+        p3Move2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         p3Move2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 p3Move2MouseEntered(evt);
@@ -162,7 +184,11 @@ public class BattleScreen extends javax.swing.JFrame {
         });
         getContentPane().add(p3Move2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 370, -1, -1));
 
+        p4Move1.setBackground(new java.awt.Color(255, 153, 0));
+        p4Move1.setFont(new java.awt.Font("OCR A Extended", 1, 12)); // NOI18N
+        p4Move1.setForeground(new java.awt.Color(0, 0, 0));
         p4Move1.setText("Move 1");
+        p4Move1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         p4Move1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 p4Move1MouseEntered(evt);
@@ -175,7 +201,11 @@ public class BattleScreen extends javax.swing.JFrame {
         });
         getContentPane().add(p4Move1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 360, -1, -1));
 
+        p4Move2.setBackground(new java.awt.Color(255, 153, 0));
+        p4Move2.setFont(new java.awt.Font("OCR A Extended", 1, 12)); // NOI18N
+        p4Move2.setForeground(new java.awt.Color(0, 0, 0));
         p4Move2.setText("Move 2");
+        p4Move2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         p4Move2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 p4Move2MouseEntered(evt);
@@ -198,47 +228,63 @@ public class BattleScreen extends javax.swing.JFrame {
         });
         getContentPane().add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 20, 40, -1));
 
+        EnemyTurnButton.setBackground(new java.awt.Color(255, 0, 0));
+        EnemyTurnButton.setFont(new java.awt.Font("OCR A Extended", 1, 16)); // NOI18N
+        EnemyTurnButton.setForeground(new java.awt.Color(0, 0, 0));
         EnemyTurnButton.setText("Enemies Turn");
+        EnemyTurnButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(153, 0, 0), new java.awt.Color(153, 0, 0), new java.awt.Color(153, 0, 0), new java.awt.Color(153, 0, 0)));
         EnemyTurnButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EnemyTurnButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(EnemyTurnButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 390, -1, -1));
+        getContentPane().add(EnemyTurnButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 380, 130, -1));
 
+        p1HPtxt.setFont(new java.awt.Font("OCR A Extended", 1, 12)); // NOI18N
         p1HPtxt.setText("500/500");
         getContentPane().add(p1HPtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 520, 90, -1));
 
+        p1Mtxt.setFont(new java.awt.Font("OCR A Extended", 1, 12)); // NOI18N
         p1Mtxt.setText("     ");
         getContentPane().add(p1Mtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 540, -1, -1));
 
+        p2HPtxt.setFont(new java.awt.Font("OCR A Extended", 1, 12)); // NOI18N
         p2HPtxt.setText("  ");
         getContentPane().add(p2HPtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 570, 60, -1));
 
+        p2Mtxt.setFont(new java.awt.Font("OCR A Extended", 1, 12)); // NOI18N
         p2Mtxt.setText("jLabel2");
         getContentPane().add(p2Mtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 590, -1, -1));
 
+        p3HPtxt.setFont(new java.awt.Font("OCR A Extended", 1, 12)); // NOI18N
         p3HPtxt.setText("jLabel3");
         getContentPane().add(p3HPtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 520, -1, -1));
 
+        p3Mtxt.setFont(new java.awt.Font("OCR A Extended", 1, 12)); // NOI18N
         p3Mtxt.setText("jLabel4");
         getContentPane().add(p3Mtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 540, -1, -1));
 
+        p4HPtxt.setFont(new java.awt.Font("OCR A Extended", 1, 12)); // NOI18N
         p4HPtxt.setText("jLabel5");
         getContentPane().add(p4HPtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 570, -1, -1));
 
+        p4Mtxt.setFont(new java.awt.Font("OCR A Extended", 1, 12)); // NOI18N
         p4Mtxt.setText("jLabel6");
         getContentPane().add(p4Mtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 590, -1, -1));
 
+        e1HPtxt.setFont(new java.awt.Font("OCR A Extended", 1, 12)); // NOI18N
         e1HPtxt.setText("jLabel7");
         getContentPane().add(e1HPtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 530, -1, -1));
 
+        e3HPtxt.setFont(new java.awt.Font("OCR A Extended", 1, 12)); // NOI18N
         e3HPtxt.setText("jLabel8");
         getContentPane().add(e3HPtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 530, -1, -1));
 
+        e2HPtxt.setFont(new java.awt.Font("OCR A Extended", 1, 12)); // NOI18N
         e2HPtxt.setText("jLabel9");
         getContentPane().add(e2HPtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 580, -1, -1));
 
+        e4HPtxt.setFont(new java.awt.Font("OCR A Extended", 1, 12)); // NOI18N
         e4HPtxt.setText("jLabel10");
         getContentPane().add(e4HPtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 580, -1, -1));
 
@@ -284,11 +330,11 @@ public class BattleScreen extends javax.swing.JFrame {
         atkInfoText.setEditable(false);
         atkInfoText.setBackground(new java.awt.Color(37, 43, 67));
         atkInfoText.setColumns(20);
-        atkInfoText.setFont(new java.awt.Font("OCR A Extended", 1, 14)); // NOI18N
+        atkInfoText.setFont(new java.awt.Font("OCR A Extended", 1, 12)); // NOI18N
         atkInfoText.setForeground(new java.awt.Color(204, 255, 255));
         atkInfoText.setLineWrap(true);
         atkInfoText.setRows(5);
-        atkInfoText.setText("txt info");
+        atkInfoText.setText("\n");
         atkInfoText.setAlignmentX(0.0F);
         atkInfoText.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(37, 43, 67), 5));
         atkInfoText.setCaretColor(new java.awt.Color(37, 43, 67));
@@ -310,10 +356,9 @@ public class BattleScreen extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-   
 
     private void p1Move1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p1Move1ActionPerformed
-        
+
         HeroManager.p1Move1();
         updateEnemysBar();
         updateHerosBar();
@@ -340,178 +385,342 @@ public class BattleScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_p1Move1ActionPerformed
 
     private void p1Move2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p1Move2ActionPerformed
-        HeroManager.p1Move2();
-        updateEnemysBar();
-        updateHerosBar();
 
-        if (HealthManager.allEnemyDead()) {
-            this.setVisible(false);
-            new WinScreen().setVisible(true);
-        }
-        p1Move1.setVisible(false);
-        p1Move2.setVisible(false);
+        if (ManaManager.getMana(1) > 0) {
+            HeroManager.p1Move2();
+            updateEnemysBar();
+            updateHerosBar();
+            if (HealthManager.allEnemyDead()) {
+                this.setVisible(false);
+                new WinScreen().setVisible(true);
+            }
+            p1Move1.setVisible(false);
+            p1Move2.setVisible(false);
 
-        if (HealthManager.getPlayerHealth(2) > 0) {
-            updateAfterTurn(2);
+            if (HealthManager.getPlayerHealth(2) > 0) {
+                updateAfterTurn(2);
 
-        } else if (HealthManager.getPlayerHealth(3) > 0) {
-            updateAfterTurn(3);
-        } else if (HealthManager.getPlayerHealth(4) > 0) {
-            updateAfterTurn(4);
+            } else if (HealthManager.getPlayerHealth(3) > 0) {
+                updateAfterTurn(3);
+            } else if (HealthManager.getPlayerHealth(4) > 0) {
+                updateAfterTurn(4);
+            } else {
+                EnemyTurnButton.setVisible(true);
+            }
         } else {
-            EnemyTurnButton.setVisible(true);
+            p1Move1.setVisible(false);
+            p1Move2.setVisible(false);
+
+            if (HealthManager.getPlayerHealth(2) > 0) {
+                updateAfterTurn(2);
+
+            } else if (HealthManager.getPlayerHealth(3) > 0) {
+                updateAfterTurn(3);
+            } else if (HealthManager.getPlayerHealth(4) > 0) {
+                updateAfterTurn(4);
+            } else {
+                EnemyTurnButton.setVisible(true);
+            }
+
         }
-
-
     }//GEN-LAST:event_p1Move2ActionPerformed
 
     private void p2Move1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p2Move1ActionPerformed
-        HeroManager.p2Move1();
-        updateEnemysBar();
-        updateHerosBar();
-        if (HealthManager.allEnemyDead()) {
-            this.setVisible(false);
-            new WinScreen().setVisible(true);
-        }
-        p2Move1.setVisible(false);
-        p2Move2.setVisible(false);
 
-        if (HealthManager.getPlayerHealth(3) > 0) {
-            updateAfterTurn(3);
+        if (ManaManager.getMana(2) > 0) {
 
-        } else if (HealthManager.getPlayerHealth(4) > 0) {
-            updateAfterTurn(4);
+            HeroManager.p2Move1();
+            updateEnemysBar();
+            updateHerosBar();
+            if (HealthManager.allEnemyDead()) {
+                this.setVisible(false);
+                new WinScreen().setVisible(true);
+            }
+            p2Move1.setVisible(false);
+            p2Move2.setVisible(false);
+
+            if (HealthManager.getPlayerHealth(3) > 0) {
+                updateAfterTurn(3);
+
+            } else if (HealthManager.getPlayerHealth(4) > 0) {
+                updateAfterTurn(4);
+            } else {
+                EnemyTurnButton.setVisible(true);
+            }
         } else {
-            EnemyTurnButton.setVisible(true);
+            p2Move1.setVisible(false);
+            p2Move2.setVisible(false);
+
+            if (HealthManager.getPlayerHealth(3) > 0) {
+                updateAfterTurn(3);
+
+            } else if (HealthManager.getPlayerHealth(4) > 0) {
+                updateAfterTurn(4);
+            } else {
+                EnemyTurnButton.setVisible(true);
+            }
         }
 
 
     }//GEN-LAST:event_p2Move1ActionPerformed
 
     private void p2Move2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p2Move2ActionPerformed
-        HeroManager.p2Move2();
-        updateEnemysBar();
-        updateHerosBar();
-        if (HealthManager.allEnemyDead()) {
-            this.setVisible(false);
-            new WinScreen().setVisible(true);
-        }
-        p2Move1.setVisible(false);
-        p2Move2.setVisible(false);
+        if (ManaManager.getMana(2) > 0) {
+            HeroManager.p2Move2();
+            updateEnemysBar();
+            updateHerosBar();
+            if (HealthManager.allEnemyDead()) {
+                this.setVisible(false);
+                new WinScreen().setVisible(true);
+            }
+            p2Move1.setVisible(false);
+            p2Move2.setVisible(false);
 
-        if (HealthManager.getPlayerHealth(3) > 0) {
-            updateAfterTurn(3);
+            if (HealthManager.getPlayerHealth(3) > 0) {
+                updateAfterTurn(3);
 
-        } else if (HealthManager.getPlayerHealth(4) > 0) {
-            updateAfterTurn(4);
+            } else if (HealthManager.getPlayerHealth(4) > 0) {
+                updateAfterTurn(4);
+            } else {
+                EnemyTurnButton.setVisible(true);
+            }
         } else {
-            EnemyTurnButton.setVisible(true);
+            p2Move1.setVisible(false);
+            p2Move2.setVisible(false);
+
+            if (HealthManager.getPlayerHealth(3) > 0) {
+                updateAfterTurn(3);
+
+            } else if (HealthManager.getPlayerHealth(4) > 0) {
+                updateAfterTurn(4);
+            } else {
+                EnemyTurnButton.setVisible(true);
+            }
         }
 
 
     }//GEN-LAST:event_p2Move2ActionPerformed
 
     private void p3Move1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p3Move1ActionPerformed
-        HeroManager.p3Move1();
-        updateEnemysBar();
-        updateHerosBar();
-        if (HealthManager.allEnemyDead()) {
-            this.setVisible(false);
-            new WinScreen().setVisible(true);
-        }
-        p3Move1.setVisible(false);
-        p3Move2.setVisible(false);
+        if (ManaManager.getMana(3) > 0) {
+            HeroManager.p3Move1();
+            updateEnemysBar();
+            updateHerosBar();
+            if (HealthManager.allEnemyDead()) {
+                this.setVisible(false);
+                new WinScreen().setVisible(true);
+            }
+            p3Move1.setVisible(false);
+            p3Move2.setVisible(false);
 
-        if (HealthManager.getPlayerHealth(4) > 0) {
-            updateAfterTurn(4);
+            if (HealthManager.getPlayerHealth(4) > 0) {
+                updateAfterTurn(4);
+            } else {
+                EnemyTurnButton.setVisible(true);
+            }
         } else {
-            EnemyTurnButton.setVisible(true);
+            p3Move1.setVisible(false);
+            p3Move2.setVisible(false);
+
+            if (HealthManager.getPlayerHealth(4) > 0) {
+                updateAfterTurn(4);
+            } else {
+                EnemyTurnButton.setVisible(true);
+            }
         }
 
 
     }//GEN-LAST:event_p3Move1ActionPerformed
 
     private void p3Move2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p3Move2ActionPerformed
-        HeroManager.p3Move2();
-        updateEnemysBar();
-        updateHerosBar();
-        if (HealthManager.allEnemyDead()) {
-            this.setVisible(false);
-            new WinScreen().setVisible(true);
-        }
-        p3Move1.setVisible(false);
-        p3Move2.setVisible(false);
+        if (ManaManager.getMana(3) > 0) {
+            HeroManager.p3Move2();
+            updateEnemysBar();
+            updateHerosBar();
+            if (HealthManager.allEnemyDead()) {
+                this.setVisible(false);
+                new WinScreen().setVisible(true);
+            }
+            p3Move1.setVisible(false);
+            p3Move2.setVisible(false);
 
-        if (HealthManager.getPlayerHealth(4) > 0) {
-            updateAfterTurn(4);
+            if (HealthManager.getPlayerHealth(4) > 0) {
+                updateAfterTurn(4);
+            } else {
+                EnemyTurnButton.setVisible(true);
+            }
         } else {
-            EnemyTurnButton.setVisible(true);
+            p3Move1.setVisible(false);
+            p3Move2.setVisible(false);
+
+            if (HealthManager.getPlayerHealth(4) > 0) {
+                updateAfterTurn(4);
+            } else {
+                EnemyTurnButton.setVisible(true);
+            }
         }
 
 
     }//GEN-LAST:event_p3Move2ActionPerformed
 
     private void p4Move1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p4Move1ActionPerformed
-        HeroManager.p4Move1();
-        updateHerosBar();
-
-        if (HealthManager.allEnemyDead()) {
-            this.setVisible(false);
-            new WinScreen().setVisible(true);
+        int pHealthTotake = Integer.parseInt(JOptionPane.showInputDialog("Enter which player whose Health you would like to sacrifice(Enter 1,2,3 or 4)"));
+        if (HealthManager.getPlayerHealth(pHealthTotake) >= MovelistManager.divineJudgementHealth()) {
+            HeroManager.p4Move1(pHealthTotake);
+            updateHerosBar();
+            p4Move1.setVisible(false);
+            p4Move2.setVisible(false);
+            EnemyTurnButton.setVisible(true);
+        } else {
+            p4Move1.setVisible(false);
+            p4Move2.setVisible(false);
+            EnemyTurnButton.setVisible(true);
         }
-        p4Move1.setVisible(false);
-        p4Move2.setVisible(false);
-
-        EnemyTurnButton.setVisible(true);
 
 
     }//GEN-LAST:event_p4Move1ActionPerformed
 
     private void p4Move2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p4Move2ActionPerformed
-        HeroManager.p4Move2();
-        updateHerosBar();
-        if (HealthManager.allEnemyDead()) {
-            this.setVisible(false);
-            new WinScreen().setVisible(true);
+        if (ManaManager.getMana(4) > 0) {
+            HeroManager.p4Move2();
+            updateHerosBar();
+            p4Move1.setVisible(false);
+            p4Move2.setVisible(false);
+            EnemyTurnButton.setVisible(true);
+        } else {
+            p4Move1.setVisible(false);
+            p4Move2.setVisible(false);
+            EnemyTurnButton.setVisible(true);
         }
-        p4Move1.setVisible(false);
-        p4Move2.setVisible(false);
-
-        EnemyTurnButton.setVisible(true);
     }//GEN-LAST:event_p4Move2ActionPerformed
 
     private void p1Move1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p1Move1MouseEntered
-        atkInfoText.setText("BraveBlade info");
+        atkInfoText.setText("""
+                            BRAVE BLADE
+                            DAMAGE: """ + MovelistManager.braveBlade() + """
+                                                                         
+                            MANA: 0""" + MovelistManager.braveBladeMana() + """
+                                                                            
+                            
+                            Strike a SINGLE 
+                            enemy with a mighty 
+                            slash from your 
+                            magic blade.
+                            
+                            """);
     }//GEN-LAST:event_p1Move1MouseEntered
 
     private void p1Move2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p1Move2MouseEntered
-        atkInfoText.setText("SwordDance info");
+      
+        atkInfoText.setText("""
+                            SWORD DANCE
+                            DAMAGE: """ + MovelistManager.swordDance()+ """
+                                                                         
+                            MANA: 0""" + MovelistManager.swordDanceMana()+ """
+                                                                            
+                            
+                            Strike a SINGLE 
+                            enemy with flurry
+                            of quick and agile
+                            slashes                                           
+                            
+                            """);
     }//GEN-LAST:event_p1Move2MouseEntered
 
     private void p2Move1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p2Move1MouseEntered
-        atkInfoText.setText("SkullCracker info");
+        atkInfoText.setText("""
+                            SKULL CRACKER
+                            DAMAGE: """ + MovelistManager.skullCracker()+ """
+                                                                         
+                            MANA: 0""" + MovelistManager.skullCrackerMana()+ """
+                                                                            
+                            
+                            Strike a SINGLE 
+                            enemy with a mighty 
+                            slash from your 
+                            magic blade.
+                            
+                            """);
     }//GEN-LAST:event_p2Move1MouseEntered
 
     private void p2Move2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p2Move2MouseEntered
-        atkInfoText.setText("GodsHand info");
+     atkInfoText.setText("""
+                            GODS HAND
+                            DAMAGE: """ + MovelistManager.godsHand()+ """
+                                                                         
+                            MANA: 0""" + MovelistManager.godHandMana()+ """
+                                                                            
+                            
+                            Strike a SINGLE 
+                            enemy with a mighty 
+                            slash from your 
+                            magic blade.
+                            
+                            """);
     }//GEN-LAST:event_p2Move2MouseEntered
 
     private void p3Move1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p3Move1MouseEntered
-        atkInfoText.setText("megidoleon info");
+      atkInfoText.setText("""
+                            MEGIDOLOAN
+                            DAMAGE: """ + MovelistManager.megidoloan()+ """
+                                                                         
+                            MANA: 0""" + MovelistManager.megidoloanMana()+ """
+                                                                            
+                            
+                            Strike a SINGLE 
+                            enemy with a mighty 
+                            slash from your 
+                            magic blade.
+                            
+                            """);
     }//GEN-LAST:event_p3Move1MouseEntered
 
     private void p3Move2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p3Move2MouseEntered
-        atkInfoText.setText("DoorsOfHades info");
+        atkInfoText.setText("""
+                            DOORS OF HADES
+                            DAMAGE: """ + MovelistManager.doorsOfHades()+ """
+                                                                         
+                            MANA: 0""" + MovelistManager.doorsOfHadesMana()+ """
+                                                                            
+                            
+                            Strike a SINGLE 
+                            enemy with a mighty 
+                            slash from your 
+                            magic blade.
+                            
+                            """);
     }//GEN-LAST:event_p3Move2MouseEntered
 
     private void p4Move1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p4Move1MouseEntered
-        atkInfoText.setText("DivineJudgement info");
+       atkInfoText.setText("""
+                            DIVINE JUDGMENT
+                            DAMAGE: """ + MovelistManager.divineJudgement()+ """
+                                                                         
+                            HEALTH: 0""" + MovelistManager.divineJudgementHealth()+ """
+                                                                            
+                            
+                            Strike a SINGLE 
+                            enemy with a mighty 
+                            slash from your 
+                            magic blade.
+                            
+                            """);
     }//GEN-LAST:event_p4Move1MouseEntered
 
     private void p4Move2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p4Move2MouseEntered
-        atkInfoText.setText("Salvation info");
-
-
+      atkInfoText.setText("""
+                            SALVATION
+                            DAMAGE: """ + MovelistManager.salvation()+ """
+                                                                         
+                            MANA: 0""" + MovelistManager.salvationMana()+ """
+                                                                            
+                            
+                            Strike a SINGLE 
+                            enemy with a mighty 
+                            slash from your 
+                            magic blade.
+                            
+                            """);
     }//GEN-LAST:event_p4Move2MouseEntered
 
     private void exitMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitMousePressed
@@ -572,7 +781,7 @@ public class BattleScreen extends javax.swing.JFrame {
     }
 
     public static void updateHerosBar() {
-        
+
         String hp1 = HealthManager.getPlayerHealth(1) + "";
         String hp1Max = HealthManager.maxHeroHp(1) + "";
         String hp2 = HealthManager.getPlayerHealth(2) + "";
@@ -581,7 +790,7 @@ public class BattleScreen extends javax.swing.JFrame {
         String hp3Max = HealthManager.maxHeroHp(3) + "";
         String hp4 = HealthManager.getPlayerHealth(4) + "";
         String hp4Max = HealthManager.maxHeroHp(4) + "";
-        
+
         String m1 = ManaManager.getMana(1) + "";
         String m1Max = ManaManager.maxMana(1) + "";
         String m2 = ManaManager.getMana(2) + "";
@@ -590,23 +799,22 @@ public class BattleScreen extends javax.swing.JFrame {
         String m3Max = ManaManager.maxMana(3) + "";
         String m4 = ManaManager.getMana(4) + "";
         String m4Max = ManaManager.maxMana(4) + "";
-        
-        
+
         BattleScreen.p1HP.setValue(HealthManager.getPlayerHealth(1));
         BattleScreen.p1M.setValue(ManaManager.getMana(1));
         BattleScreen.p1HPtxt.setText(hp1 + "/" + hp1Max);
         BattleScreen.p1Mtxt.setText(m1 + "/" + m1Max);
-        
+
         BattleScreen.p2HP.setValue(HealthManager.getPlayerHealth(2));
         BattleScreen.p2M.setValue(ManaManager.getMana(2));
         BattleScreen.p2HPtxt.setText(hp2 + "/" + hp2Max);
         BattleScreen.p2Mtxt.setText(m2 + "/" + m2Max);
-        
+
         BattleScreen.p3HP.setValue(HealthManager.getPlayerHealth(3));
         BattleScreen.p3M.setValue(ManaManager.getMana(3));
         BattleScreen.p3HPtxt.setText(hp3 + "/" + hp3Max);
         BattleScreen.p3Mtxt.setText(m3 + "/" + m3Max);
-        
+
         BattleScreen.p4HP.setValue(HealthManager.getPlayerHealth(4));
         BattleScreen.p4M.setValue(ManaManager.getMana(4));
         BattleScreen.p4HPtxt.setText(hp4 + "/" + hp4Max);
@@ -614,27 +822,26 @@ public class BattleScreen extends javax.swing.JFrame {
     }
 
     public static void updateEnemysBar() {
-        
+
         String hp1 = HealthManager.getEnemyHealth(1) + "";
         String hp2 = HealthManager.getEnemyHealth(2) + "";
         String hp3 = HealthManager.getEnemyHealth(3) + "";
         String hp4 = HealthManager.getEnemyHealth(4) + "";
-        
+
         String e1Max = HealthManager.maxEnemyHP(1) + "";
         String e2Max = HealthManager.maxEnemyHP(2) + "";
         String e3Max = HealthManager.maxEnemyHP(3) + "";
         String e4Max = HealthManager.maxEnemyHP(4) + "";
-         
+
         BattleScreen.enemy1HP.setValue(HealthManager.getEnemyHealth(1));
         BattleScreen.enemy2HP.setValue(HealthManager.getEnemyHealth(2));
         BattleScreen.enemy3HP.setValue(HealthManager.getEnemyHealth(3));
         BattleScreen.enemy4HP.setValue(HealthManager.getEnemyHealth(4));
-        
+
         BattleScreen.e1HPtxt.setText(hp1 + "/" + e1Max);
         BattleScreen.e2HPtxt.setText(hp2 + "/" + e2Max);
         BattleScreen.e3HPtxt.setText(hp3 + "/" + e3Max);
         BattleScreen.e4HPtxt.setText(hp4 + "/" + e4Max);
-        
 
     }
 

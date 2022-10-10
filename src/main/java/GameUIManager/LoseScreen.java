@@ -31,10 +31,9 @@ public class LoseScreen extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(826, 487));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        exit.setFont(new java.awt.Font("OCR A Extended", 1, 24)); // NOI18N
+        exit.setFont(new java.awt.Font("OCR A Extended", 1, 36)); // NOI18N
         exit.setForeground(new java.awt.Color(255, 153, 51));
         exit.setText("X");
         exit.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -42,10 +41,9 @@ public class LoseScreen extends javax.swing.JFrame {
                 exitMousePressed(evt);
             }
         });
-        getContentPane().add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 10, -1, -1));
+        getContentPane().add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 0, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/LoseScreen.png"))); // NOI18N
-        jLabel1.setPreferredSize(new java.awt.Dimension(826, 487));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/LoseScreen1.JPG"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();

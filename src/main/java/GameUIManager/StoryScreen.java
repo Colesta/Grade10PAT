@@ -31,6 +31,7 @@ public class StoryScreen extends javax.swing.JFrame {
 
         jFrame1 = new javax.swing.JFrame();
         beginButton = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
         jFrame1.getContentPane().setLayout(jFrame1Layout);
@@ -46,7 +47,11 @@ public class StoryScreen extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 51, 51));
         setForeground(new java.awt.Color(255, 51, 0));
+        setMaximumSize(new java.awt.Dimension(900, 500));
+        setMinimumSize(new java.awt.Dimension(900, 500));
         setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(900, 500));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         beginButton.setBackground(new java.awt.Color(255, 153, 51));
         beginButton.setFont(new java.awt.Font("OCR A Extended", 1, 18)); // NOI18N
@@ -57,23 +62,14 @@ public class StoryScreen extends javax.swing.JFrame {
                 beginButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(beginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 450, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(224, 224, 224)
-                .addComponent(beginButton)
-                .addContainerGap(236, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(203, Short.MAX_VALUE)
-                .addComponent(beginButton)
-                .addGap(23, 23, 23))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/StroyScreen.JPG"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        jLabel1.setMaximumSize(new java.awt.Dimension(900, 500));
+        jLabel1.setMinimumSize(new java.awt.Dimension(900, 500));
+        jLabel1.setPreferredSize(new java.awt.Dimension(900, 500));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -82,8 +78,7 @@ public class StoryScreen extends javax.swing.JFrame {
     private void beginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_beginButtonActionPerformed
         this.setVisible(false);
         new BattleScreen().setVisible(true);
-        
-        
+
         //setup for turn system
         BattleScreen.p2Move1.setVisible(false);
         BattleScreen.p2Move2.setVisible(false);
@@ -92,91 +87,87 @@ public class StoryScreen extends javax.swing.JFrame {
         BattleScreen.p4Move1.setVisible(false);
         BattleScreen.p4Move2.setVisible(false);
         BattleScreen.EnemyTurnButton.setVisible(false);
-        
+
         //setup for health and mana bars
-        
-        
-        BattleScreen.p1HP.setMaximum(500);
+        BattleScreen.p1HP.setMaximum(HealthManager.maxHeroHp(1));
         BattleScreen.p1HP.setMinimum(0);
         BattleScreen.p1HP.setValue(HealthManager.getPlayerHealth(1));
-        BattleScreen.p1M.setMaximum(500);
+        BattleScreen.p1M.setMaximum(ManaManager.maxMana(1));
         BattleScreen.p1M.setMinimum(0);
         BattleScreen.p1M.setValue(ManaManager.getMana(1));
-        
-        BattleScreen.p2HP.setMaximum(500);
+
+        BattleScreen.p2HP.setMaximum(HealthManager.maxHeroHp(2));
         BattleScreen.p2HP.setMinimum(0);
         BattleScreen.p2HP.setValue(HealthManager.getPlayerHealth(2));
-        BattleScreen.p2M.setMaximum(500);
+        BattleScreen.p2M.setMaximum(ManaManager.maxMana(2));
         BattleScreen.p2M.setMinimum(0);
         BattleScreen.p2M.setValue(ManaManager.getMana(2));
-        
-        BattleScreen.p3HP.setMaximum(500);
+
+        BattleScreen.p3HP.setMaximum(HealthManager.maxHeroHp(3));
         BattleScreen.p3HP.setMinimum(0);
         BattleScreen.p3HP.setValue(HealthManager.getPlayerHealth(3));
-        BattleScreen.p3M.setMaximum(500);
+        BattleScreen.p3M.setMaximum(ManaManager.maxMana(3));
         BattleScreen.p3M.setMinimum(0);
         BattleScreen.p3M.setValue(ManaManager.getMana(3));
-        
-        BattleScreen.p4HP.setMaximum(500);
+
+        BattleScreen.p4HP.setMaximum(HealthManager.maxHeroHp(4));
         BattleScreen.p4HP.setMinimum(0);
         BattleScreen.p4HP.setValue(HealthManager.getPlayerHealth(4));
-        BattleScreen.p4M.setMaximum(500);
+        BattleScreen.p4M.setMaximum(ManaManager.maxMana(4));
         BattleScreen.p4M.setMinimum(0);
         BattleScreen.p4M.setValue(ManaManager.getMana(4));
-        
+
         //setup for enemy health
-        
-        BattleScreen.enemy1HP.setMaximum(500);
+        BattleScreen.enemy1HP.setMaximum(HealthManager.maxEnemyHP(1));
         BattleScreen.enemy1HP.setMinimum(0);
         BattleScreen.enemy1HP.setValue(HealthManager.getEnemyHealth(1));
-        
-        BattleScreen.enemy2HP.setMaximum(500);
+
+        BattleScreen.enemy2HP.setMaximum(HealthManager.maxEnemyHP(2));
         BattleScreen.enemy2HP.setMinimum(0);
         BattleScreen.enemy2HP.setValue(HealthManager.getEnemyHealth(2));
-        
-        BattleScreen.enemy3HP.setMaximum(500);
+
+        BattleScreen.enemy3HP.setMaximum(HealthManager.maxEnemyHP(3));
         BattleScreen.enemy3HP.setMinimum(0);
         BattleScreen.enemy3HP.setValue(HealthManager.getEnemyHealth(3));
-        
-        BattleScreen.enemy4HP.setMaximum(500);
+
+        BattleScreen.enemy4HP.setMaximum(HealthManager.maxEnemyHP(4));
         BattleScreen.enemy4HP.setMinimum(0);
         BattleScreen.enemy4HP.setValue(HealthManager.getEnemyHealth(4));
-        
+
         //setting the text over the healthbars
-        
-        String maxHp1 = HealthManager.maxHeroHp(1)+"";
-        String maxM1 = ManaManager.maxMana(1)+"";
+        String maxHp1 = HealthManager.maxHeroHp(1) + "";
+        String maxM1 = ManaManager.maxMana(1) + "";
         BattleScreen.p1HPtxt.setText(maxHp1 + "/" + maxHp1);
         BattleScreen.p1Mtxt.setText(maxM1 + "/" + maxM1);
-        
-        String maxHp2 = HealthManager.maxHeroHp(2)+"";
-        String maxM2 = ManaManager.maxMana(2)+"";
+
+        String maxHp2 = HealthManager.maxHeroHp(2) + "";
+        String maxM2 = ManaManager.maxMana(2) + "";
         BattleScreen.p2HPtxt.setText(maxHp2 + "/" + maxHp2);
         BattleScreen.p2Mtxt.setText(maxM2 + "/" + maxM2);
-        
-        String maxHp3 = HealthManager.maxHeroHp(3)+"";
-        String maxM3 = ManaManager.maxMana(3)+"";
+
+        String maxHp3 = HealthManager.maxHeroHp(3) + "";
+        String maxM3 = ManaManager.maxMana(3) + "";
         BattleScreen.p3HPtxt.setText(maxHp3 + "/" + maxHp3);
         BattleScreen.p3Mtxt.setText(maxM3 + "/" + maxM3);
-        
-        String maxHp4 = HealthManager.maxHeroHp(4)+"";
-        String maxM4 = ManaManager.maxMana(4)+"";
+
+        String maxHp4 = HealthManager.maxHeroHp(4) + "";
+        String maxM4 = ManaManager.maxMana(4) + "";
         BattleScreen.p4HPtxt.setText(maxHp4 + "/" + maxHp4);
         BattleScreen.p4Mtxt.setText(maxM4 + "/" + maxM4);
-        
-        String maxEHP1 = HealthManager.maxEnemyHP(1)+"";
+
+        String maxEHP1 = HealthManager.maxEnemyHP(1) + "";
         BattleScreen.e1HPtxt.setText(maxEHP1 + "/" + maxEHP1);
-        
-        String maxEHP2 = HealthManager.maxEnemyHP(2)+"";
+
+        String maxEHP2 = HealthManager.maxEnemyHP(2) + "";
         BattleScreen.e2HPtxt.setText(maxEHP2 + "/" + maxEHP2);
-        
-        String maxEHP3 = HealthManager.maxEnemyHP(3)+"";
+
+        String maxEHP3 = HealthManager.maxEnemyHP(3) + "";
         BattleScreen.e3HPtxt.setText(maxEHP3 + "/" + maxEHP3);
-        
-        String maxEHP4 = HealthManager.maxEnemyHP(4)+"";
+
+        String maxEHP4 = HealthManager.maxEnemyHP(4) + "";
         BattleScreen.e4HPtxt.setText(maxEHP4 + "/" + maxEHP4
         );
-        
+
     }//GEN-LAST:event_beginButtonActionPerformed
 
     /**
@@ -217,5 +208,6 @@ public class StoryScreen extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton beginButton;
     private javax.swing.JFrame jFrame1;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

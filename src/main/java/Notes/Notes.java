@@ -18,16 +18,7 @@ public class Notes {
     
     //make it so the mana bar updates after each hero turn, ad the hero healthupdates every enemy turn
     
-     private void makePlayerMove(int player, int move, int enemy){
-        HeroManager.heroMove(player, move, enemy);
-        
-        player++;
-        while(HealthManager.getPlayerHealth(player)<0){
-            player++;
-        }
-        
-        
-    }
+   //make a continue and new game
     
     
     

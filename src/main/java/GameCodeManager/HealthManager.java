@@ -39,7 +39,7 @@ public class HealthManager {
                 case 4 ->
                     player4Health;
                 default ->
-                    
+
                     -1;
             };
 
@@ -95,85 +95,73 @@ public class HealthManager {
             return false;
         }
     }
-    
-    public static boolean heroDead(int hero){
+
+    public static boolean heroDead(int hero) {
         boolean dead = false;
-        switch (hero){
-        case 1:
-            if (getPlayerHealth(1) == 0){
-            dead = true;
-        }
-        else{
-            dead = false;
-        }
-            break;
-        case 2:
-            dead = getPlayerHealth(2) == 0;
-            break;
-
-        case 3:
-            if (getPlayerHealth(3) == 0){
-            dead = true;
-        }
-        else{
-            dead = false;
-        }
-            break;
-        case 4:
-            if (getPlayerHealth(4) == 0){
-            dead = true;
-        }
-        else{
-            dead = false;
-        }
-            break;
-        default: 
-            dead = false;
-            
-        
-    }
-        return dead;
-    }
-    
-    public static int getEnemyAttack() {
-
-        int atkPotency = EnemyManager.AttackPotencyChance();
-
-        int enemyDamage;
-
-        switch (atkPotency) {
+        switch (hero) {
             case 1 -> {
-                enemyDamage = 34;
-                return enemyDamage;
+                if (getPlayerHealth(1) == 0) {
+                    dead = true;
+                } else {
+                    dead = false;
+                }
             }
-
             case 2 -> {
-                enemyDamage = 32;
-                return enemyDamage;
+                if (getPlayerHealth(2) == 0) {
+                    dead = true;
+                } else {
+                    dead = false;
+                }
             }
 
             case 3 -> {
-                enemyDamage = 50;
-                return enemyDamage;
+                if (getPlayerHealth(3) == 0) {
+                    dead = true;
+                } else {
+                    dead = false;
+                }
             }
-            default -> {
-                return 0;
+            case 4 -> {
+                if (getPlayerHealth(4) == 0) {
+                    dead = true;
+                } else {
+                    dead = false;
+                }
             }
+            default -> dead = false;
+
         }
+        return dead;
     }
     
-    public static int getHeroAttack(int damage, int enemy) throws FileNotFoundException{
+     public static int EnemyAlive() {
+        int enemyAlive = 4;
+
+        if (getEnemyHealth(1) <= 0) {
+            enemyAlive = enemyAlive - 1;
+        } else if (getEnemyHealth(2) <= 0) {
+            enemyAlive = enemyAlive - 1;
+        } else if (getEnemyHealth(3) <= 0) {
+            enemyAlive = enemyAlive - 1;
+        } else if (getEnemyHealth(4) <= 0) {
+            enemyAlive = enemyAlive - 1;
+        }
+
+        return enemyAlive;
+    }
+
+    public static int getHeroAttack(int damage, int enemy) throws FileNotFoundException {
         Scanner sc;
         sc = new Scanner(new File("data//enemyHealth.txt"));
         int enemy1Health = sc.nextInt();
         int enemy2Health = sc.nextInt();
         int enemy3Health = sc.nextInt();
         int enemy4Health = sc.nextInt();
-        
-               switch (enemy) {
+
+        switch (enemy) {
             case 1 -> {
                 enemy1Health = enemy1Health - damage;
-                
+
                 return enemy1Health;
             }
 
@@ -190,62 +178,61 @@ public class HealthManager {
                 enemy4Health -= damage;
                 return enemy4Health;
             }
-            
+
             default -> {
                 return 0;
             }
         }
-        
 
     }
 
     public static void addHealth(int healthToAdd, int player) {
         Scanner sc;
-        
+
         int maxP1Hp = 200;
         int maxP2Hp = 200;
         int maxP3Hp = 200;
         int maxP4Hp = 200;
-        
+
         try {
             sc = new Scanner(new File("data//playerHealth.txt"));
             int player1Health = sc.nextInt();
             int player2Health = sc.nextInt();
             int player3Health = sc.nextInt();
             int player4Health = sc.nextInt();
-            
 
             switch (player) {
                 case 1 -> {
                     player1Health += healthToAdd;
-                    if(player1Health > maxP1Hp){
+                    if (player1Health > maxP1Hp) {
                         player1Health = maxP1Hp;
                     }
-                  break;
+                    break;
                 }
                 case 2 -> {
                     player2Health += healthToAdd;
-                    if(player2Health > maxP2Hp){
+                    if (player2Health > maxP2Hp) {
                         player2Health = maxP2Hp;
                     }
                     break;
                 }
                 case 3 -> {
                     player3Health += healthToAdd;
-                    if(player3Health > maxP3Hp){
+                    if (player3Health > maxP3Hp) {
                         player3Health = maxP3Hp;
                     }
                     break;
                 }
                 case 4 -> {
                     player4Health += healthToAdd;
-                    if(player4Health > maxP4Hp){
+                    if (player4Health > maxP4Hp) {
                         player4Health = maxP4Hp;
                     }
                     break;
                 }
-                default -> System.out.println("INVALID NUMBER");
-                    
+                default ->
+                    System.out.println("INVALID NUMBER");
+
             }
 
             PrintWriter pw = new PrintWriter(new FileWriter("data//playerHealth.txt"));
@@ -253,7 +240,7 @@ public class HealthManager {
             pw.println(player2Health);
             pw.println(player3Health);
             pw.println(player4Health);
-            
+
             pw.close();
 
         } catch (FileNotFoundException ex) {
@@ -266,43 +253,42 @@ public class HealthManager {
 
     public static void getHeroDamage(int damage, int player) {
         Scanner sc;
-        
+
         try {
             sc = new Scanner(new File("data//playerHealth.txt"));
             int player1Health = sc.nextInt();
             int player2Health = sc.nextInt();
             int player3Health = sc.nextInt();
             int player4Health = sc.nextInt();
-            
-            
+
             switch (player) {
                 case 1:
                     player1Health -= damage;
-                    if(player1Health < 0){
+                    if (player1Health < 0) {
                         player1Health = 0;
                     }
                     break;
                 case 2:
                     player2Health -= damage;
-                    if(player2Health < 0){
+                    if (player2Health < 0) {
                         player2Health = 0;
-                    }                    
+                    }
                     break;
                 case 3:
                     player3Health -= damage;
-                    if(player3Health < 0){
+                    if (player3Health < 0) {
                         player3Health = 0;
                     }
                     break;
                 case 4:
                     player4Health -= damage;
-                    if(player4Health < 0){
+                    if (player4Health < 0) {
                         player4Health = 0;
                     }
                     break;
                 default:
                     System.out.println("INVALID NUMBER");
-                    
+
             }
 
             PrintWriter pw = new PrintWriter(new FileWriter("data//playerHealth.txt"));
@@ -310,7 +296,7 @@ public class HealthManager {
             pw.println(player2Health);
             pw.println(player3Health);
             pw.println(player4Health);
-            
+
             pw.close();
 
         } catch (FileNotFoundException ex) {
@@ -320,7 +306,7 @@ public class HealthManager {
         }
 
     }
-    
+
     public static void getEnemyDamage(int enemy, int damage) {
         Scanner sc;
         try {
@@ -371,15 +357,15 @@ public class HealthManager {
         }
 
     }
-    
+
     public static void resetHeroHP() {
         try {
             PrintWriter pw = new PrintWriter(new FileWriter("data//playerHealth.txt"));
-            pw.println(500);
-            pw.println(500);
-            pw.println(500);
-            pw.println(500);
-            
+            pw.println(maxHeroHp(1));
+            pw.println(maxHeroHp(2));
+            pw.println(maxHeroHp(3));
+            pw.println(maxHeroHp(4));
+
             pw.close();
 
         } catch (FileNotFoundException ex) {
@@ -389,15 +375,15 @@ public class HealthManager {
         }
 
     }
-    
+
     public static void resetEnemyHP() {
         try {
             PrintWriter pw = new PrintWriter(new FileWriter("data//enemyHealth.txt"));
-            pw.println(500);
-            pw.println(500);
-            pw.println(500);
-            pw.println(500);
-            
+            pw.println(maxEnemyHP(1));
+            pw.println(maxEnemyHP(2));
+            pw.println(maxEnemyHP(3));
+            pw.println(maxEnemyHP(4));
+
             pw.close();
 
         } catch (FileNotFoundException ex) {
@@ -407,47 +393,45 @@ public class HealthManager {
         }
 
     }
-     
-    public static int maxHeroHp(int player){
-        
+
+    public static int maxHeroHp(int player) {
+
         int maxHP = 0;
-        
-        switch(player){
+
+        switch (player) {
             case 1:
-                maxHP = 500;
+                maxHP = 330;
                 break;
             case 2:
-                maxHP = 500;
+                maxHP = 650;
                 break;
             case 3:
-                maxHP = 500;
+                maxHP = 215;
                 break;
             case 4:
-                maxHP = 500;
+                maxHP = 300;
         }
         return maxHP;
     }
-    
-    
-    public static int maxEnemyHP(int enemy){
-        
+
+    public static int maxEnemyHP(int enemy) {
+
         int maxHP = 0;
-        
-        switch(enemy){
+
+        switch (enemy) {
             case 1:
-                maxHP = 500;
+                maxHP = 900;
                 break;
             case 2:
-                maxHP = 500;
+                maxHP = 635;
                 break;
             case 3:
-                maxHP = 500;
+                maxHP = 445;
                 break;
             case 4:
-                maxHP = 500;
+                maxHP = 570;
         }
         return maxHP;
     }
-    
 
 }

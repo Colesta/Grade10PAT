@@ -21,7 +21,6 @@ import javax.swing.SpringLayout;
  * @author Peters
  */
 public class ManaManager {
-    
 
     public static int getMana(int player) {
         try {
@@ -92,7 +91,7 @@ public class ManaManager {
             pw.println(player2Mana);
             pw.println(player3Mana);
             pw.println(player4Mana);
-            
+
             pw.close();
 
         } catch (FileNotFoundException ex) {
@@ -102,12 +101,12 @@ public class ManaManager {
         }
 
     }
-    
+
     public static void addMana(int manaToAdd, int player) {
         Scanner sc;
-        
+
         int maxMana1 = maxMana(1);
-        int maxMana2 = maxMana(2);        
+        int maxMana2 = maxMana(2);
         int maxMana3 = maxMana(3);
         int maxMana4 = maxMana(4);
         try {
@@ -116,35 +115,35 @@ public class ManaManager {
             int player2Mana = sc.nextInt();
             int player3Mana = sc.nextInt();
             int player4Mana = sc.nextInt();
-            
+
             switch (player) {
                 case 1:
                     player1Mana += manaToAdd;
-                    if(player1Mana > maxMana1){
+                    if (player1Mana > maxMana1) {
                         player1Mana = maxMana1;
                     }
                     break;
                 case 2:
                     player2Mana += manaToAdd;
-                    if(player2Mana > maxMana2){
+                    if (player2Mana > maxMana2) {
                         player2Mana = maxMana2;
                     }
                     break;
                 case 3:
                     player3Mana += manaToAdd;
-                    if(player3Mana > maxMana3){
+                    if (player3Mana > maxMana3) {
                         player3Mana = maxMana3;
                     }
                     break;
                 case 4:
                     player4Mana += manaToAdd;
-                    if(player4Mana > maxMana4){
+                    if (player4Mana > maxMana4) {
                         player4Mana = maxMana4;
                     }
                     break;
                 default:
                     System.out.println("INVALID NUMBER");
-                    
+
             }
 
             PrintWriter pw = new PrintWriter(new FileWriter("data//playerMana.txt"));
@@ -152,7 +151,7 @@ public class ManaManager {
             pw.println(player2Mana);
             pw.println(player3Mana);
             pw.println(player4Mana);
-            
+
             pw.close();
 
         } catch (FileNotFoundException ex) {
@@ -162,16 +161,16 @@ public class ManaManager {
         }
 
     }
-    
-     public static void resetMana() {
-         
+
+    public static void resetMana() {
+
         try {
             PrintWriter pw = new PrintWriter(new FileWriter("data//playerMana.txt"));
             pw.println(maxMana(1));
             pw.println(maxMana(2));
             pw.println(maxMana(3));
             pw.println(maxMana(4));
-            
+
             pw.close();
 
         } catch (FileNotFoundException ex) {
@@ -180,24 +179,24 @@ public class ManaManager {
             Logger.getLogger(ManaManager.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-}
-     
-    public static int maxMana(int player){
-        
+    }
+
+    public static int maxMana(int player) {
+
         int maxM = 0;
-        
-        switch(player){
+
+        switch (player) {
             case 1:
-                maxM = 500;
+                maxM = 310;
                 break;
             case 2:
-                maxM = 500;
+                maxM = 215;
                 break;
             case 3:
-                maxM = 500;
+                maxM = 420;
                 break;
             case 4:
-                maxM = 500;
+                maxM = 185;
         }
         return maxM;
     }
