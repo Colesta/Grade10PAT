@@ -28,7 +28,7 @@ public class EnemyManager {
             }
 
             case 3 -> {
-                enemyDamage = 250;
+                enemyDamage = 200;
                 return enemyDamage;
             }
             default -> {

@@ -22,6 +22,7 @@ import javax.swing.SpringLayout;
  */
 public class ManaManager {
 
+    
     public static int getMana(int player) {
         try {
             Scanner sc = new Scanner(new File("data//playerMana.txt"));
@@ -50,6 +51,7 @@ public class ManaManager {
 
     }
 
+    // This method will happen every time a move is used
     public static void subtractMana(int player, int manaToSubtract) {
         Scanner sc;
         try {

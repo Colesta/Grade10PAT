@@ -36,6 +36,7 @@ public class TitleScreen extends javax.swing.JFrame {
         charButton = new javax.swing.JButton();
         exit = new javax.swing.JLabel();
         reset = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         battleScreen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/titleScreen.jpeg"))); // NOI18N
@@ -45,11 +46,10 @@ public class TitleScreen extends javax.swing.JFrame {
         setForeground(new java.awt.Color(255, 102, 0));
         setMinimumSize(new java.awt.Dimension(900, 500));
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(900, 500));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         playButton.setBackground(new java.awt.Color(255, 153, 51));
-        playButton.setFont(new java.awt.Font("OCR A Extended", 1, 18)); // NOI18N
+        playButton.setFont(new java.awt.Font("OCR A Extended", 1, 36)); // NOI18N
         playButton.setForeground(new java.awt.Color(0, 0, 0));
         playButton.setText("PLAY");
         playButton.addActionListener(new java.awt.event.ActionListener() {
@@ -57,7 +57,7 @@ public class TitleScreen extends javax.swing.JFrame {
                 playButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(playButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 260, -1, -1));
+        getContentPane().add(playButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 240, -1, -1));
 
         charButton.setBackground(new java.awt.Color(255, 153, 51));
         charButton.setFont(new java.awt.Font("OCR A Extended", 1, 18)); // NOI18N
@@ -68,7 +68,7 @@ public class TitleScreen extends javax.swing.JFrame {
                 charButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(charButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 260, -1, -1));
+        getContentPane().add(charButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 410, -1, -1));
 
         exit.setFont(new java.awt.Font("OCR A Extended", 1, 36)); // NOI18N
         exit.setForeground(new java.awt.Color(255, 153, 51));
@@ -89,7 +89,14 @@ public class TitleScreen extends javax.swing.JFrame {
                 resetActionPerformed(evt);
             }
         });
-        getContentPane().add(reset, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, -1, -1));
+        getContentPane().add(reset, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 410, -1, -1));
+
+        jTextField1.setBackground(new java.awt.Color(255, 102, 0));
+        jTextField1.setFont(new java.awt.Font("OCR A Extended", 1, 48)); // NOI18N
+        jTextField1.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField1.setText("THE DRAGON KNIGHTS");
+        jTextField1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/titleScreen.jpeg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -144,6 +151,7 @@ public class TitleScreen extends javax.swing.JFrame {
     private javax.swing.JButton charButton;
     private javax.swing.JLabel exit;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JButton playButton;
     private javax.swing.JButton reset;
     // End of variables declaration//GEN-END:variables

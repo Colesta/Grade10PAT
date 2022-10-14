@@ -134,22 +134,6 @@ public class HealthManager {
         return dead;
     }
     
-     public static int EnemyAlive() {
-        int enemyAlive = 4;
-
-        if (getEnemyHealth(1) <= 0) {
-            enemyAlive = enemyAlive - 1;
-        } else if (getEnemyHealth(2) <= 0) {
-            enemyAlive = enemyAlive - 1;
-        } else if (getEnemyHealth(3) <= 0) {
-            enemyAlive = enemyAlive - 1;
-        } else if (getEnemyHealth(4) <= 0) {
-            enemyAlive = enemyAlive - 1;
-        }
-
-        return enemyAlive;
-    }
-
     public static int getHeroAttack(int damage, int enemy) throws FileNotFoundException {
         Scanner sc;
         sc = new Scanner(new File("data//enemyHealth.txt"));
@@ -400,7 +384,7 @@ public class HealthManager {
 
         switch (player) {
             case 1:
-                maxHP = 330;
+                maxHP = 370;
                 break;
             case 2:
                 maxHP = 650;
@@ -409,7 +393,7 @@ public class HealthManager {
                 maxHP = 215;
                 break;
             case 4:
-                maxHP = 300;
+                maxHP = 350;
         }
         return maxHP;
     }
@@ -420,7 +404,7 @@ public class HealthManager {
 
         switch (enemy) {
             case 1:
-                maxHP = 900;
+                maxHP = 850;
                 break;
             case 2:
                 maxHP = 635;

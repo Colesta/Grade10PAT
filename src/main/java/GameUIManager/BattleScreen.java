@@ -428,7 +428,7 @@ public class BattleScreen extends javax.swing.JFrame {
     private void p2Move1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p2Move1ActionPerformed
 
         if (ManaManager.getMana(2) > 0) {
-
+            
             HeroManager.p2Move1();
             updateEnemysBar();
             updateHerosBar();
@@ -599,7 +599,7 @@ public class BattleScreen extends javax.swing.JFrame {
                             BRAVE BLADE
                             DAMAGE: """ + MovelistManager.braveBlade() + """
                                                                          
-                            MANA: 0""" + MovelistManager.braveBladeMana() + """
+                            MANA: """ + MovelistManager.braveBladeMana() + """
                                                                             
                             
                             Strike a SINGLE 
@@ -616,7 +616,7 @@ public class BattleScreen extends javax.swing.JFrame {
                             SWORD DANCE
                             DAMAGE: """ + MovelistManager.swordDance()+ """
                                                                          
-                            MANA: 0""" + MovelistManager.swordDanceMana()+ """
+                            MANA: """ + MovelistManager.swordDanceMana()+ """
                                                                             
                             
                             Strike a SINGLE 
@@ -632,7 +632,7 @@ public class BattleScreen extends javax.swing.JFrame {
                             SKULL CRACKER
                             DAMAGE: """ + MovelistManager.skullCracker()+ """
                                                                          
-                            MANA: 0""" + MovelistManager.skullCrackerMana()+ """
+                            MANA: """ + MovelistManager.skullCrackerMana()+ """
                                                                             
                             
                             Strike a SINGLE 
@@ -648,7 +648,7 @@ public class BattleScreen extends javax.swing.JFrame {
                             GODS HAND
                             DAMAGE: """ + MovelistManager.godsHand()+ """
                                                                          
-                            MANA: 0""" + MovelistManager.godHandMana()+ """
+                            MANA: """ + MovelistManager.godsHandMana()+ """
                                                                             
                             
                             Strike a SINGLE 
@@ -664,7 +664,7 @@ public class BattleScreen extends javax.swing.JFrame {
                             MEGIDOLOAN
                             DAMAGE: """ + MovelistManager.megidoloan()+ """
                                                                          
-                            MANA: 0""" + MovelistManager.megidoloanMana()+ """
+                            MANA: """ + MovelistManager.megidoloanMana()+ """
                                                                             
                             
                             Strike a SINGLE 
@@ -680,7 +680,7 @@ public class BattleScreen extends javax.swing.JFrame {
                             DOORS OF HADES
                             DAMAGE: """ + MovelistManager.doorsOfHades()+ """
                                                                          
-                            MANA: 0""" + MovelistManager.doorsOfHadesMana()+ """
+                            MANA: """ + MovelistManager.doorsOfHadesMana()+ """
                                                                             
                             
                             Strike a SINGLE 
@@ -694,9 +694,9 @@ public class BattleScreen extends javax.swing.JFrame {
     private void p4Move1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p4Move1MouseEntered
        atkInfoText.setText("""
                             DIVINE JUDGMENT
-                            DAMAGE: """ + MovelistManager.divineJudgement()+ """
+                            MANA GIVEN: """ + MovelistManager.divineJudgement()+ """
                                                                          
-                            HEALTH: 0""" + MovelistManager.divineJudgementHealth()+ """
+                            HEALTH TAKEN: """ + MovelistManager.divineJudgementHealth()+ """
                                                                             
                             
                             Strike a SINGLE 
@@ -710,9 +710,9 @@ public class BattleScreen extends javax.swing.JFrame {
     private void p4Move2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p4Move2MouseEntered
       atkInfoText.setText("""
                             SALVATION
-                            DAMAGE: """ + MovelistManager.salvation()+ """
+                            HEALTH GIVEN: """ + MovelistManager.salvation()+ """
                                                                          
-                            MANA: 0""" + MovelistManager.salvationMana()+ """
+                            MANA: """ + MovelistManager.salvationMana()+ """
                                                                             
                             
                             Strike a SINGLE 
@@ -848,7 +848,7 @@ public class BattleScreen extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void battleScreen(String args[]) {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

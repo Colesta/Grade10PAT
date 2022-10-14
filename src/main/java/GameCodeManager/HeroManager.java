@@ -12,10 +12,6 @@ import javax.swing.JOptionPane;
  */
 public class HeroManager {
 
-    public static void heroMove(int hero, int move, int enemy) {
-
-    }
-
     public static void p1Move1() {
         int enemy = Integer.parseInt(JOptionPane.showInputDialog("Enter which enemy you would like to attack (Enter 1,2,3 or 4)"));
         int damage = MovelistManager.braveBlade();
@@ -43,9 +39,9 @@ public class HeroManager {
 
     public static void p2Move2() {
         int damage = MovelistManager.godsHand();
-        int manaToSubtract = MovelistManager.godHandMana();
+        int manaToSubtract = MovelistManager.godsHandMana();
         ManaManager.subtractMana(2, manaToSubtract);
-        for (int i = 1; i < 5; i++) {
+        for (int i = 1; i < 6; i++) {
             HealthManager.getEnemyDamage(i, damage);
         }
 
@@ -55,7 +51,7 @@ public class HeroManager {
         int damage = MovelistManager.megidoloan();
         int manaToSubtract = MovelistManager.megidoloanMana();
         ManaManager.subtractMana(3, manaToSubtract);
-        for (int i = 1; i < 5; i++) {
+        for (int i = 1; i < 6; i++) {
             HealthManager.getEnemyDamage(i, damage);
         }
     }
@@ -64,7 +60,7 @@ public class HeroManager {
         int damage = MovelistManager.doorsOfHades();
         int manaToSubtract = MovelistManager.doorsOfHadesMana();
         ManaManager.subtractMana(3, manaToSubtract);
-        for (int i = 1; i < 5; i++) {
+        for (int i = 1; i < 6; i++) {
             HealthManager.getEnemyDamage(i, damage);
         }
     }
@@ -87,9 +83,9 @@ public class HeroManager {
         ManaManager.subtractMana(4, manaToSub);
 
         HealthManager.addHealth(healthToAdd, 1);
-        HealthManager.addHealth(healthToAdd, 1);
-        HealthManager.addHealth(healthToAdd, 1);
-        HealthManager.addHealth(healthToAdd, 1);
+        HealthManager.addHealth(healthToAdd, 2);
+        HealthManager.addHealth(healthToAdd, 3);
+        HealthManager.addHealth(healthToAdd, 4);
     }
 
 }

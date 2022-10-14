@@ -13,7 +13,8 @@ import java.util.Scanner;
  * @author Peters
  */
 public class MovelistManager {
-
+    
+    // Moves for Player 1
     public static int braveBlade() {
         return 95;
     }
@@ -30,6 +31,7 @@ public class MovelistManager {
         return 55;
     }
 
+    // Moves for Player 2
     public static int skullCracker() {
         return 150;
     }
@@ -42,10 +44,11 @@ public class MovelistManager {
         return 85;
     }
 
-    public static int godHandMana() {
+    public static int godsHandMana() {
         return 75;
     }
 
+    // Moves for Player 3
     public static int megidoloan() {
         return 100;
     }
@@ -62,6 +65,7 @@ public class MovelistManager {
         return 200;
     }
 
+    // Moves for PLayer 4
     public static int divineJudgement() {
         return 100;
     }
