@@ -41,28 +41,30 @@ public class HeroManager {
         int damage = MovelistManager.godsHand();
         int manaToSubtract = MovelistManager.godsHandMana();
         ManaManager.subtractMana(2, manaToSubtract);
-        for (int i = 1; i < 6; i++) {
-            HealthManager.getEnemyDamage(i, damage);
-        }
-
+        HealthManager.getEnemyDamage(1, damage);
+        HealthManager.getEnemyDamage(2, damage);
+        HealthManager.getEnemyDamage(3, damage);
+        HealthManager.getEnemyDamage(4, damage);
     }
 
     public static void p3Move1() {
         int damage = MovelistManager.megidoloan();
         int manaToSubtract = MovelistManager.megidoloanMana();
         ManaManager.subtractMana(3, manaToSubtract);
-        for (int i = 1; i < 6; i++) {
-            HealthManager.getEnemyDamage(i, damage);
-        }
+        HealthManager.getEnemyDamage(1, damage);
+        HealthManager.getEnemyDamage(2, damage);
+        HealthManager.getEnemyDamage(3, damage);
+        HealthManager.getEnemyDamage(4, damage);
     }
 
     public static void p3Move2() {
         int damage = MovelistManager.doorsOfHades();
         int manaToSubtract = MovelistManager.doorsOfHadesMana();
         ManaManager.subtractMana(3, manaToSubtract);
-        for (int i = 1; i < 6; i++) {
-            HealthManager.getEnemyDamage(i, damage);
-        }
+        HealthManager.getEnemyDamage(1, damage);
+        HealthManager.getEnemyDamage(2, damage);
+        HealthManager.getEnemyDamage(3, damage);
+        HealthManager.getEnemyDamage(4, damage);
     }
 
     public static void p4Move1(int pHealthTotake) {

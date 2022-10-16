@@ -28,6 +28,18 @@ public class HeroInfoScreen extends javax.swing.JFrame {
 
         jButton1 = new javax.swing.JButton();
         returnButton = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        jTextField4 = new javax.swing.JTextField();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTextArea4 = new javax.swing.JTextArea();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTextArea5 = new javax.swing.JTextArea();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jTextArea6 = new javax.swing.JTextArea();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        jTextArea7 = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -57,8 +69,92 @@ public class HeroInfoScreen extends javax.swing.JFrame {
         });
         getContentPane().add(returnButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 650, -1, -1));
 
+        jTextField1.setBackground(new java.awt.Color(204, 255, 255));
+        jTextField1.setFont(new java.awt.Font("OCR A Extended", 1, 24)); // NOI18N
+        jTextField1.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField1.setText("Arcanara");
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 370, -1, -1));
+
+        jTextField2.setBackground(new java.awt.Color(204, 255, 255));
+        jTextField2.setFont(new java.awt.Font("OCR A Extended", 1, 24)); // NOI18N
+        jTextField2.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField2.setText("Lupardeo");
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 370, -1, -1));
+
+        jTextField3.setBackground(new java.awt.Color(204, 255, 255));
+        jTextField3.setFont(new java.awt.Font("OCR A Extended", 1, 24)); // NOI18N
+        jTextField3.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField3.setText("Astram");
+        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 370, -1, -1));
+
+        jTextField4.setBackground(new java.awt.Color(204, 255, 255));
+        jTextField4.setFont(new java.awt.Font("OCR A Extended", 1, 24)); // NOI18N
+        jTextField4.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField4.setText("Castellus");
+        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, -1, -1));
+
+        jTextArea4.setBackground(new java.awt.Color(204, 255, 255));
+        jTextArea4.setColumns(20);
+        jTextArea4.setFont(new java.awt.Font("OCR A Extended", 1, 12)); // NOI18N
+        jTextArea4.setForeground(new java.awt.Color(0, 0, 0));
+        jTextArea4.setRows(5);
+        jTextArea4.setText("Arcanara is the Leader of the\nDragon Knights. Using her \nFlame enhanced Sword, Vorpal\n(gifted to by Castellus) she\nis one of, if not, the most \nskilled sword fighter in \nAsterius.\n\nShe is also the daugther of \nthe previous leader of the \nDragon Knights, Astram.");
+        jScrollPane4.setViewportView(jTextArea4);
+
+        getContentPane().add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 430, 240, 160));
+
+        jTextArea5.setBackground(new java.awt.Color(204, 255, 255));
+        jTextArea5.setColumns(20);
+        jTextArea5.setFont(new java.awt.Font("OCR A Extended", 1, 12)); // NOI18N
+        jTextArea5.setForeground(new java.awt.Color(0, 0, 0));
+        jTextArea5.setRows(5);
+        jTextArea5.setText("The Father of Arcanara and\nthe previous leader of the\nDragon Knights, Astram is a \nferocious fighter.\n\nUsing his Axe to crack down \non foes, and Shield to \nprotect his allies, Astram is\na force to be reckoned with\nAlso, never interupt him while\nhe knits.");
+        jScrollPane5.setViewportView(jTextArea5);
+
+        getContentPane().add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 430, 250, 160));
+
+        jTextArea6.setBackground(new java.awt.Color(204, 255, 255));
+        jTextArea6.setColumns(20);
+        jTextArea6.setFont(new java.awt.Font("OCR A Extended", 1, 12)); // NOI18N
+        jTextArea6.setForeground(new java.awt.Color(0, 0, 0));
+        jTextArea6.setRows(5);
+        jTextArea6.setText("The most recent addition to\nthe Dragon Knights, Lupardeo \nuses his Canon (also gifted \nto him by Castellus) to Heal\nand Invigorate his allies.\n\nThe Helemt he wears used to\nbelong to his Older Brother\nwho died, and was also a \nmember of the Dragon Knights");
+        jScrollPane6.setViewportView(jTextArea6);
+
+        getContentPane().add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 430, 240, 160));
+
+        jTextArea7.setBackground(new java.awt.Color(204, 255, 255));
+        jTextArea7.setColumns(20);
+        jTextArea7.setFont(new java.awt.Font("OCR A Extended", 1, 12)); // NOI18N
+        jTextArea7.setForeground(new java.awt.Color(0, 0, 0));
+        jTextArea7.setRows(5);
+        jTextArea7.setText("Nekrollus' wiser younger \nbrother, he has become one \nwith the Arcane Arts. Being\nable to use both it's Light \nand Dark aspects in Harmony.\n\nAdvisor to the king, and a \nmember of the Dragon Knights,\nhe will do anything to protect\nhis kingdom, and defeat his\nbrother.");
+        jScrollPane7.setViewportView(jTextArea7);
+
+        getContentPane().add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 430, 250, 160));
+
+        jLabel1.setBackground(new java.awt.Color(204, 255, 255));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/HeroScreen.JPG"))); // NOI18N
-        jLabel1.setPreferredSize(new java.awt.Dimension(1083, 683));
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1130, -1));
 
         pack();
@@ -76,6 +172,22 @@ public class HeroInfoScreen extends javax.swing.JFrame {
         this.setVisible(false);
         new TitleScreen().setVisible(true);
     }//GEN-LAST:event_returnButtonActionPerformed
+
+    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField4ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
+
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -116,6 +228,18 @@ public class HeroInfoScreen extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JTextArea jTextArea4;
+    private javax.swing.JTextArea jTextArea5;
+    private javax.swing.JTextArea jTextArea6;
+    private javax.swing.JTextArea jTextArea7;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
     private javax.swing.JButton returnButton;
     // End of variables declaration//GEN-END:variables
 }

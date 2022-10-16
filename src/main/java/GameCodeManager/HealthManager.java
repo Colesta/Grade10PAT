@@ -134,42 +134,6 @@ public class HealthManager {
         return dead;
     }
     
-    public static int getHeroAttack(int damage, int enemy) throws FileNotFoundException {
-        Scanner sc;
-        sc = new Scanner(new File("data//enemyHealth.txt"));
-        int enemy1Health = sc.nextInt();
-        int enemy2Health = sc.nextInt();
-        int enemy3Health = sc.nextInt();
-        int enemy4Health = sc.nextInt();
-
-        switch (enemy) {
-            case 1 -> {
-                enemy1Health = enemy1Health - damage;
-
-                return enemy1Health;
-            }
-
-            case 2 -> {
-                enemy2Health -= damage;
-                return enemy2Health;
-            }
-
-            case 3 -> {
-                enemy3Health -= damage;
-                return enemy3Health;
-            }
-            case 4 -> {
-                enemy4Health -= damage;
-                return enemy4Health;
-            }
-
-            default -> {
-                return 0;
-            }
-        }
-
-    }
-
     public static void addHealth(int healthToAdd, int player) {
         Scanner sc;
 
@@ -384,16 +348,16 @@ public class HealthManager {
 
         switch (player) {
             case 1:
-                maxHP = 370;
+                maxHP = 450;
                 break;
             case 2:
                 maxHP = 650;
                 break;
             case 3:
-                maxHP = 215;
+                maxHP = 315;
                 break;
             case 4:
-                maxHP = 350;
+                maxHP = 400;
         }
         return maxHP;
     }

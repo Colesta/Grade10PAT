@@ -27,11 +27,22 @@ public class EnemyInfoScreen extends javax.swing.JFrame {
     private void initComponents() {
 
         backButton = new javax.swing.JButton();
+        jTextField4 = new javax.swing.JTextField();
+        jTextField5 = new javax.swing.JTextField();
+        jTextField6 = new javax.swing.JTextField();
+        jTextField7 = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea2 = new javax.swing.JTextArea();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTextArea3 = new javax.swing.JTextArea();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTextArea4 = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(1083, 683));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         backButton.setBackground(new java.awt.Color(255, 153, 51));
@@ -45,8 +56,91 @@ public class EnemyInfoScreen extends javax.swing.JFrame {
         });
         getContentPane().add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 650, -1, -1));
 
+        jTextField4.setBackground(new java.awt.Color(255, 102, 102));
+        jTextField4.setFont(new java.awt.Font("OCR A Extended", 1, 24)); // NOI18N
+        jTextField4.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField4.setText("Vorcaull");
+        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 380, -1, -1));
+
+        jTextField5.setBackground(new java.awt.Color(255, 102, 102));
+        jTextField5.setFont(new java.awt.Font("OCR A Extended", 1, 24)); // NOI18N
+        jTextField5.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField5.setText("Drachul");
+        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 380, -1, -1));
+
+        jTextField6.setBackground(new java.awt.Color(255, 102, 102));
+        jTextField6.setFont(new java.awt.Font("OCR A Extended", 1, 24)); // NOI18N
+        jTextField6.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField6.setText("Gortuga");
+        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField6ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 380, -1, -1));
+
+        jTextField7.setBackground(new java.awt.Color(255, 102, 102));
+        jTextField7.setFont(new java.awt.Font("OCR A Extended", 1, 24)); // NOI18N
+        jTextField7.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField7.setText("Nekrollus");
+        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField7ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 380, -1, -1));
+
+        jTextArea1.setBackground(new java.awt.Color(255, 102, 102));
+        jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("OCR A Extended", 1, 12)); // NOI18N
+        jTextArea1.setForeground(new java.awt.Color(0, 0, 0));
+        jTextArea1.setRows(5);
+        jTextArea1.setText("While resemballing a Dragon,\nDrachul actually has no ties\nto the Dragon's Gem. \n\nHe uses his Fire Breath as\nwell as create powerful\ngusts of winds using its \nwings.");
+        jScrollPane1.setViewportView(jTextArea1);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 430, 230, 170));
+
+        jTextArea2.setBackground(new java.awt.Color(255, 102, 102));
+        jTextArea2.setColumns(20);
+        jTextArea2.setFont(new java.awt.Font("OCR A Extended", 1, 12)); // NOI18N
+        jTextArea2.setForeground(new java.awt.Color(0, 0, 0));
+        jTextArea2.setRows(5);
+        jTextArea2.setText("The Strongest by pure Strength\nbut by intelligence...\n\nUsing his molton core \nlimbs he can deal great damage\nto anything that is unluky\nenough to be caught in its\ngrasp.");
+        jScrollPane2.setViewportView(jTextArea2);
+
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 430, 250, 170));
+
+        jTextArea3.setBackground(new java.awt.Color(255, 102, 102));
+        jTextArea3.setColumns(20);
+        jTextArea3.setFont(new java.awt.Font("OCR A Extended", 1, 12)); // NOI18N
+        jTextArea3.setForeground(new java.awt.Color(0, 0, 0));
+        jTextArea3.setRows(5);
+        jTextArea3.setText("Gortuga is one of the\ndeadliest foes you will\nencounter. \n\nMaster of Sword Combat, \nLegends spoke of the Gortuga\nand it's skill. Many Warriors\nhave fallen to it's blade, \nwill you as well?\n\n");
+        jScrollPane3.setViewportView(jTextArea3);
+
+        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 430, 240, 170));
+
+        jTextArea4.setBackground(new java.awt.Color(255, 102, 102));
+        jTextArea4.setColumns(20);
+        jTextArea4.setFont(new java.awt.Font("OCR A Extended", 1, 11)); // NOI18N
+        jTextArea4.setForeground(new java.awt.Color(0, 0, 0));
+        jTextArea4.setRows(5);
+        jTextArea4.setText("Nekrollus is the Jelous older\nbrother of Castellus, and like\nhim, he is a user of the Arcane\nArts who fell to the dark,\nspecializng in Tarrot \nCards.\n\nWith a Hunger for Power, He \nwill stop at nothing to reach\nhis goal of using the power\nof the Dragon Gem to rule\nAsterius, with an Army that\nworships and obeys him");
+        jScrollPane4.setViewportView(jTextArea4);
+
+        getContentPane().add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, 240, 170));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/EnemyScreen.JPG"))); // NOI18N
-        jLabel1.setPreferredSize(new java.awt.Dimension(1083, 683));
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
@@ -58,6 +152,22 @@ public class EnemyInfoScreen extends javax.swing.JFrame {
         this.setVisible(false);
         new HeroInfoScreen().setVisible(true);
     }//GEN-LAST:event_backButtonActionPerformed
+
+    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField4ActionPerformed
+
+    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField5ActionPerformed
+
+    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField6ActionPerformed
+
+    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField7ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -97,5 +207,17 @@ public class EnemyInfoScreen extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backButton;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jTextArea2;
+    private javax.swing.JTextArea jTextArea3;
+    private javax.swing.JTextArea jTextArea4;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
     // End of variables declaration//GEN-END:variables
 }

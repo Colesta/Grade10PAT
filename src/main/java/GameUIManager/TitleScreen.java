@@ -96,6 +96,7 @@ public class TitleScreen extends javax.swing.JFrame {
         jTextField1.setForeground(new java.awt.Color(0, 0, 0));
         jTextField1.setText("THE DRAGON KNIGHTS");
         jTextField1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTextField1.setOpaque(true);
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/titleScreen.jpeg"))); // NOI18N

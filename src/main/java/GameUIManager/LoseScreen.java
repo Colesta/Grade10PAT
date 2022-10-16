@@ -27,6 +27,9 @@ public class LoseScreen extends javax.swing.JFrame {
     private void initComponents() {
 
         exit = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -42,6 +45,26 @@ public class LoseScreen extends javax.swing.JFrame {
             }
         });
         getContentPane().add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 0, -1, -1));
+
+        jTextArea1.setBackground(new java.awt.Color(247, 244, 194));
+        jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("OCR A Extended", 1, 12)); // NOI18N
+        jTextArea1.setForeground(new java.awt.Color(0, 0, 0));
+        jTextArea1.setLineWrap(true);
+        jTextArea1.setRows(5);
+        jTextArea1.setText("The Kingdom has fallen to ruin.\n\nDue to your failures, Nekrollus was able to take over the kingdom.\n\nMabye if you weren't such a failure, you would have won, also mabye your dad would still be in your life.\n\nMabye if you tried again you could actually try do someting.\n\nThanks for playing:)\n(NOT)");
+        jTextArea1.setWrapStyleWord(true);
+        jTextArea1.setBorder(null);
+        jTextArea1.setCaretColor(new java.awt.Color(252, 247, 165));
+        jTextArea1.setRequestFocusEnabled(false);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 150, 160, 200));
+
+        jLabel2.setFont(new java.awt.Font("OCR A Extended", 1, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("YOU LOST!");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 110, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/LoseScreen1.JPG"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -93,5 +116,8 @@ public class LoseScreen extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel exit;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }

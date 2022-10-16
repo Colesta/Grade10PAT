@@ -31,6 +31,9 @@ public class StoryScreen extends javax.swing.JFrame {
 
         jFrame1 = new javax.swing.JFrame();
         beginButton = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
@@ -50,7 +53,6 @@ public class StoryScreen extends javax.swing.JFrame {
         setMaximumSize(new java.awt.Dimension(900, 500));
         setMinimumSize(new java.awt.Dimension(900, 500));
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(900, 500));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         beginButton.setBackground(new java.awt.Color(255, 153, 51));
@@ -63,6 +65,26 @@ public class StoryScreen extends javax.swing.JFrame {
             }
         });
         getContentPane().add(beginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 450, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("OCR A Extended", 1, 16)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("GREETINGS TRAVELLER!");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 120, -1, -1));
+
+        jTextArea1.setBackground(new java.awt.Color(252, 247, 165));
+        jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("OCR A Extended", 1, 12)); // NOI18N
+        jTextArea1.setForeground(new java.awt.Color(0, 0, 0));
+        jTextArea1.setLineWrap(true);
+        jTextArea1.setRows(5);
+        jTextArea1.setText("The Kingdom of Asterius needs your\nhelp!\nThe magical Gem known as the \n“Dragon's Jewel” has been stolen by\nthe devious Nekrollus has stolen the\nGem and has summoned ancient \nmonsters to take over the Kingdom!\nLuckily, Nekrollus’ brother, Castellus \nand the order of knights tasked with\nprotecting the  Gem,The Dragon \nKnights (yes that's the name of the \ngame) are on their way to defeat\n these Evil Forces, and they need YOUR HELP to stop them.\n\nThink you're up for the task?\n");
+        jTextArea1.setWrapStyleWord(true);
+        jTextArea1.setBorder(null);
+        jTextArea1.setCaretColor(new java.awt.Color(252, 247, 165));
+        jTextArea1.setRequestFocusEnabled(false);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 140, -1, 210));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/StroyScreen.JPG"))); // NOI18N
         jLabel1.setText("jLabel1");
@@ -209,5 +231,8 @@ public class StoryScreen extends javax.swing.JFrame {
     private javax.swing.JButton beginButton;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }

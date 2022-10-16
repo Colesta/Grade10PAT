@@ -18,17 +18,17 @@ public class EnemyManager {
 
         switch (atkPotency) {
             case 1 -> {
-                enemyDamage = 85;
+                enemyDamage = 65;
                 return enemyDamage;
             }
 
             case 2 -> {
-                enemyDamage = 130 ;
+                enemyDamage = 75;
                 return enemyDamage;
             }
 
             case 3 -> {
-                enemyDamage = 200;
+                enemyDamage = 95;
                 return enemyDamage;
             }
             default -> {

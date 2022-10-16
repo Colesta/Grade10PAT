@@ -331,7 +331,7 @@ public class BattleScreen extends javax.swing.JFrame {
         atkInfoText.setBackground(new java.awt.Color(37, 43, 67));
         atkInfoText.setColumns(20);
         atkInfoText.setFont(new java.awt.Font("OCR A Extended", 1, 12)); // NOI18N
-        atkInfoText.setForeground(new java.awt.Color(204, 255, 255));
+        atkInfoText.setForeground(new java.awt.Color(153, 255, 255));
         atkInfoText.setLineWrap(true);
         atkInfoText.setRows(5);
         atkInfoText.setText("\n");
@@ -619,7 +619,7 @@ public class BattleScreen extends javax.swing.JFrame {
                             MANA: """ + MovelistManager.swordDanceMana()+ """
                                                                             
                             
-                            Strike a SINGLE 
+                            Slash a SINGLE 
                             enemy with flurry
                             of quick and agile
                             slashes                                           
@@ -634,12 +634,9 @@ public class BattleScreen extends javax.swing.JFrame {
                                                                          
                             MANA: """ + MovelistManager.skullCrackerMana()+ """
                                                                             
-                            
-                            Strike a SINGLE 
-                            enemy with a mighty 
-                            slash from your 
-                            magic blade.
-                            
+                            Wallop a SINGLE
+                            enemy with your
+                            Mighty Axe
                             """);
     }//GEN-LAST:event_p2Move1MouseEntered
 
@@ -650,12 +647,9 @@ public class BattleScreen extends javax.swing.JFrame {
                                                                          
                             MANA: """ + MovelistManager.godsHandMana()+ """
                                                                             
-                            
-                            Strike a SINGLE 
-                            enemy with a mighty 
-                            slash from your 
-                            magic blade.
-                            
+                            Smite ALL foes
+                            with an 
+                            Earthquake                                           
                             """);
     }//GEN-LAST:event_p2Move2MouseEntered
 
@@ -666,12 +660,9 @@ public class BattleScreen extends javax.swing.JFrame {
                                                                          
                             MANA: """ + MovelistManager.megidoloanMana()+ """
                                                                             
-                            
-                            Strike a SINGLE 
-                            enemy with a mighty 
-                            slash from your 
-                            magic blade.
-                            
+                            Bombarde ALL foes                                              
+                            with the Power of
+                            the Arcane Arts                                              
                             """);
     }//GEN-LAST:event_p3Move1MouseEntered
 
@@ -681,12 +672,11 @@ public class BattleScreen extends javax.swing.JFrame {
                             DAMAGE: """ + MovelistManager.doorsOfHades()+ """
                                                                          
                             MANA: """ + MovelistManager.doorsOfHadesMana()+ """
-                                                                            
-                            
-                            Strike a SINGLE 
-                            enemy with a mighty 
-                            slash from your 
-                            magic blade.
+                           
+                            Open a Portal
+                            to the underworld 
+                            and unleash its 
+                            wrath on ALL foes                                               
                             
                             """);
     }//GEN-LAST:event_p3Move2MouseEntered
@@ -697,13 +687,12 @@ public class BattleScreen extends javax.swing.JFrame {
                             MANA GIVEN: """ + MovelistManager.divineJudgement()+ """
                                                                          
                             HEALTH TAKEN: """ + MovelistManager.divineJudgementHealth()+ """
-                                                                            
-                            
-                            Strike a SINGLE 
-                            enemy with a mighty 
-                            slash from your 
-                            magic blade.
-                            
+                              
+                                                                                         
+                            Sacrifce Health 
+                            of an ally to 
+                            restore Mana to
+                            the Knights                                                                                                                                                                                  
                             """);
     }//GEN-LAST:event_p4Move1MouseEntered
 
@@ -713,13 +702,10 @@ public class BattleScreen extends javax.swing.JFrame {
                             HEALTH GIVEN: """ + MovelistManager.salvation()+ """
                                                                          
                             MANA: """ + MovelistManager.salvationMana()+ """
-                                                                            
-                            
-                            Strike a SINGLE 
-                            enemy with a mighty 
-                            slash from your 
-                            magic blade.
-                            
+                                  
+                                                                                    
+                            Restore Health                                             
+                            to the Knights
                             """);
     }//GEN-LAST:event_p4Move2MouseEntered
 
