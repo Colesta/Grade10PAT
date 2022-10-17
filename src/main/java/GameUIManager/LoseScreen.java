@@ -72,9 +72,8 @@ public class LoseScreen extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+//why did you lose
     private void exitMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitMousePressed
-        // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_exitMousePressed
 

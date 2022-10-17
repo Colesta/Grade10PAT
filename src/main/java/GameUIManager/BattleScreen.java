@@ -9,13 +9,7 @@ import GameCodeManager.HealthManager;
 import GameCodeManager.HeroManager;
 import GameCodeManager.ManaManager;
 import GameCodeManager.MovelistManager;
-import java.io.FileNotFoundException;
-import java.nio.charset.CodingErrorAction;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
-import java.awt.Color;
 
 /**
  *
@@ -356,20 +350,25 @@ public class BattleScreen extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-
+    //this is where the actual game takes place
+    // these are what happens when a heros move is pressed
     private void p1Move1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p1Move1ActionPerformed
 
         HeroManager.p1Move1();
         updateEnemysBar();
         updateHerosBar();
+        //the hero does damage and the enemies health bars are updeated to show the damage
 
         if (HealthManager.allEnemyDead()) {
+            //if all enemies died, then the win screen will be launched
             this.setVisible(false);
             new WinScreen().setVisible(true);
         }
+        //sets both players moves invisible
         p1Move1.setVisible(false);
         p1Move2.setVisible(false);
 
+        //will make the player whose next turn(and isnt dead) visible
         if (HealthManager.getPlayerHealth(2) > 0) {
             updateAfterTurn(2);
 
@@ -428,7 +427,7 @@ public class BattleScreen extends javax.swing.JFrame {
     private void p2Move1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p2Move1ActionPerformed
 
         if (ManaManager.getMana(2) > 0) {
-            
+
             HeroManager.p2Move1();
             updateEnemysBar();
             updateHerosBar();
@@ -594,6 +593,7 @@ public class BattleScreen extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_p4Move2ActionPerformed
 
+    //displays text that is relevant to the move you hover over
     private void p1Move1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p1Move1MouseEntered
         atkInfoText.setText("""
                             BRAVE BLADE
@@ -611,12 +611,12 @@ public class BattleScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_p1Move1MouseEntered
 
     private void p1Move2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p1Move2MouseEntered
-      
+
         atkInfoText.setText("""
                             SWORD DANCE
-                            DAMAGE: """ + MovelistManager.swordDance()+ """
+                            DAMAGE: """ + MovelistManager.swordDance() + """
                                                                          
-                            MANA: """ + MovelistManager.swordDanceMana()+ """
+                            MANA: """ + MovelistManager.swordDanceMana() + """
                                                                             
                             
                             Slash a SINGLE 
@@ -630,9 +630,9 @@ public class BattleScreen extends javax.swing.JFrame {
     private void p2Move1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p2Move1MouseEntered
         atkInfoText.setText("""
                             SKULL CRACKER
-                            DAMAGE: """ + MovelistManager.skullCracker()+ """
+                            DAMAGE: """ + MovelistManager.skullCracker() + """
                                                                          
-                            MANA: """ + MovelistManager.skullCrackerMana()+ """
+                            MANA: """ + MovelistManager.skullCrackerMana() + """
                                                                             
                             Wallop a SINGLE
                             enemy with your
@@ -641,11 +641,11 @@ public class BattleScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_p2Move1MouseEntered
 
     private void p2Move2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p2Move2MouseEntered
-     atkInfoText.setText("""
+        atkInfoText.setText("""
                             GODS HAND
-                            DAMAGE: """ + MovelistManager.godsHand()+ """
+                            DAMAGE: """ + MovelistManager.godsHand() + """
                                                                          
-                            MANA: """ + MovelistManager.godsHandMana()+ """
+                            MANA: """ + MovelistManager.godsHandMana() + """
                                                                             
                             Smite ALL foes
                             with an 
@@ -654,11 +654,11 @@ public class BattleScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_p2Move2MouseEntered
 
     private void p3Move1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p3Move1MouseEntered
-      atkInfoText.setText("""
+        atkInfoText.setText("""
                             MEGIDOLOAN
-                            DAMAGE: """ + MovelistManager.megidoloan()+ """
+                            DAMAGE: """ + MovelistManager.megidoloan() + """
                                                                          
-                            MANA: """ + MovelistManager.megidoloanMana()+ """
+                            MANA: """ + MovelistManager.megidoloanMana() + """
                                                                             
                             Bombarde ALL foes                                              
                             with the Power of
@@ -669,9 +669,9 @@ public class BattleScreen extends javax.swing.JFrame {
     private void p3Move2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p3Move2MouseEntered
         atkInfoText.setText("""
                             DOORS OF HADES
-                            DAMAGE: """ + MovelistManager.doorsOfHades()+ """
+                            DAMAGE: """ + MovelistManager.doorsOfHades() + """
                                                                          
-                            MANA: """ + MovelistManager.doorsOfHadesMana()+ """
+                            MANA: """ + MovelistManager.doorsOfHadesMana() + """
                            
                             Open a Portal
                             to the underworld 
@@ -682,11 +682,11 @@ public class BattleScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_p3Move2MouseEntered
 
     private void p4Move1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p4Move1MouseEntered
-       atkInfoText.setText("""
+        atkInfoText.setText("""
                             DIVINE JUDGMENT
-                            MANA GIVEN: """ + MovelistManager.divineJudgement()+ """
+                            MANA GIVEN: """ + MovelistManager.divineJudgement() + """
                                                                          
-                            HEALTH TAKEN: """ + MovelistManager.divineJudgementHealth()+ """
+                            HEALTH TAKEN: """ + MovelistManager.divineJudgementHealth() + """
                               
                                                                                          
                             Sacrifce Health 
@@ -697,11 +697,11 @@ public class BattleScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_p4Move1MouseEntered
 
     private void p4Move2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p4Move2MouseEntered
-      atkInfoText.setText("""
+        atkInfoText.setText("""
                             SALVATION
-                            HEALTH GIVEN: """ + MovelistManager.salvation()+ """
+                            HEALTH GIVEN: """ + MovelistManager.salvation() + """
                                                                          
-                            MANA: """ + MovelistManager.salvationMana()+ """
+                            MANA: """ + MovelistManager.salvationMana() + """
                                   
                                                                                     
                             Restore Health                                             
@@ -710,7 +710,6 @@ public class BattleScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_p4Move2MouseEntered
 
     private void exitMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitMousePressed
-        // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_exitMousePressed
 
@@ -740,10 +739,11 @@ public class BattleScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_EnemyTurnButtonActionPerformed
 
     private void battleScreenMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_battleScreenMouseEntered
-
+        //accidently added this and now i cant remove it :(
     }//GEN-LAST:event_battleScreenMouseEntered
 
     private static void updateAfterTurn(int player) {
+        //used to display the moves of the player inputted
 
         switch (player) {
             case 1 -> {
@@ -767,6 +767,7 @@ public class BattleScreen extends javax.swing.JFrame {
     }
 
     public static void updateHerosBar() {
+        //will update all the heroes health and mana bars
 
         String hp1 = HealthManager.getPlayerHealth(1) + "";
         String hp1Max = HealthManager.maxHeroHp(1) + "";
@@ -808,6 +809,7 @@ public class BattleScreen extends javax.swing.JFrame {
     }
 
     public static void updateEnemysBar() {
+        //will update all enemies health bars
 
         String hp1 = HealthManager.getEnemyHealth(1) + "";
         String hp2 = HealthManager.getEnemyHealth(2) + "";

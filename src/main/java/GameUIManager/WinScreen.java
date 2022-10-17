@@ -72,9 +72,8 @@ public class WinScreen extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+//good job :)
     private void exitMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitMousePressed
-        // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_exitMousePressed
 

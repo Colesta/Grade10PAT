@@ -12,6 +12,8 @@ import javax.swing.JOptionPane;
  */
 public class HeroManager {
 
+    //This is where all the moves are stored. These will decrease the health of the enemy as well as decrease the mana of the hero. Some moves even ask the player to input which enemy they want to attack
+    //hero 1's moveset (Damage)
     public static void p1Move1() {
         int enemy = Integer.parseInt(JOptionPane.showInputDialog("Enter which enemy you would like to attack (Enter 1,2,3 or 4)"));
         int damage = MovelistManager.braveBlade();
@@ -29,6 +31,7 @@ public class HeroManager {
         HealthManager.getEnemyDamage(enemy, damage);
     }
 
+    //hero 2's moveset (Tank)
     public static void p2Move1() {
         int enemy = Integer.parseInt(JOptionPane.showInputDialog("Enter which enemy you would like to attack (Enter 1,2,3 or 4)"));
         int damage = MovelistManager.skullCracker();
@@ -47,6 +50,7 @@ public class HeroManager {
         HealthManager.getEnemyDamage(4, damage);
     }
 
+    //hero 3's moveset (Mage)
     public static void p3Move1() {
         int damage = MovelistManager.megidoloan();
         int manaToSubtract = MovelistManager.megidoloanMana();
@@ -67,6 +71,7 @@ public class HeroManager {
         HealthManager.getEnemyDamage(4, damage);
     }
 
+    //hero 4's moveset (Healer)
     public static void p4Move1(int pHealthTotake) {
 
         int damage = MovelistManager.divineJudgementHealth();

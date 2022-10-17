@@ -4,7 +4,6 @@
  */
 package GameUIManager;
 
-
 import GameCodeManager.HealthManager;
 import GameCodeManager.ManaManager;
 import com.sun.source.tree.ModuleTree;
@@ -37,6 +36,7 @@ public class TitleScreen extends javax.swing.JFrame {
         exit = new javax.swing.JLabel();
         reset = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         battleScreen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/titleScreen.jpeg"))); // NOI18N
@@ -99,6 +99,12 @@ public class TitleScreen extends javax.swing.JFrame {
         jTextField1.setOpaque(true);
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, -1, -1));
 
+        jLabel2.setFont(new java.awt.Font("OCR A Extended", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 153, 0));
+        jLabel2.setText("CLICK ME!");
+        jLabel2.setToolTipText("");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 440, -1, -1));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/titleScreen.jpeg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -106,6 +112,7 @@ public class TitleScreen extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    //The titlescreen. this is where the user can choose what they want to do
     private void playButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playButtonActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
@@ -130,16 +137,16 @@ public class TitleScreen extends javax.swing.JFrame {
         ManaManager.resetMana();
     }//GEN-LAST:event_resetActionPerformed
 
+    public void jButtonAction(java.awt.event.ActionEvent evt) {
 
-    public void jButtonAction (java.awt.event.ActionEvent evt){
-        
     }
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        
-                java.awt.EventQueue.invokeLater(new Runnable() {
+
+        java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new TitleScreen().setVisible(true);
             }
@@ -152,6 +159,7 @@ public class TitleScreen extends javax.swing.JFrame {
     private javax.swing.JButton charButton;
     private javax.swing.JLabel exit;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JButton playButton;
     private javax.swing.JButton reset;

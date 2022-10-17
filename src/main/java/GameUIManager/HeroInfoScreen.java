@@ -69,6 +69,7 @@ public class HeroInfoScreen extends javax.swing.JFrame {
         });
         getContentPane().add(returnButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 650, -1, -1));
 
+        jTextField1.setEditable(false);
         jTextField1.setBackground(new java.awt.Color(204, 255, 255));
         jTextField1.setFont(new java.awt.Font("OCR A Extended", 1, 24)); // NOI18N
         jTextField1.setForeground(new java.awt.Color(0, 0, 0));
@@ -80,6 +81,7 @@ public class HeroInfoScreen extends javax.swing.JFrame {
         });
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 370, -1, -1));
 
+        jTextField2.setEditable(false);
         jTextField2.setBackground(new java.awt.Color(204, 255, 255));
         jTextField2.setFont(new java.awt.Font("OCR A Extended", 1, 24)); // NOI18N
         jTextField2.setForeground(new java.awt.Color(0, 0, 0));
@@ -91,6 +93,7 @@ public class HeroInfoScreen extends javax.swing.JFrame {
         });
         getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 370, -1, -1));
 
+        jTextField3.setEditable(false);
         jTextField3.setBackground(new java.awt.Color(204, 255, 255));
         jTextField3.setFont(new java.awt.Font("OCR A Extended", 1, 24)); // NOI18N
         jTextField3.setForeground(new java.awt.Color(0, 0, 0));
@@ -102,6 +105,7 @@ public class HeroInfoScreen extends javax.swing.JFrame {
         });
         getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 370, -1, -1));
 
+        jTextField4.setEditable(false);
         jTextField4.setBackground(new java.awt.Color(204, 255, 255));
         jTextField4.setFont(new java.awt.Font("OCR A Extended", 1, 24)); // NOI18N
         jTextField4.setForeground(new java.awt.Color(0, 0, 0));
@@ -113,6 +117,7 @@ public class HeroInfoScreen extends javax.swing.JFrame {
         });
         getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, -1, -1));
 
+        jTextArea4.setEditable(false);
         jTextArea4.setBackground(new java.awt.Color(204, 255, 255));
         jTextArea4.setColumns(20);
         jTextArea4.setFont(new java.awt.Font("OCR A Extended", 1, 12)); // NOI18N
@@ -123,6 +128,7 @@ public class HeroInfoScreen extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 430, 240, 160));
 
+        jTextArea5.setEditable(false);
         jTextArea5.setBackground(new java.awt.Color(204, 255, 255));
         jTextArea5.setColumns(20);
         jTextArea5.setFont(new java.awt.Font("OCR A Extended", 1, 12)); // NOI18N
@@ -133,6 +139,7 @@ public class HeroInfoScreen extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 430, 250, 160));
 
+        jTextArea6.setEditable(false);
         jTextArea6.setBackground(new java.awt.Color(204, 255, 255));
         jTextArea6.setColumns(20);
         jTextArea6.setFont(new java.awt.Font("OCR A Extended", 1, 12)); // NOI18N
@@ -143,6 +150,7 @@ public class HeroInfoScreen extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 430, 240, 160));
 
+        jTextArea7.setEditable(false);
         jTextArea7.setBackground(new java.awt.Color(204, 255, 255));
         jTextArea7.setColumns(20);
         jTextArea7.setFont(new java.awt.Font("OCR A Extended", 1, 12)); // NOI18N
@@ -160,33 +168,27 @@ public class HeroInfoScreen extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+//info on heroes
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
         this.setVisible(false);
         new EnemyInfoScreen().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void returnButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returnButtonActionPerformed
-        // TODO add your handling code here:
         this.setVisible(false);
         new TitleScreen().setVisible(true);
     }//GEN-LAST:event_returnButtonActionPerformed
 
     private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_jTextField4ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_jTextField2ActionPerformed
 
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_jTextField3ActionPerformed
 
     /**

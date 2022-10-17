@@ -12,7 +12,6 @@ import java.io.PrintWriter;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -20,7 +19,9 @@ import javax.swing.JOptionPane;
  */
 public class HealthManager {
 
+    //This is where all the Health is managed. All the methods that involve increasing, decreasing, or pulling from a textfile for the Health for both heroes and enemies
     public static int getPlayerHealth(int player) {
+        //pulls health from textfile depending on which player you input
         try {
             Scanner sc;
             sc = new Scanner(new File("data//playerHealth.txt"));
@@ -28,6 +29,7 @@ public class HealthManager {
             int player2Health = sc.nextInt();
             int player3Health = sc.nextInt();
             int player4Health = sc.nextInt();
+            //calling the textfile and given alll the values in it a variable
 
             return switch (player) {
                 case 1 ->
@@ -42,6 +44,7 @@ public class HealthManager {
 
                     -1;
             };
+            //calling a specific value depending on the player inputted and returning it
 
         } catch (FileNotFoundException ex) {
             Logger.getLogger(ManaManager.class.getName()).log(Level.SEVERE, null, ex);
@@ -51,6 +54,7 @@ public class HealthManager {
     }
 
     public static int getEnemyHealth(int enemy) {
+        //pulls health from textfile depending on which enemy you input
         try {
             Scanner sc;
             sc = new Scanner(new File("data//enemyHealth.txt"));
@@ -80,67 +84,47 @@ public class HealthManager {
     }
 
     public static boolean allHeroDead() {
-
-        if (getPlayerHealth(1) == 0 && getPlayerHealth(2) == 0 && getPlayerHealth(3) == 0 && getPlayerHealth(4) == 0) {
-            return true;
-        } else {
-            return false;
-        }
+        // will return True if all the heroes healths equal 0, therfore ending the game
+        return getPlayerHealth(1) == 0 && getPlayerHealth(2) == 0 && getPlayerHealth(3) == 0 && getPlayerHealth(4) == 0;
     }
 
     public static boolean allEnemyDead() {
-        if (getEnemyHealth(1) == 0 && getEnemyHealth(2) == 0 && getEnemyHealth(3) == 0 && getEnemyHealth(4) == 0) {
-            return true;
-        } else {
-            return false;
-        }
+        // will return True if all the enemies healths equal 0, therfore ending the game
+        return getEnemyHealth(1) == 0 && getEnemyHealth(2) == 0 && getEnemyHealth(3) == 0 && getEnemyHealth(4) == 0;
     }
 
     public static boolean heroDead(int hero) {
-        boolean dead = false;
+        //will return True or False depending if the hero inputted is dead
+        boolean dead;
         switch (hero) {
             case 1 -> {
-                if (getPlayerHealth(1) == 0) {
-                    dead = true;
-                } else {
-                    dead = false;
-                }
+                dead = getPlayerHealth(1) == 0;
             }
             case 2 -> {
-                if (getPlayerHealth(2) == 0) {
-                    dead = true;
-                } else {
-                    dead = false;
-                }
+                dead = getPlayerHealth(2) == 0;
             }
 
             case 3 -> {
-                if (getPlayerHealth(3) == 0) {
-                    dead = true;
-                } else {
-                    dead = false;
-                }
+                dead = getPlayerHealth(3) == 0;
             }
             case 4 -> {
-                if (getPlayerHealth(4) == 0) {
-                    dead = true;
-                } else {
-                    dead = false;
-                }
+                dead = getPlayerHealth(4) == 0;
             }
-            default -> dead = false;
+            default ->
+                dead = false;
 
         }
         return dead;
     }
-    
+
     public static void addHealth(int healthToAdd, int player) {
+        //Will increase and rewrite the health in the playerHealth textfile
         Scanner sc;
 
-        int maxP1Hp = 200;
-        int maxP2Hp = 200;
-        int maxP3Hp = 200;
-        int maxP4Hp = 200;
+        int maxP1Hp = maxHeroHp(1);
+        int maxP2Hp = maxHeroHp(2);
+        int maxP3Hp = maxHeroHp(3);
+        int maxP4Hp = maxHeroHp(4);
 
         try {
             sc = new Scanner(new File("data//playerHealth.txt"));
@@ -183,13 +167,13 @@ public class HealthManager {
 
             }
 
-            PrintWriter pw = new PrintWriter(new FileWriter("data//playerHealth.txt"));
-            pw.println(player1Health);
-            pw.println(player2Health);
-            pw.println(player3Health);
-            pw.println(player4Health);
-
-            pw.close();
+            try (PrintWriter pw = new PrintWriter(new FileWriter("data//playerHealth.txt"))) {
+                //rewriting all values in the textfile with the updated ones
+                pw.println(player1Health);
+                pw.println(player2Health);
+                pw.println(player3Health);
+                pw.println(player4Health);
+            }
 
         } catch (FileNotFoundException ex) {
             Logger.getLogger(ManaManager.class.getName()).log(Level.SEVERE, null, ex);
@@ -200,6 +184,7 @@ public class HealthManager {
     }
 
     public static void getHeroDamage(int damage, int player) {
+        //Will decrease and rewrite the health in the playerHealth textfile
         Scanner sc;
 
         try {
@@ -210,42 +195,41 @@ public class HealthManager {
             int player4Health = sc.nextInt();
 
             switch (player) {
-                case 1:
+                case 1 -> {
                     player1Health -= damage;
                     if (player1Health < 0) {
                         player1Health = 0;
                     }
-                    break;
-                case 2:
+                }
+                case 2 -> {
                     player2Health -= damage;
                     if (player2Health < 0) {
                         player2Health = 0;
                     }
-                    break;
-                case 3:
+                }
+                case 3 -> {
                     player3Health -= damage;
                     if (player3Health < 0) {
                         player3Health = 0;
                     }
-                    break;
-                case 4:
+                }
+                case 4 -> {
                     player4Health -= damage;
                     if (player4Health < 0) {
                         player4Health = 0;
                     }
-                    break;
-                default:
+                }
+                default ->
                     System.out.println("INVALID NUMBER");
 
             }
 
-            PrintWriter pw = new PrintWriter(new FileWriter("data//playerHealth.txt"));
-            pw.println(player1Health);
-            pw.println(player2Health);
-            pw.println(player3Health);
-            pw.println(player4Health);
-
-            pw.close();
+            try (PrintWriter pw = new PrintWriter(new FileWriter("data//playerHealth.txt"))) {
+                pw.println(player1Health);
+                pw.println(player2Health);
+                pw.println(player3Health);
+                pw.println(player4Health);
+            }
 
         } catch (FileNotFoundException ex) {
             Logger.getLogger(ManaManager.class.getName()).log(Level.SEVERE, null, ex);
@@ -256,6 +240,7 @@ public class HealthManager {
     }
 
     public static void getEnemyDamage(int enemy, int damage) {
+        //Will decrease and rewrite the health in the enemyHealth textfile depending on the enemy inputted
         Scanner sc;
         try {
             sc = new Scanner(new File("data//enemyHealth.txt"));
@@ -307,14 +292,14 @@ public class HealthManager {
     }
 
     public static void resetHeroHP() {
+        //rewrite health in textfiles to their mx vaules
         try {
-            PrintWriter pw = new PrintWriter(new FileWriter("data//playerHealth.txt"));
-            pw.println(maxHeroHp(1));
-            pw.println(maxHeroHp(2));
-            pw.println(maxHeroHp(3));
-            pw.println(maxHeroHp(4));
-
-            pw.close();
+            try (PrintWriter pw = new PrintWriter(new FileWriter("data//playerHealth.txt"))) {
+                pw.println(maxHeroHp(1));
+                pw.println(maxHeroHp(2));
+                pw.println(maxHeroHp(3));
+                pw.println(maxHeroHp(4));
+            }
 
         } catch (FileNotFoundException ex) {
             Logger.getLogger(ManaManager.class.getName()).log(Level.SEVERE, null, ex);
@@ -325,14 +310,14 @@ public class HealthManager {
     }
 
     public static void resetEnemyHP() {
+        //rewrite health in textfiles to their mx vaules
         try {
-            PrintWriter pw = new PrintWriter(new FileWriter("data//enemyHealth.txt"));
-            pw.println(maxEnemyHP(1));
-            pw.println(maxEnemyHP(2));
-            pw.println(maxEnemyHP(3));
-            pw.println(maxEnemyHP(4));
-
-            pw.close();
+            try (PrintWriter pw = new PrintWriter(new FileWriter("data//enemyHealth.txt"))) {
+                pw.println(maxEnemyHP(1));
+                pw.println(maxEnemyHP(2));
+                pw.println(maxEnemyHP(3));
+                pw.println(maxEnemyHP(4));
+            }
 
         } catch (FileNotFoundException ex) {
             Logger.getLogger(ManaManager.class.getName()).log(Level.SEVERE, null, ex);
@@ -343,40 +328,35 @@ public class HealthManager {
     }
 
     public static int maxHeroHp(int player) {
+        //returns max health for the hero inputted
 
         int maxHP = 0;
 
         switch (player) {
-            case 1:
+            case 1 ->
                 maxHP = 450;
-                break;
-            case 2:
+            case 2 ->
                 maxHP = 650;
-                break;
-            case 3:
+            case 3 ->
                 maxHP = 315;
-                break;
-            case 4:
+            case 4 ->
                 maxHP = 400;
         }
         return maxHP;
     }
 
     public static int maxEnemyHP(int enemy) {
-
+        //returns max health for the enemy inputted
         int maxHP = 0;
 
         switch (enemy) {
-            case 1:
+            case 1 ->
                 maxHP = 850;
-                break;
-            case 2:
+            case 2 ->
                 maxHP = 635;
-                break;
-            case 3:
+            case 3 ->
                 maxHP = 445;
-                break;
-            case 4:
+            case 4 ->
                 maxHP = 570;
         }
         return maxHP;
